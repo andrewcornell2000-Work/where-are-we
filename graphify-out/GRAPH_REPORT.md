@@ -1,16 +1,16 @@
 # Graph Report - where-are-we  (2026-07-17)
 
 ## Corpus Check
-- 33 files · ~16,309 words
+- 33 files · ~16,355 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 237 nodes · 415 edges · 12 communities
+- 237 nodes · 406 edges · 13 communities
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `ccc22b48`
+- Built from commit: `8997a6c8`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -26,12 +26,13 @@
 - Rect
 - elk-bundled.d.ts
 - Where things stand
+- StrokeShape.tsx
 
 ## God Nodes (most connected - your core abstractions)
 1. `compilerOptions` - 17 edges
-2. `Rect` - 13 edges
-3. `WawNode` - 12 edges
-4. `App()` - 11 edges
+2. `App()` - 11 edges
+3. `Rect` - 11 edges
+4. `WawNode` - 11 edges
 5. `CanvasView()` - 8 edges
 6. `Where Are We` - 8 edges
 7. `startServer()` - 7 edges
@@ -42,8 +43,8 @@
 ## Surprising Connections (you probably didn't know these)
 - `main()` --calls--> `startServer()`  [EXTRACTED]
   bin/waw.mjs → server/index.mjs
-- `SectionItem` --references--> `Rect`  [EXTRACTED]
-  src/canvas/CanvasView.tsx → src/lib/geometry.ts
+- `Props` --references--> `Rect`  [EXTRACTED]
+  src/canvas/SectionShape.tsx → src/lib/geometry.ts
 - `Props` --references--> `Camera`  [EXTRACTED]
   src/canvas/CanvasView.tsx → src/types.ts
 - `Props` --references--> `NodePos`  [EXTRACTED]
@@ -54,7 +55,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (12 total, 0 thin omitted)
+## Communities (13 total, 0 thin omitted)
 
 ### Community 0 - "App.tsx"
 Cohesion: 0.08
@@ -65,8 +66,8 @@ Cohesion: 0.09
 Nodes (22): chokidar, bin, where-are-we, dependencies, chokidar, ws, description, files (+14 more)
 
 ### Community 2 - "NodeShape.tsx"
-Cohesion: 0.09
-Nodes (29): NodeItem, DrawnPath(), Props, EdgeShape, Props, Props, Props, SectionShape (+21 more)
+Cohesion: 0.13
+Nodes (17): DrawnPath(), Props, EdgeShape, Props, Props, SectionShape, emitFlakes(), polylineMidpoint() (+9 more)
 
 ### Community 3 - "compilerOptions"
 Cohesion: 0.09
@@ -81,8 +82,8 @@ Cohesion: 0.12
 Nodes (14): A good habit, Hard rules, Instructions for AI assistants working in this project, The file format, Use graphify for accurate connections, What you do, and when, Data schema (`where-are-we.json`), How it works (+6 more)
 
 ### Community 6 - "CanvasView.tsx"
-Cohesion: 0.18
-Nodes (17): CanvasView(), Drag, EdgeItem, EraseTarget, Props, SectionItem, NodeShape, statusDotCenter() (+9 more)
+Cohesion: 0.12
+Nodes (23): CanvasView(), Drag, EdgeItem, EraseTarget, NodeItem, SectionItem, NodeShape, Props (+15 more)
 
 ### Community 7 - "Toolbar.tsx"
 Cohesion: 0.40
@@ -99,6 +100,10 @@ Nodes (7): ELK, ElkEdgeSection, ElkExtendedEdge, elkjs/lib/elk.bundled.js, ElkLa
 ### Community 11 - "Where things stand"
 Cohesion: 0.25
 Nodes (7): Board state (data/where-are-we.json), Gotchas that still apply, HANDOVER — Where Are We v2 (verification complete, ready to use), Machine setup notes (fresh machine), What this project is, What to do next (nothing is blocked), Where things stand
+
+### Community 12 - "StrokeShape.tsx"
+Cohesion: 0.39
+Nodes (6): Props, Props, StrokeShape(), outlineToPath(), strokePath(), FreehandStroke
 
 ## Knowledge Gaps
 - **89 isolated node(s):** `args`, `cwd`, `dataDir`, `name`, `version` (+84 more)
@@ -118,6 +123,6 @@ _Questions this graph is uniquely positioned to answer:_
 - **Should `devDependencies` be split into smaller, more focused modules?**
   _Cohesion score 0.08695652173913043 - nodes in this community are weakly interconnected._
 - **Should `NodeShape.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.09102564102564102 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.13043478260869565 - nodes in this community are weakly interconnected._
 - **Should `compilerOptions` be split into smaller, more focused modules?**
   _Cohesion score 0.08695652173913043 - nodes in this community are weakly interconnected._
