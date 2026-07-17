@@ -1,0 +1,40 @@
+{
+  "name": "where-are-we",
+  "version": "2.0.0",
+  "type": "module",
+  "description": "Where Are We — a live, infinite crayon-sketch canvas your AI draws onto to show where you're up to.",
+  "bin": {
+    "where-are-we": "bin/waw.mjs"
+  },
+  "files": [
+    "bin",
+    "server",
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,web -c magenta,cyan \"npm:dev:server\" \"npm:dev:web\"",
+    "dev:server": "node server/index.mjs",
+    "dev:web": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "chokidar": "^4.0.3",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/ws": "^8.5.13",
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "elkjs": "^0.11.0",
+    "perfect-freehand": "^1.2.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "roughjs": "^4.6.6",
+    "typescript": "^5.6.3",
+    "vite": "^6.0.7"
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "data/layout.local.json": {
+    "mtime": 1784254180.2669504,
+    "ast_hash": "db3a56154ffa46e3ee179d7a9662d4c2",
+    "semantic_hash": ""
+  },
+  "data/where-are-we.json": {
+    "mtime": 1784254619.239685,
+    "ast_hash": "e78980afd067ced9b2b5e8ff8fb827d7",
+    "semantic_hash": ""
+  },
+  "package.json": {
+    "mtime": 1784251818.6615307,
+    "ast_hash": "f1b76d6c222a908a1d52baac65ffa50f",
+    "semantic_hash": ""
+  },
+  "server/index.mjs": {
+    "mtime": 1784252006.281722,
+    "ast_hash": "e15254e3bbe8015fc3d399ec52619ae9",
+    "semantic_hash": ""
+  },
+  "src/App.tsx": {
+    "mtime": 1784252516.9918325,
+    "ast_hash": "3bd1fec2a675135d9c13c1934be5b7ae",
+    "semantic_hash": ""
+  },
+  "src/canvas/CanvasView.tsx": {
+    "mtime": 1784253110.7537718,
+    "ast_hash": "c611883fb876c47b1d28f2a6c6689bff",
+    "semantic_hash": ""
+  },
+  "src/canvas/DrawnPath.tsx": {
+    "mtime": 1784254443.9387307,
+    "ast_hash": "96b9f2fa59bb664a5d407e12b052c32b",
+    "semantic_hash": ""
+  },
+  "src/canvas/EdgeShape.tsx": {
+    "mtime": 1784252198.590279,
+    "ast_hash": "4de3f00fe100d29eaf85ee9c5bfaaf41",
+    "semantic_hash": ""
+  },
+  "src/canvas/NodeShape.tsx": {
+    "mtime": 1784252182.7814014,
+    "ast_hash": "6abab57aefa2c4206316f0c2444d0cdc",
+    "semantic_hash": ""
+  },
+  "src/canvas/StrokeShape.tsx": {
+    "mtime": 1784252207.4802346,
+    "ast_hash": "141ba230e37488d692bb9d3fcb481fb5",
+    "semantic_hash": ""
+  },
+  "src/lib/autolayout.ts": {
+    "mtime": 1784252098.0380833,
+    "ast_hash": "2805826a65eb8429e1082bed0f1475f9",
+    "semantic_hash": ""
+  },
+  "src/lib/freehand.ts": {
+    "mtime": 1784252085.709006,
+    "ast_hash": "cb8c4dfcd584947315f642450b9827b4",
+    "semantic_hash": ""
+  },
+  "src/lib/geometry.ts": {
+    "mtime": 1784252037.0765784,
+    "ast_hash": "03e5daa3bc35749a3179e55d5c5907da",
+    "semantic_hash": ""
+  },
+  "src/lib/rough.ts": {
+    "mtime": 1784252599.9650705,
+    "ast_hash": "e7379087e7ef8082e00de61d7751139f",
+    "semantic_hash": ""
+  },
+  "src/lib/theme.ts": {
+    "mtime": 1784252022.5779529,
+    "ast_hash": "f64061b13f24f241a7cbddc79af5cb1c",
+    "semantic_hash": ""
+  },
+  "src/lib/useLive.ts": {
+    "mtime": 1784252126.3861554,
+    "ast_hash": "4d8c053253bff4558470a7f79a4f171f",
+    "semantic_hash": ""
+  },
+  "src/main.tsx": {
+    "mtime": 1784252523.7555337,
+    "ast_hash": "0965f28b05924310faae4d8ad7baf32a",
+    "semantic_hash": ""
+  },
+  "src/types.ts": {
+    "mtime": 1784252001.008371,
+    "ast_hash": "b5984e732fdb92c005b30bf41f100fc0",
+    "semantic_hash": ""
+  },
+  "src/ui/Toolbar.tsx": {
+    "mtime": 1784252348.385756,
+    "ast_hash": "112e7ad12893777b9eefe554549fef11",
+    "semantic_hash": ""
+  },
+  "src/ui/TopBar.tsx": {
+    "mtime": 1784252360.4165561,
+    "ast_hash": "cf36389c8433be913ecf14c57e4c0d92",
+    "semantic_hash": ""
+  },
+  "tsconfig.json": {
+    "mtime": 1784251698.624259,
+    "ast_hash": "54da7be56fd00fe935743beb6897c981",
+    "semantic_hash": ""
+  },
+  "vite.config.ts": {
+    "mtime": 1784251692.4778125,
+    "ast_hash": "94fb9af4cf86128ef4d614e1667d55e6",
+    "semantic_hash": ""
+  },
+  "AGENTS.md": {
+    "mtime": 1784253769.1680663,
+    "ast_hash": "0082f968ec0bcfa18db12ed50cb619b0",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1784253299.67867,
+    "ast_hash": "d103716f8278c80455428c7ae5e341b9",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1784253350.2861207,
+    "ast_hash": "90fbef7425fe5d5f5a962a84d539f180",
+    "semantic_hash": ""
+  }
+}

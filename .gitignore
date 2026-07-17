@@ -1,0 +1,8 @@
+node_modules/
+dist/
+*.local
+.DS_Store
+.playwright-mcp/
+data/NEXT.md
+data/*.tmp-*
+.waw/

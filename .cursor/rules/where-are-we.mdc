@@ -1,0 +1,49 @@
+---
+description: Keep the live "Where Are We" crayon board updated as you work
+alwaysApply: true
+---
+
+# Where Are We — live project board
+
+This project has a live visual flowchart the user keeps open. You keep it current by
+editing exactly one file: `data/where-are-we.json`. Edits appear on the canvas within a
+moment, sketched in by hand. Read `data/NEXT.md` for the current next move after a
+context reset. Full details in [AGENTS.md](mdc:AGENTS.md).
+
+## When to update the board
+
+- **New milestone** → add a `project` node with a `section` and `blockedBy`
+  (prerequisite ids). These drive the flowchart, gold critical path, and the
+  "Do this next" banner — be accurate about dependencies.
+- **Progress** → update `status` (`todo` → `doing` → `done`) and bump `updatedAt`.
+- **Each work session** → add `daily` nodes with today's `day` (`YYYY-MM-DD`), a
+  `section`, and `projectRef` pointing at the project node they advanced.
+- **Flow** → add `edges` between project nodes (they also count as dependencies).
+
+## Use graphify for accurate edges
+
+Before writing `link` fields, `edges`, or `blockedBy`, run `graphify query "<question>"`
+or `graphify path "A" "B"` against `graphify-out/graph.json` so declared dependencies
+reflect how the code actually connects. Run `graphify update .` after code changes.
+
+## Rules
+
+- Only edit `data/where-are-we.json`. **Never** `data/layout.local.json` (the user's
+  layout + personal edits) or `data/NEXT.md` (generated).
+- Keep node `id`s **stable and unique**; reuse the same id when updating a thing.
+- Always write valid JSON (read → modify → write the whole file).
+- Never set colors; color derives from `status`, gold highlighting is automatic.
+- Bump `updatedAt` on meaningful change (re-triggers the draw-in animation).
+
+## Shapes
+
+```jsonc
+// section:  { "id": "sec-x", "title": "Backend", "order": 1 }
+// project:  { "id": "proj-x", "title": "...", "status": "todo|doing|done", "note": "...",
+//             "view": "project", "section": "sec-x", "blockedBy": ["proj-y"],
+//             "link": { "file": "src/x.ts", "line": 10 }, "createdAt": ISO, "updatedAt": ISO }
+// daily:    { "id": "day-...", "title": "...", "status": "done", "view": "daily",
+//             "day": "YYYY-MM-DD", "section": "sec-x", "projectRef": "proj-x",
+//             "createdAt": ISO, "updatedAt": ISO }
+// edge:     { "id": "e-x-y", "from": "proj-x", "to": "proj-y", "label": "optional" }
+```

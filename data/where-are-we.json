@@ -1,0 +1,156 @@
+{
+  "version": 2,
+  "title": "Where Are We",
+  "sections": [
+    { "id": "sec-foundation", "title": "Foundation", "order": 1 },
+    { "id": "sec-canvas", "title": "Canvas & Tools", "order": 2 },
+    { "id": "sec-ship", "title": "Ship It", "order": 3 }
+  ],
+  "nodes": [
+    {
+      "id": "proj-idea",
+      "title": "The idea",
+      "status": "done",
+      "note": "Infinite crayon canvas that my AI draws on live so I never lose track.",
+      "view": "project",
+      "section": "sec-foundation",
+      "createdAt": "2026-07-17T00:00:00.000Z",
+      "updatedAt": "2026-07-17T00:00:00.000Z"
+    },
+    {
+      "id": "proj-scaffold",
+      "title": "Scaffold app",
+      "status": "done",
+      "note": "Vite + React + TS, WebSocket server, watched JSON files.",
+      "view": "project",
+      "section": "sec-foundation",
+      "blockedBy": ["proj-idea"],
+      "createdAt": "2026-07-17T00:10:00.000Z",
+      "updatedAt": "2026-07-17T00:10:00.000Z"
+    },
+    {
+      "id": "proj-canvas",
+      "title": "Infinite canvas",
+      "status": "done",
+      "note": "SVG world, pan + wheel zoom, crayon look on a black page.",
+      "view": "project",
+      "section": "sec-canvas",
+      "blockedBy": ["proj-scaffold"],
+      "createdAt": "2026-07-17T00:20:00.000Z",
+      "updatedAt": "2026-07-17T00:20:00.000Z"
+    },
+    {
+      "id": "proj-flow",
+      "title": "Structured flow",
+      "status": "doing",
+      "note": "Sections, routed edges, critical path, do-this-next.",
+      "view": "project",
+      "section": "sec-canvas",
+      "blockedBy": ["proj-canvas"],
+      "createdAt": "2026-07-17T00:30:00.000Z",
+      "updatedAt": "2026-07-17T00:30:00.000Z"
+    },
+    {
+      "id": "proj-tools",
+      "title": "Drawing tools",
+      "status": "done",
+      "note": "Pan, move, crayon draw, connect, cards, eraser, colors.",
+      "view": "project",
+      "section": "sec-canvas",
+      "blockedBy": ["proj-canvas"],
+      "createdAt": "2026-07-17T00:40:00.000Z",
+      "updatedAt": "2026-07-17T00:40:00.000Z"
+    },
+    {
+      "id": "proj-editing",
+      "title": "Card editing + undo",
+      "status": "doing",
+      "note": "Status cycling, inline rename, Ctrl+Z, unhide panel.",
+      "view": "project",
+      "section": "sec-canvas",
+      "blockedBy": ["proj-tools"],
+      "createdAt": "2026-07-17T00:45:00.000Z",
+      "updatedAt": "2026-07-17T00:45:00.000Z"
+    },
+    {
+      "id": "proj-cli",
+      "title": "Drop-in CLI",
+      "status": "todo",
+      "note": "where-are-we --data-dir, runs in any repo.",
+      "view": "project",
+      "section": "sec-ship",
+      "blockedBy": ["proj-flow"],
+      "createdAt": "2026-07-17T00:50:00.000Z",
+      "updatedAt": "2026-07-17T00:50:00.000Z"
+    },
+    {
+      "id": "proj-ship",
+      "title": "Use it every day",
+      "status": "todo",
+      "note": "Open it in Cursor, let the AI keep me oriented.",
+      "view": "project",
+      "section": "sec-ship",
+      "blockedBy": ["proj-cli", "proj-editing"],
+      "createdAt": "2026-07-17T01:00:00.000Z",
+      "updatedAt": "2026-07-17T01:00:00.000Z"
+    },
+    {
+      "id": "day-1-kickoff",
+      "title": "Kicked off the build",
+      "status": "done",
+      "note": "Set up the project skeleton and data files.",
+      "view": "daily",
+      "day": "2026-07-17",
+      "section": "sec-foundation",
+      "projectRef": "proj-scaffold",
+      "createdAt": "2026-07-17T02:00:00.000Z",
+      "updatedAt": "2026-07-17T02:00:00.000Z"
+    },
+    {
+      "id": "day-1-canvas",
+      "title": "Got the canvas panning",
+      "status": "done",
+      "note": "Black page, crayon strokes, wheel zoom feels right.",
+      "view": "daily",
+      "day": "2026-07-17",
+      "section": "sec-canvas",
+      "projectRef": "proj-canvas",
+      "createdAt": "2026-07-17T03:00:00.000Z",
+      "updatedAt": "2026-07-17T03:00:00.000Z"
+    },
+    {
+      "id": "day-1-flow",
+      "title": "Started the structured flow",
+      "status": "doing",
+      "note": "Sections and routed edges going in.",
+      "view": "daily",
+      "day": "2026-07-17",
+      "section": "sec-canvas",
+      "projectRef": "proj-flow",
+      "createdAt": "2026-07-17T04:00:00.000Z",
+      "updatedAt": "2026-07-17T04:00:00.000Z"
+    },
+    {
+      "id": "day-1-polish",
+      "title": "Tool polish: flakes, one-shot Card, themes",
+      "status": "done",
+      "note": "Manual drawing sheds shavings; Card returns to Pan after use (double-click pins); light/dark switch.",
+      "view": "daily",
+      "day": "2026-07-17",
+      "section": "sec-canvas",
+      "projectRef": "proj-tools",
+      "createdAt": "2026-07-17T02:48:00.000Z",
+      "updatedAt": "2026-07-17T02:48:00.000Z"
+    }
+  ],
+  "edges": [
+    { "id": "e-idea-scaffold", "from": "proj-idea", "to": "proj-scaffold" },
+    { "id": "e-scaffold-canvas", "from": "proj-scaffold", "to": "proj-canvas" },
+    { "id": "e-canvas-flow", "from": "proj-canvas", "to": "proj-flow" },
+    { "id": "e-canvas-tools", "from": "proj-canvas", "to": "proj-tools" },
+    { "id": "e-tools-editing", "from": "proj-tools", "to": "proj-editing" },
+    { "id": "e-flow-cli", "from": "proj-flow", "to": "proj-cli" },
+    { "id": "e-cli-ship", "from": "proj-cli", "to": "proj-ship" },
+    { "id": "e-editing-ship", "from": "proj-editing", "to": "proj-ship" }
+  ]
+}
