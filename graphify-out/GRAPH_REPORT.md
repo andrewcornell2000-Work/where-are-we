@@ -1,13 +1,18 @@
-# Graph Report - Where Are We  (2026-07-17)
+# Graph Report - where-are-we  (2026-07-17)
 
 ## Corpus Check
-- 32 files · ~15,446 words
+- 33 files · ~16,662 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 207 nodes · 385 edges · 11 communities
+- 238 nodes · 415 edges · 12 communities
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
+
+## Graph Freshness
+- Built from commit: `7aeea853`
+- Run `git rev-parse HEAD` and compare to check if the graph is stale.
+- Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - App.tsx
@@ -20,6 +25,7 @@
 - Toolbar.tsx
 - Rect
 - elk-bundled.d.ts
+- Where things stand
 
 ## God Nodes (most connected - your core abstractions)
 1. `compilerOptions` - 17 edges
@@ -36,10 +42,10 @@
 ## Surprising Connections (you probably didn't know these)
 - `main()` --calls--> `startServer()`  [EXTRACTED]
   bin/waw.mjs → server/index.mjs
+- `Props` --references--> `Rect`  [EXTRACTED]
+  src/canvas/SectionShape.tsx → src/lib/geometry.ts
 - `App()` --calls--> `useLive()`  [EXTRACTED]
   src/App.tsx → src/lib/useLive.ts
-- `NodeItem` --references--> `Rect`  [EXTRACTED]
-  src/canvas/CanvasView.tsx → src/lib/geometry.ts
 - `Props` --references--> `Camera`  [EXTRACTED]
   src/canvas/CanvasView.tsx → src/types.ts
 - `Props` --references--> `NodePos`  [EXTRACTED]
@@ -48,23 +54,23 @@
 ## Import Cycles
 - None detected.
 
-## Communities (11 total, 0 thin omitted)
+## Communities (12 total, 0 thin omitted)
 
 ### Community 0 - "App.tsx"
-Cohesion: 0.18
-Nodes (14): Live, useLive(), wsUrl(), Camera, ClientMessage, EdgeStyle, EMPTY_LAYOUT, NodeLink (+6 more)
+Cohesion: 0.08
+Nodes (25): concurrently, elkjs, devDependencies, concurrently, elkjs, perfect-freehand, react, react-dom (+17 more)
 
 ### Community 1 - "devDependencies"
-Cohesion: 0.07
-Nodes (29): bin, where-are-we, dependencies, chokidar, ws, description, devDependencies, concurrently (+21 more)
+Cohesion: 0.09
+Nodes (22): chokidar, bin, where-are-we, dependencies, chokidar, ws, description, files (+14 more)
 
 ### Community 2 - "NodeShape.tsx"
-Cohesion: 0.12
-Nodes (21): SectionItem, DrawnPath(), Props, EdgeShape, Props, NodeShape, Props, Props (+13 more)
+Cohesion: 0.11
+Nodes (21): DrawnPath(), Props, EdgeShape, Props, Props, SectionShape, emitFlakes(), polylineMidpoint() (+13 more)
 
 ### Community 3 - "compilerOptions"
-Cohesion: 0.11
-Nodes (18): compilerOptions, allowImportingTsExtensions, isolatedModules, jsx, lib, module, moduleDetection, moduleResolution (+10 more)
+Cohesion: 0.09
+Nodes (22): DOM, DOM.Iterable, ES2021, src, compilerOptions, allowImportingTsExtensions, isolatedModules, jsx (+14 more)
 
 ### Community 4 - "index.mjs"
 Cohesion: 0.14
@@ -75,39 +81,43 @@ Cohesion: 0.12
 Nodes (14): A good habit, Hard rules, Instructions for AI assistants working in this project, The file format, Use graphify for accurate connections, What you do, and when, Data schema (`where-are-we.json`), How it works (+6 more)
 
 ### Community 6 - "CanvasView.tsx"
-Cohesion: 0.20
-Nodes (15): CanvasView(), Drag, EdgeItem, EraseTarget, Props, statusDotCenter(), Props, StrokeShape() (+7 more)
+Cohesion: 0.19
+Nodes (16): CanvasView(), Drag, EdgeItem, EraseTarget, Props, NodeShape, statusDotCenter(), Props (+8 more)
 
 ### Community 7 - "Toolbar.tsx"
-Cohesion: 0.15
-Nodes (13): Tool, CRAYON, CRAYON_PICKS, NOTE: use these via `style={{ stroke/fill/color: ... }}` — SVG *presentation, statusColor(), statusLabel(), Status, ViewKind (+5 more)
+Cohesion: 0.40
+Nodes (5): Tool, CRAYON_PICKS, Props, Toolbar(), TOOLS
 
 ### Community 9 - "Rect"
-Cohesion: 0.17
-Nodes (21): App(), nowIso(), todayStr(), NodeItem, Analysis, analyze(), DailyLayout, layoutDaily() (+13 more)
+Cohesion: 0.12
+Nodes (35): App(), nowIso(), todayStr(), NodeItem, SectionItem, Props, Analysis, analyze() (+27 more)
 
 ### Community 10 - "elk-bundled.d.ts"
-Cohesion: 0.20
-Nodes (7): ELK, ElkEdgeSection, ElkExtendedEdge, elkjs/lib/elk.bundled.js, ElkLabel, ElkNode, ElkPoint
+Cohesion: 0.13
+Nodes (14): ELK, ElkEdgeSection, ElkExtendedEdge, elkjs/lib/elk.bundled.js, ElkLabel, ElkNode, ElkPoint, Live (+6 more)
+
+### Community 11 - "Where things stand"
+Cohesion: 0.22
+Nodes (8): Gotchas the next agent should know, HANDOVER — Where Are We v2 (paused mid-verification), How to resume, v2 features implemented (all plan sections), Verification already PASSED (live browser via Playwright MCP), Verification REMAINING (was mid-flight when paused), What this project is, Where things stand
 
 ## Knowledge Gaps
-- **79 isolated node(s):** `args`, `cwd`, `dataDir`, `name`, `version` (+74 more)
+- **90 isolated node(s):** `args`, `cwd`, `dataDir`, `name`, `version` (+85 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `useLive()` connect `App.tsx` to `Rect`, `elk-bundled.d.ts`?**
-  _High betweenness centrality (0.053) - this node is a cross-community bridge._
+- **Why does `useLive()` connect `elk-bundled.d.ts` to `Rect`?**
+  _High betweenness centrality (0.040) - this node is a cross-community bridge._
+- **Why does `devDependencies` connect `App.tsx` to `devDependencies`?**
+  _High betweenness centrality (0.029) - this node is a cross-community bridge._
 - **What connects `args`, `cwd`, `dataDir` to the rest of the system?**
-  _81 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _90 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `App.tsx` be split into smaller, more focused modules?**
+  _Cohesion score 0.08 - nodes in this community are weakly interconnected._
 - **Should `devDependencies` be split into smaller, more focused modules?**
-  _Cohesion score 0.06666666666666667 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08695652173913043 - nodes in this community are weakly interconnected._
 - **Should `NodeShape.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.11576354679802955 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.11397849462365592 - nodes in this community are weakly interconnected._
 - **Should `compilerOptions` be split into smaller, more focused modules?**
-  _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
-- **Should `index.mjs` be split into smaller, more focused modules?**
-  _Cohesion score 0.13852813852813853 - nodes in this community are weakly interconnected._
-- **Should `Where Are We` be split into smaller, more focused modules?**
-  _Cohesion score 0.125 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08695652173913043 - nodes in this community are weakly interconnected._

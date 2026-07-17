@@ -42,13 +42,13 @@
     {
       "id": "proj-flow",
       "title": "Structured flow",
-      "status": "doing",
+      "status": "done",
       "note": "Sections, routed edges, critical path, do-this-next.",
       "view": "project",
       "section": "sec-canvas",
       "blockedBy": ["proj-canvas"],
       "createdAt": "2026-07-17T00:30:00.000Z",
-      "updatedAt": "2026-07-17T00:30:00.000Z"
+      "updatedAt": "2026-07-17T03:48:00.000Z"
     },
     {
       "id": "proj-tools",
@@ -64,35 +64,35 @@
     {
       "id": "proj-editing",
       "title": "Card editing + undo",
-      "status": "doing",
+      "status": "done",
       "note": "Status cycling, inline rename, Ctrl+Z, unhide panel.",
       "view": "project",
       "section": "sec-canvas",
       "blockedBy": ["proj-tools"],
       "createdAt": "2026-07-17T00:45:00.000Z",
-      "updatedAt": "2026-07-17T00:45:00.000Z"
+      "updatedAt": "2026-07-17T03:48:00.000Z"
     },
     {
       "id": "proj-cli",
       "title": "Drop-in CLI",
-      "status": "todo",
+      "status": "done",
       "note": "where-are-we --data-dir, runs in any repo.",
       "view": "project",
       "section": "sec-ship",
       "blockedBy": ["proj-flow"],
       "createdAt": "2026-07-17T00:50:00.000Z",
-      "updatedAt": "2026-07-17T00:50:00.000Z"
+      "updatedAt": "2026-07-17T03:48:00.000Z"
     },
     {
       "id": "proj-ship",
       "title": "Use it every day",
-      "status": "todo",
-      "note": "Open it in Cursor, let the AI keep me oriented.",
+      "status": "doing",
+      "note": "v2 verified; now use it in daily Cursor work.",
       "view": "project",
       "section": "sec-ship",
       "blockedBy": ["proj-cli", "proj-editing"],
       "createdAt": "2026-07-17T01:00:00.000Z",
-      "updatedAt": "2026-07-17T01:00:00.000Z"
+      "updatedAt": "2026-07-17T03:48:00.000Z"
     },
     {
       "id": "day-1-kickoff",
@@ -121,14 +121,14 @@
     {
       "id": "day-1-flow",
       "title": "Started the structured flow",
-      "status": "doing",
+      "status": "done",
       "note": "Sections and routed edges going in.",
       "view": "daily",
       "day": "2026-07-17",
       "section": "sec-canvas",
       "projectRef": "proj-flow",
       "createdAt": "2026-07-17T04:00:00.000Z",
-      "updatedAt": "2026-07-17T04:00:00.000Z"
+      "updatedAt": "2026-07-17T03:48:00.000Z"
     },
     {
       "id": "day-1-polish",
@@ -141,6 +141,18 @@
       "projectRef": "proj-tools",
       "createdAt": "2026-07-17T02:48:00.000Z",
       "updatedAt": "2026-07-17T02:48:00.000Z"
+    },
+    {
+      "id": "day-2026-07-17-v2-verify-machine",
+      "title": "Verified v2 on the second machine",
+      "status": "done",
+      "note": "Production build, CLI portability, stroke erase, two-tab sync, and live critical-path update.",
+      "view": "daily",
+      "day": "2026-07-17",
+      "section": "sec-ship",
+      "projectRef": "proj-ship",
+      "createdAt": "2026-07-17T03:48:00.000Z",
+      "updatedAt": "2026-07-17T03:48:00.000Z"
     }
   ],
   "edges": [
