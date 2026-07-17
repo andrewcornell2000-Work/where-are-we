@@ -87,12 +87,12 @@
       "id": "proj-ship",
       "title": "Use it every day",
       "status": "doing",
-      "note": "v2 verified; now use it in daily Cursor work.",
+      "note": "v2 verified; live board running for daily Cursor work.",
       "view": "project",
       "section": "sec-ship",
       "blockedBy": ["proj-cli", "proj-editing"],
       "createdAt": "2026-07-17T01:00:00.000Z",
-      "updatedAt": "2026-07-17T03:48:00.000Z"
+      "updatedAt": "2026-07-17T04:10:00.000Z"
     },
     {
       "id": "day-1-kickoff",
@@ -153,6 +153,42 @@
       "projectRef": "proj-ship",
       "createdAt": "2026-07-17T03:48:00.000Z",
       "updatedAt": "2026-07-17T03:48:00.000Z"
+    },
+    {
+      "id": "day-2026-07-17-daily-use",
+      "title": "Started using the live board",
+      "status": "done",
+      "note": "Installed dependencies and launched the board for this Cursor session.",
+      "view": "daily",
+      "day": "2026-07-17",
+      "section": "sec-ship",
+      "projectRef": "proj-ship",
+      "createdAt": "2026-07-17T04:10:00.000Z",
+      "updatedAt": "2026-07-17T04:10:00.000Z"
+    },
+    {
+      "id": "day-2026-07-17-code-split",
+      "title": "Code-split the bundle",
+      "status": "done",
+      "note": "elkjs now lazy-loads as its own chunk; main JS dropped 1.67 MB -> 216 kB.",
+      "view": "daily",
+      "day": "2026-07-17",
+      "section": "sec-ship",
+      "projectRef": "proj-ship",
+      "createdAt": "2026-07-17T04:17:00.000Z",
+      "updatedAt": "2026-07-17T04:17:00.000Z"
+    },
+    {
+      "id": "day-2026-07-17-first-host-repo",
+      "title": "Deployed the board into Boostl",
+      "status": "done",
+      "note": "Installed graphify globally, git hooks in both repos, and the board now runs live inside boostly (.waw) seeded from its handoff.",
+      "view": "daily",
+      "day": "2026-07-17",
+      "section": "sec-ship",
+      "projectRef": "proj-ship",
+      "createdAt": "2026-07-17T04:45:00.000Z",
+      "updatedAt": "2026-07-17T04:45:00.000Z"
     }
   ],
   "edges": [

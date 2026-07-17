@@ -174,6 +174,46 @@
       "norm_label": "files"
     },
     {
+      "label": "bin",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "ref_bin",
+      "community": 1,
+      "norm_label": "bin"
+    },
+    {
+      "label": "server",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "ref_server",
+      "community": 1,
+      "norm_label": "server"
+    },
+    {
+      "label": "dist",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "ref_dist",
+      "community": 1,
+      "norm_label": "dist"
+    },
+    {
+      "label": "README.md",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "ref_readme_md",
+      "community": 1,
+      "norm_label": "readme.md"
+    },
+    {
       "label": "scripts",
       "file_type": "code",
       "source_file": "package.json",
@@ -254,6 +294,16 @@
       "norm_label": "chokidar"
     },
     {
+      "label": "chokidar",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "chokidar",
+      "community": 1,
+      "norm_label": "chokidar"
+    },
+    {
       "label": "ws",
       "file_type": "code",
       "source_file": "package.json",
@@ -264,13 +314,23 @@
       "norm_label": "ws"
     },
     {
+      "label": "ws",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "ws",
+      "community": 1,
+      "norm_label": "ws"
+    },
+    {
       "label": "devDependencies",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L26",
       "_origin": "ast",
       "id": "package_devdependencies",
-      "community": 1,
+      "community": 0,
       "norm_label": "devdependencies"
     },
     {
@@ -280,7 +340,17 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "package_devdependencies_types_react",
-      "community": 1,
+      "community": 0,
+      "norm_label": "@types/react"
+    },
+    {
+      "label": "@types/react",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "types_react",
+      "community": 0,
       "norm_label": "@types/react"
     },
     {
@@ -290,7 +360,17 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "package_devdependencies_types_react_dom",
-      "community": 1,
+      "community": 0,
+      "norm_label": "@types/react-dom"
+    },
+    {
+      "label": "@types/react-dom",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "types_react_dom",
+      "community": 0,
       "norm_label": "@types/react-dom"
     },
     {
@@ -300,7 +380,17 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "package_devdependencies_types_ws",
-      "community": 1,
+      "community": 0,
+      "norm_label": "@types/ws"
+    },
+    {
+      "label": "@types/ws",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "types_ws",
+      "community": 0,
       "norm_label": "@types/ws"
     },
     {
@@ -310,7 +400,17 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "package_devdependencies_vitejs_plugin_react",
-      "community": 1,
+      "community": 0,
+      "norm_label": "@vitejs/plugin-react"
+    },
+    {
+      "label": "@vitejs/plugin-react",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L30",
+      "_origin": "ast",
+      "id": "vitejs_plugin_react",
+      "community": 0,
       "norm_label": "@vitejs/plugin-react"
     },
     {
@@ -320,7 +420,17 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "package_devdependencies_concurrently",
-      "community": 1,
+      "community": 0,
+      "norm_label": "concurrently"
+    },
+    {
+      "label": "concurrently",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "concurrently",
+      "community": 0,
       "norm_label": "concurrently"
     },
     {
@@ -330,7 +440,17 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "package_devdependencies_elkjs",
-      "community": 1,
+      "community": 0,
+      "norm_label": "elkjs"
+    },
+    {
+      "label": "elkjs",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L32",
+      "_origin": "ast",
+      "id": "elkjs",
+      "community": 0,
       "norm_label": "elkjs"
     },
     {
@@ -340,7 +460,17 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "package_devdependencies_perfect_freehand",
-      "community": 1,
+      "community": 0,
+      "norm_label": "perfect-freehand"
+    },
+    {
+      "label": "perfect-freehand",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L33",
+      "_origin": "ast",
+      "id": "perfect_freehand",
+      "community": 0,
       "norm_label": "perfect-freehand"
     },
     {
@@ -350,7 +480,17 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "package_devdependencies_react",
-      "community": 1,
+      "community": 0,
+      "norm_label": "react"
+    },
+    {
+      "label": "react",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L34",
+      "_origin": "ast",
+      "id": "react",
+      "community": 0,
       "norm_label": "react"
     },
     {
@@ -360,7 +500,17 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "package_devdependencies_react_dom",
-      "community": 1,
+      "community": 0,
+      "norm_label": "react-dom"
+    },
+    {
+      "label": "react-dom",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L35",
+      "_origin": "ast",
+      "id": "react_dom",
+      "community": 0,
       "norm_label": "react-dom"
     },
     {
@@ -370,7 +520,17 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "package_devdependencies_roughjs",
-      "community": 1,
+      "community": 0,
+      "norm_label": "roughjs"
+    },
+    {
+      "label": "roughjs",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L36",
+      "_origin": "ast",
+      "id": "roughjs",
+      "community": 0,
       "norm_label": "roughjs"
     },
     {
@@ -380,7 +540,17 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "package_devdependencies_typescript",
-      "community": 1,
+      "community": 0,
+      "norm_label": "typescript"
+    },
+    {
+      "label": "typescript",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L37",
+      "_origin": "ast",
+      "id": "typescript",
+      "community": 0,
       "norm_label": "typescript"
     },
     {
@@ -390,7 +560,17 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "package_devdependencies_vite",
-      "community": 1,
+      "community": 0,
+      "norm_label": "vite"
+    },
+    {
+      "label": "vite",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L38",
+      "_origin": "ast",
+      "id": "vite",
+      "community": 0,
       "norm_label": "vite"
     },
     {
@@ -610,7 +790,7 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "src_canvas_canvasview_sectionitem",
-      "community": 2,
+      "community": 9,
       "norm_label": "sectionitem"
     },
     {
@@ -730,7 +910,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_canvas_nodeshape_props",
-      "community": 2,
+      "community": 9,
       "norm_label": "props"
     },
     {
@@ -750,7 +930,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "src_canvas_nodeshape_nodeshape",
-      "community": 2,
+      "community": 6,
       "norm_label": "nodeshape"
     },
     {
@@ -1090,7 +1270,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_lib_geometry_rect",
-      "community": 2,
+      "community": 9,
       "norm_label": "rect"
     },
     {
@@ -1310,7 +1490,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_lib_theme",
-      "community": 7,
+      "community": 2,
       "norm_label": "theme.ts"
     },
     {
@@ -1320,7 +1500,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_lib_theme_crayon",
-      "community": 7,
+      "community": 2,
       "norm_label": "crayon"
     },
     {
@@ -1340,7 +1520,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "src_lib_theme_statuscolor",
-      "community": 7,
+      "community": 2,
       "norm_label": "statuscolor()"
     },
     {
@@ -1350,7 +1530,7 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "src_lib_theme_statuslabel",
-      "community": 7,
+      "community": 2,
       "norm_label": "statuslabel()"
     },
     {
@@ -1360,7 +1540,7 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "src_lib_theme_categorycolor",
-      "community": 7,
+      "community": 2,
       "norm_label": "categorycolor()"
     },
     {
@@ -1370,7 +1550,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_lib_theme_rationale_5",
-      "community": 7,
+      "community": 2,
       "norm_label": "note: use these via `style={{ stroke/fill/color: ... }}` \u2014 svg *presentation"
     },
     {
@@ -1380,7 +1560,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_lib_uselive",
-      "community": 0,
+      "community": 10,
       "norm_label": "uselive.ts"
     },
     {
@@ -1390,7 +1570,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "src_lib_uselive_wsurl",
-      "community": 0,
+      "community": 10,
       "norm_label": "wsurl()"
     },
     {
@@ -1400,7 +1580,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_lib_uselive_live",
-      "community": 0,
+      "community": 10,
       "norm_label": "live"
     },
     {
@@ -1410,7 +1590,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "src_lib_uselive_uselive",
-      "community": 0,
+      "community": 10,
       "norm_label": "uselive()"
     },
     {
@@ -1440,7 +1620,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_types",
-      "community": 0,
+      "community": 9,
       "norm_label": "types.ts"
     },
     {
@@ -1450,7 +1630,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_types_status",
-      "community": 7,
+      "community": 9,
       "norm_label": "status"
     },
     {
@@ -1460,7 +1640,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_types_viewkind",
-      "community": 7,
+      "community": 9,
       "norm_label": "viewkind"
     },
     {
@@ -1470,7 +1650,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_types_nodelink",
-      "community": 0,
+      "community": 9,
       "norm_label": "nodelink"
     },
     {
@@ -1500,7 +1680,7 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "src_types_edgestyle",
-      "community": 0,
+      "community": 9,
       "norm_label": "edgestyle"
     },
     {
@@ -1520,7 +1700,7 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "src_types_wawcontent",
-      "community": 0,
+      "community": 10,
       "norm_label": "wawcontent"
     },
     {
@@ -1550,7 +1730,7 @@
       "source_location": "L83",
       "_origin": "ast",
       "id": "src_types_camera",
-      "community": 0,
+      "community": 9,
       "norm_label": "camera"
     },
     {
@@ -1560,7 +1740,7 @@
       "source_location": "L90",
       "_origin": "ast",
       "id": "src_types_nodeoverride",
-      "community": 0,
+      "community": 9,
       "norm_label": "nodeoverride"
     },
     {
@@ -1570,7 +1750,7 @@
       "source_location": "L97",
       "_origin": "ast",
       "id": "src_types_wawlayout",
-      "community": 0,
+      "community": 10,
       "norm_label": "wawlayout"
     },
     {
@@ -1580,7 +1760,7 @@
       "source_location": "L116",
       "_origin": "ast",
       "id": "src_types_servermessage",
-      "community": 0,
+      "community": 10,
       "norm_label": "servermessage"
     },
     {
@@ -1590,7 +1770,7 @@
       "source_location": "L120",
       "_origin": "ast",
       "id": "src_types_clientmessage",
-      "community": 0,
+      "community": 10,
       "norm_label": "clientmessage"
     },
     {
@@ -1600,7 +1780,7 @@
       "source_location": "L122",
       "_origin": "ast",
       "id": "src_types_empty_layout",
-      "community": 0,
+      "community": 9,
       "norm_label": "empty_layout"
     },
     {
@@ -1620,7 +1800,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_ui_inlineeditor",
-      "community": 0,
+      "community": 9,
       "norm_label": "inlineeditor.tsx"
     },
     {
@@ -1630,7 +1810,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_ui_inlineeditor_props",
-      "community": 0,
+      "community": 9,
       "norm_label": "props"
     },
     {
@@ -1640,7 +1820,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_ui_inlineeditor_inlineeditor",
-      "community": 0,
+      "community": 9,
       "norm_label": "inlineeditor()"
     },
     {
@@ -1690,7 +1870,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_ui_topbar",
-      "community": 7,
+      "community": 9,
       "norm_label": "topbar.tsx"
     },
     {
@@ -1700,7 +1880,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_ui_topbar_props",
-      "community": 7,
+      "community": 9,
       "norm_label": "props"
     },
     {
@@ -1710,7 +1890,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "src_ui_topbar_topbar",
-      "community": 7,
+      "community": 9,
       "norm_label": "topbar()"
     },
     {
@@ -1762,6 +1942,36 @@
       "id": "tsconfig_compileroptions_lib",
       "community": 3,
       "norm_label": "lib"
+    },
+    {
+      "label": "ES2021",
+      "file_type": "concept",
+      "source_file": "tsconfig.json",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "ref_es2021",
+      "community": 3,
+      "norm_label": "es2021"
+    },
+    {
+      "label": "DOM",
+      "file_type": "concept",
+      "source_file": "tsconfig.json",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "ref_dom",
+      "community": 3,
+      "norm_label": "dom"
+    },
+    {
+      "label": "DOM.Iterable",
+      "file_type": "concept",
+      "source_file": "tsconfig.json",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "ref_dom_iterable",
+      "community": 3,
+      "norm_label": "dom.iterable"
     },
     {
       "label": "module",
@@ -1904,6 +2114,16 @@
       "norm_label": "include"
     },
     {
+      "label": "src",
+      "file_type": "concept",
+      "source_file": "tsconfig.json",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "ref_src",
+      "community": 3,
+      "norm_label": "src"
+    },
+    {
       "label": "vite.config.ts",
       "file_type": "code",
       "source_file": "vite.config.ts",
@@ -1982,6 +2202,96 @@
       "id": "agents_a_good_habit",
       "community": 5,
       "norm_label": "a good habit"
+    },
+    {
+      "label": "HANDOVER.md",
+      "file_type": "document",
+      "source_file": "HANDOVER.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "handover",
+      "community": 11,
+      "norm_label": "handover.md"
+    },
+    {
+      "label": "HANDOVER \u2014 Where Are We v2 (paused mid-verification)",
+      "file_type": "document",
+      "source_file": "HANDOVER.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "handover_handover_where_are_we_v2_paused_mid_verification",
+      "community": 11,
+      "norm_label": "handover \u2014 where are we v2 (paused mid-verification)"
+    },
+    {
+      "label": "What this project is",
+      "file_type": "document",
+      "source_file": "HANDOVER.md",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "handover_what_this_project_is",
+      "community": 11,
+      "norm_label": "what this project is"
+    },
+    {
+      "label": "Where things stand",
+      "file_type": "document",
+      "source_file": "HANDOVER.md",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "handover_where_things_stand",
+      "community": 11,
+      "norm_label": "where things stand"
+    },
+    {
+      "label": "v2 features implemented (all plan sections)",
+      "file_type": "document",
+      "source_file": "HANDOVER.md",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "handover_v2_features_implemented_all_plan_sections",
+      "community": 11,
+      "norm_label": "v2 features implemented (all plan sections)"
+    },
+    {
+      "label": "Verification already PASSED (live browser via Playwright MCP)",
+      "file_type": "document",
+      "source_file": "HANDOVER.md",
+      "source_location": "L63",
+      "_origin": "ast",
+      "id": "handover_verification_already_passed_live_browser_via_playwright_mcp",
+      "community": 11,
+      "norm_label": "verification already passed (live browser via playwright mcp)"
+    },
+    {
+      "label": "Verification REMAINING (was mid-flight when paused)",
+      "file_type": "document",
+      "source_file": "HANDOVER.md",
+      "source_location": "L82",
+      "_origin": "ast",
+      "id": "handover_verification_remaining_was_mid_flight_when_paused",
+      "community": 11,
+      "norm_label": "verification remaining (was mid-flight when paused)"
+    },
+    {
+      "label": "Gotchas the next agent should know",
+      "file_type": "document",
+      "source_file": "HANDOVER.md",
+      "source_location": "L104",
+      "_origin": "ast",
+      "id": "handover_gotchas_the_next_agent_should_know",
+      "community": 11,
+      "norm_label": "gotchas the next agent should know"
+    },
+    {
+      "label": "How to resume",
+      "file_type": "document",
+      "source_file": "HANDOVER.md",
+      "source_location": "L122",
+      "_origin": "ast",
+      "id": "handover_how_to_resume",
+      "community": 11,
+      "norm_label": "how to resume"
     },
     {
       "label": "README.md",
@@ -2333,6 +2643,50 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import",
+      "source": "package_files",
+      "target": "ref_bin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import",
+      "source": "package_files",
+      "target": "ref_dist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import",
+      "source": "package_files",
+      "target": "ref_readme_md",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import",
+      "source": "package_files",
+      "target": "ref_server",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
@@ -2400,6 +2754,28 @@
       "weight": 1.0,
       "source": "package_dependencies",
       "target": "package_dependencies_ws",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "import",
+      "source": "package_dependencies_chokidar",
+      "target": "chokidar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "import",
+      "source": "package_dependencies_ws",
+      "target": "ws",
       "confidence_score": 1.0
     },
     {
@@ -2520,6 +2896,138 @@
       "weight": 1.0,
       "source": "package_devdependencies",
       "target": "package_devdependencies_vitejs_plugin_react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "context": "import",
+      "source": "package_devdependencies_types_react",
+      "target": "types_react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "context": "import",
+      "source": "package_devdependencies_types_react_dom",
+      "target": "types_react_dom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "context": "import",
+      "source": "package_devdependencies_types_ws",
+      "target": "types_ws",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L30",
+      "weight": 1.0,
+      "context": "import",
+      "source": "package_devdependencies_vitejs_plugin_react",
+      "target": "vitejs_plugin_react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L31",
+      "weight": 1.0,
+      "context": "import",
+      "source": "package_devdependencies_concurrently",
+      "target": "concurrently",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "context": "import",
+      "source": "package_devdependencies_elkjs",
+      "target": "elkjs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L33",
+      "weight": 1.0,
+      "context": "import",
+      "source": "package_devdependencies_perfect_freehand",
+      "target": "perfect_freehand",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L34",
+      "weight": 1.0,
+      "context": "import",
+      "source": "package_devdependencies_react",
+      "target": "react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L35",
+      "weight": 1.0,
+      "context": "import",
+      "source": "package_devdependencies_react_dom",
+      "target": "react_dom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L36",
+      "weight": 1.0,
+      "context": "import",
+      "source": "package_devdependencies_roughjs",
+      "target": "roughjs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L37",
+      "weight": 1.0,
+      "context": "import",
+      "source": "package_devdependencies_typescript",
+      "target": "typescript",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L38",
+      "weight": 1.0,
+      "context": "import",
+      "source": "package_devdependencies_vite",
+      "target": "vite",
       "confidence_score": 1.0
     },
     {
@@ -5983,6 +6491,50 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import",
+      "source": "tsconfig_compileroptions_lib",
+      "target": "ref_dom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import",
+      "source": "tsconfig_compileroptions_lib",
+      "target": "ref_dom_iterable",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import",
+      "source": "tsconfig_compileroptions_lib",
+      "target": "ref_es2021",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "import",
+      "source": "tsconfig_include",
+      "target": "ref_src",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "AGENTS.md",
@@ -6050,6 +6602,86 @@
       "weight": 1.0,
       "source": "agents_the_file_format",
       "target": "agents_hard_rules",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HANDOVER.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "handover",
+      "target": "handover_handover_where_are_we_v2_paused_mid_verification",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HANDOVER.md",
+      "source_location": "L122",
+      "weight": 1.0,
+      "source": "handover_handover_where_are_we_v2_paused_mid_verification",
+      "target": "handover_how_to_resume",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HANDOVER.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "handover_handover_where_are_we_v2_paused_mid_verification",
+      "target": "handover_what_this_project_is",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HANDOVER.md",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "handover_handover_where_are_we_v2_paused_mid_verification",
+      "target": "handover_where_things_stand",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HANDOVER.md",
+      "source_location": "L104",
+      "weight": 1.0,
+      "source": "handover_where_things_stand",
+      "target": "handover_gotchas_the_next_agent_should_know",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HANDOVER.md",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "handover_where_things_stand",
+      "target": "handover_v2_features_implemented_all_plan_sections",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HANDOVER.md",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "handover_where_things_stand",
+      "target": "handover_verification_already_passed_live_browser_via_playwright_mcp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HANDOVER.md",
+      "source_location": "L82",
+      "weight": 1.0,
+      "source": "handover_where_things_stand",
+      "target": "handover_verification_remaining_was_mid_flight_when_paused",
       "confidence_score": 1.0
     },
     {
@@ -6133,5 +6765,6 @@
       "confidence_score": 1.0
     }
   ],
-  "hyperedges": []
+  "hyperedges": [],
+  "built_at_commit": "7aeea8536b0f456ad0fdffa1dd3a4fa5dcfedb1a"
 }
