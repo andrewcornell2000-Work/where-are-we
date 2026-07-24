@@ -1,4 +1,4 @@
-import ELK from "elkjs/lib/elk.bundled.js";
+import type ELK from "elkjs/lib/elk.bundled.js";
 import type { ElkNode, ElkExtendedEdge } from "elkjs/lib/elk.bundled.js";
 import type { WawEdge, WawNode, WawSection } from "../types";
 import type { Rect } from "./geometry";
@@ -9,9 +9,14 @@ import { nodeSize } from "./geometry";
 // orthogonally with bend points that avoid cards and section boundaries.
 //
 // Graphs here are small (tens of cards), so we run the bundled main-thread build;
-// layout is still async (promise-based).
+// layout is still async (promise-based). elkjs is ~1.4 MB minified, so it is
+// loaded lazily via dynamic import to keep it out of the main chunk.
 
-const elk = new ELK();
+let elkPromise: Promise<ELK> | null = null;
+function getElk(): Promise<ELK> {
+  elkPromise ??= import("elkjs/lib/elk.bundled.js").then((m) => new m.default());
+  return elkPromise;
+}
 
 export interface FlowLayout {
   /** Absolute card rects by node id. */
@@ -76,6 +81,7 @@ export async function layoutFlow(
     edges: elkEdges,
   };
 
+  const elk = await getElk();
   const out = await elk.layout(graph);
 
   const rects: Record<string, Rect> = {};
