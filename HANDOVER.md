@@ -1,6 +1,54 @@
 # HANDOVER — Where Are We v2 (paused mid-verification)
 
-_Last updated: 2026-07-17, paused so work can continue from another machine._
+_Last updated: 2026-07-24 — canvas reliability pass (see below), previously 2026-07-17._
+
+## 2026-07-24 canvas reliability pass (HANDOFF-CANVAS-FIX.md)
+
+**Root cause of the reported flash→black:** `dist/` was a **stale v1 build** — the CLI
+served v1 app code that read `layout.positions`, which a v2 server layout doesn't have →
+TypeError on first adopted state → React unmounted → black. Fixed by rebuilding; keep
+`npm run build` in the loop after src changes when using `bin/waw.mjs`.
+
+Shipped on top of that (all in src, `tsc -b` + `npm run build` green):
+
+1. **Camera rescue** (`App.tsx`): a saved camera is now *verified* once ELK produces
+   real rects (`contentVisible`); if it frames empty space the board auto-fits instead
+   of staying black. User pan/zoom (any `setCamera`) marks the camera checked and is
+   never overridden. Demo `data/layout.local.json` camera was left in git (it verifies
+   visible).
+2. **DrawnPath cancel safety** (`canvas/DrawnPath.tsx`): effect cleanup clears the
+   inline dasharray/dashoffset after `anim.cancel()`, so interrupted draw-ins can no
+   longer leave permanently invisible strokes.
+3. **Pins + new cards + edges** (`App.tsx` viewRects + `lib/geometry.ts`):
+   - Brand-new nodes get an immediate placeholder rect (below their section, or right
+     of all content) instead of being omitted while ELK is in flight.
+   - Auto-laid cards are nudged downward off any pinned card they land on.
+   - ELK edge routes are only trusted if both ends still attach and the path doesn't
+     cut through any card; otherwise `routeEdge()` re-routes: straight line when clear,
+     else an orthogonal A* over a 30px grid with a turn penalty (`lib/geometry.ts`).
+4. **Readable cards**: `nodeSize()` now models the real card (status row + wrapped
+   title at ~22px/line clamped 3 + note at ~17px/line clamped 4 + chip); `.node-title`
+   is line-clamped at 3 in CSS. AGENTS.md, the CLI `init` snippet, and
+   `.cursor/rules/where-are-we.mdc` now tell AIs: title ≤ ~6 words, note one short line.
+5. **Card resize** (`canvas/CanvasView.tsx` + `App.tsx`): the selected card (select
+   tool) shows a bottom-right corner handle; dragging persists `{x,y,w,h}` into
+   `layout.pinned` (min 140×74), undo works (`resize-<id>` key), dragging a resized
+   card keeps its size, Auto-arrange clears size with the pin.
+
+Verified live against the Boostl `.waw` data and the repo demo seed: 5× reload with a
+toxic saved camera always recovers; rapid AI add/remove leaves no invisible geometry;
+pinned card + AI-added card in the same section don't stack and edges avoid all cards;
+long-title card sizes exactly to its rendered height; resize persists across reload.
+
+**Known gaps / owner questions (batched):**
+- Section frames are member bounding boxes, so pinning a card far outside its section
+  stretches the frame across the board (can cross other cards). Deliberate v2 behavior —
+  redesign only if it bothers you.
+- Resize handle look (plain chalk corner L) and 3-line title clamp aggressiveness are
+  taste calls — say the word and they change.
+- Cursor (or similar) may hold `[::1]:8787` as a forward; the CLI then binds only
+  `0.0.0.0` and `http://localhost:8787` can hit the wrong process. Use `127.0.0.1` or
+  another port if the board looks like someone else's 404.
 
 ## What this project is
 

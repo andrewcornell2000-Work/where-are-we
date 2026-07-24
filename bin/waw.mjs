@@ -36,6 +36,8 @@ Rules:
 - Each session, add \`daily\` nodes (day: YYYY-MM-DD) with \`projectRef\` links.
 - Update \`status\` (todo/doing/done) + bump \`updatedAt\` as work progresses.
 - Keep ids stable; always write valid JSON; never edit \`layout.local.json\`.
+- Card copy is sticky-note sized: \`title\` ≤ ~6 words, \`note\` one short line
+  (both are clamped on the card — long text is lost).
 
 Node shape: { id, title, status, note?, view: "project"|"daily", day?, section?,
 projectRef?, blockedBy?, link?: {file, line?}, createdAt, updatedAt }
@@ -52,7 +54,8 @@ alwaysApply: true
 
 Keep the visual board current by editing \`${dataPath}/where-are-we.json\` (valid JSON,
 stable ids, bump updatedAt on change). Add project nodes with a section + blockedBy,
-daily nodes with day + projectRef, and edges for flow. Never edit
+daily nodes with day + projectRef, and edges for flow. Keep titles ≤ ~6 words and
+notes to one short line (cards clamp long text). Never edit
 \`${dataPath}/layout.local.json\`. Read \`${dataPath}/NEXT.md\` for the next move.
 `;
 

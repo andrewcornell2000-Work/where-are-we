@@ -1,7 +1,12 @@
 {
+  "data/layout.local.json": {
+    "mtime": 1784256152.6374745,
+    "ast_hash": "2d7ce2b8d97b05356dcbf7700412258a",
+    "semantic_hash": ""
+  },
   "data/where-are-we.json": {
-    "mtime": 1784256921.7781408,
-    "ast_hash": "e00c29fbfdb9c7924805659e9a5aad30",
+    "mtime": 1784254938.3326225,
+    "ast_hash": "aab7d372ba3f57598fadc1d72adc0862",
     "semantic_hash": ""
   },
   "package.json": {
@@ -15,18 +20,18 @@
     "semantic_hash": ""
   },
   "src/App.tsx": {
-    "mtime": 1784855425.1912405,
-    "ast_hash": "8b5a6cfd2763ab118b170a338cd9a890",
+    "mtime": 1784255861.2507708,
+    "ast_hash": "f7abca09aed885921571089d22c25cbb",
     "semantic_hash": ""
   },
   "src/canvas/CanvasView.tsx": {
-    "mtime": 1784855406.6069298,
-    "ast_hash": "416087017aa4fdb1debd9b9f3bbe00c7",
+    "mtime": 1784255792.6636257,
+    "ast_hash": "f214ad01b0499eeeef67b47a8639db28",
     "semantic_hash": ""
   },
   "src/canvas/DrawnPath.tsx": {
-    "mtime": 1784854581.1406136,
-    "ast_hash": "ce74eeb21c273998e88901c92418d61e",
+    "mtime": 1784255740.874085,
+    "ast_hash": "2fcba0bfaaf55a962d63d039cbb3c403",
     "semantic_hash": ""
   },
   "src/canvas/EdgeShape.tsx": {
@@ -55,8 +60,8 @@
     "semantic_hash": ""
   },
   "src/lib/geometry.ts": {
-    "mtime": 1784855223.5624847,
-    "ast_hash": "fc274210944ecefbc094e7e4425793b8",
+    "mtime": 1784255046.8470304,
+    "ast_hash": "9711185a84032b1f4d63f6c492e9dcdf",
     "semantic_hash": ""
   },
   "src/lib/rough.ts": {
@@ -105,8 +110,8 @@
     "semantic_hash": ""
   },
   "AGENTS.md": {
-    "mtime": 1784855252.5228498,
-    "ast_hash": "b7ea14231be550395e2ea4ebe060c98b",
+    "mtime": 1784255693.6922884,
+    "ast_hash": "4b5855943f107f6f91c1ee272966bcbc",
     "semantic_hash": ""
   },
   "README.md": {
@@ -120,8 +125,8 @@
     "semantic_hash": ""
   },
   "bin/waw.mjs": {
-    "mtime": 1784855266.4912379,
-    "ast_hash": "8790f07a7c832d883d8f7a1c03d59c81",
+    "mtime": 1784255486.5779603,
+    "ast_hash": "06a056403439c16a68885b5ecdf9e310",
     "semantic_hash": ""
   },
   "src/canvas/SectionShape.tsx": {
@@ -157,21 +162,6 @@
   "src/ui/InlineEditor.tsx": {
     "mtime": 1784256080.355519,
     "ast_hash": "5b78b15405fb0560575a2f8d7418df3a",
-    "semantic_hash": ""
-  },
-  ".claude/settings.local.json": {
-    "mtime": 1784854249.9574938,
-    "ast_hash": "3775dd7f60a94ec8785c3fe02d164262",
-    "semantic_hash": ""
-  },
-  "HANDOFF-CANVAS-FIX.md": {
-    "mtime": 1784854041.850531,
-    "ast_hash": "e6f8611eb42a625029016f48e2e5288b",
-    "semantic_hash": ""
-  },
-  "HANDOVER.md": {
-    "mtime": 1784855620.9657252,
-    "ast_hash": "792cce1235dcfc3cd449c0bbf6350f49",
     "semantic_hash": ""
   }
 }

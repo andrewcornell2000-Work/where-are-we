@@ -8,7 +8,17 @@ import { useLive } from "./lib/useLive";
 import { layoutDaily } from "./lib/autolayout";
 import { layoutFlow, type FlowLayout } from "./lib/elklayout";
 import { analyze } from "./lib/analysis";
-import { edgeAnchor, rectCenter, rectOf, type Rect } from "./lib/geometry";
+import {
+  edgeAnchor,
+  inflate,
+  nodeSize,
+  pointInRect,
+  polylineHitsAny,
+  rectOf,
+  rectsOverlap,
+  routeEdge,
+  type Rect,
+} from "./lib/geometry";
 import { CRAYON } from "./lib/theme";
 import { EMPTY_LAYOUT, nextStatus } from "./types";
 import type {
@@ -71,6 +81,9 @@ export default function App() {
   const lastLocalEditRef = useRef(0);
   const saveTimerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const cameraInitRef = useRef(false);
+  // A camera adopted from disk before ELK produced any rects may frame empty
+  // space; it stays unverified until checked against real content rects.
+  const cameraCheckedRef = useRef(false);
   const undoRef = useRef<WawLayout[]>([]);
   const lastUndoKeyRef = useRef<{ key: string; at: number }>({ key: "", at: 0 });
   const pendingServerRef = useRef<{ layout: WawLayout; at: number } | null>(null);
@@ -86,6 +99,9 @@ export default function App() {
 
   const setCamera = useCallback(
     (c: Camera) => {
+      // User-driven camera intent always wins; never auto-fit over it later.
+      cameraInitRef.current = true;
+      cameraCheckedRef.current = true;
       setCameraState(c);
       cameraRef.current = c;
       scheduleSave();
@@ -268,11 +284,55 @@ export default function App() {
     const map = new Map<string, Rect>();
     if (view === "project") {
       if (!flow) return map;
+      const missing: WawNode[] = [];
       for (const n of viewNodes) {
         const pin = layout.pinned[n.id];
         const pos = pin ?? flow.rects[n.id];
-        if (!pos) continue; // brand-new node: waits one beat for the next ELK pass
+        if (!pos) {
+          missing.push(n); // brand-new node: ELK pass still in flight
+          continue;
+        }
         map.set(n.id, rectOf(n, pos));
+      }
+      // Temporary placeholder for brand-new nodes so they render immediately:
+      // below their section's cards, or right of all content.
+      for (const n of missing) {
+        const peers = viewNodes
+          .filter((p) => p.section === n.section && map.has(p.id))
+          .map((p) => map.get(p.id)!);
+        const all = [...map.values()];
+        const { w, h } = nodeSize(n);
+        let x = 120;
+        let y = 120;
+        if (peers.length) {
+          x = Math.min(...peers.map((r) => r.x));
+          y = Math.max(...peers.map((r) => r.y + r.h)) + 28;
+        } else if (all.length) {
+          x = Math.max(...all.map((r) => r.x + r.w)) + 120;
+          y = Math.min(...all.map((r) => r.y));
+        }
+        map.set(n.id, { x, y, w, h });
+      }
+      // ELK lays out without knowing about pins; shift auto-laid cards (and
+      // placeholders) downward off any pinned card they landed on.
+      const pinnedRects = viewNodes
+        .filter((n) => layout.pinned[n.id] && map.has(n.id))
+        .map((n) => map.get(n.id)!);
+      if (pinnedRects.length) {
+        for (const n of viewNodes) {
+          if (layout.pinned[n.id]) continue;
+          let r = map.get(n.id);
+          if (!r) continue;
+          let guard = 0;
+          let moved = false;
+          while (guard++ < 20) {
+            const hit = pinnedRects.find((p) => rectsOverlap(r!, p, 16));
+            if (!hit) break;
+            r = { ...r!, y: hit.y + hit.h + 24 };
+            moved = true;
+          }
+          if (moved) map.set(n.id, r!);
+        }
       }
     } else if (daily) {
       for (const n of viewNodes) {
@@ -327,12 +387,18 @@ export default function App() {
     for (const id of [...animRef.current.keys()]) if (!valid.has(id)) animRef.current.delete(id);
   }, [allNodesUnfiltered, content, layout.manualEdges, sections]);
 
-  // First-load framing (deliberately does NOT schedule a layout save).
+  // First-load framing (deliberately does NOT schedule a layout save). Runs once
+  // real rects exist: adopts a fit when no camera was restored, and rescues a
+  // restored camera that frames empty space (saved against stale content, or
+  // adopted before ELK produced any rects).
   useEffect(() => {
-    if (cameraInitRef.current) return;
+    if (cameraCheckedRef.current) return;
     if (!content || viewRects.size === 0) return;
+    cameraCheckedRef.current = true;
+    const rects = [...viewRects.values()];
+    if (cameraInitRef.current && contentVisible(cameraRef.current, rects)) return;
     cameraInitRef.current = true;
-    const c = fitCamera([...viewRects.values()]);
+    const c = fitCamera(rects);
     if (c) {
       setCameraState(c);
       cameraRef.current = c;
@@ -399,13 +465,22 @@ export default function App() {
       const from = viewRects.get(e.from);
       const to = viewRects.get(e.to);
       if (!from || !to) continue;
-      const pinnedEndpoint = layout.pinned[e.from] || layout.pinned[e.to];
-      let points = !pinnedEndpoint ? flow.routes[e.id] : undefined;
-      if (!points) {
-        const [fcx, fcy] = rectCenter(from);
-        const [tcx, tcy] = rectCenter(to);
-        points = [edgeAnchor(from, tcx, tcy), edgeAnchor(to, fcx, fcy)];
-      }
+      // ELK's route is only trusted while it still matches reality: both
+      // endpoints must attach to the cards' current rects and the path must
+      // not cut through any other card (pins move cards after layout).
+      const obstacles = [...viewRects.entries()]
+        .filter(([id]) => id !== e.from && id !== e.to)
+        .map(([, r]) => r);
+      const route = flow.routes[e.id];
+      let points =
+        route &&
+        route.length >= 2 &&
+        pointInRect(inflate(from, 20), route[0][0], route[0][1]) &&
+        pointInRect(inflate(to, 20), route[route.length - 1][0], route[route.length - 1][1]) &&
+        !polylineHitsAny(route, obstacles.map((r) => inflate(r, 4)))
+          ? route
+          : undefined;
+      if (!points) points = routeEdge(from, to, obstacles);
       const a = ensureAnim(e.id);
       edgeItems.push({
         id: e.id,
@@ -499,6 +574,23 @@ export default function App() {
   }
 
   // ---- Camera helpers ----
+  // True when the camera shows a meaningful slice of the content bounds
+  // (more than a sliver in both dimensions).
+  function contentVisible(cam: Camera, rects: Rect[]): boolean {
+    if (!rects.length) return false;
+    const minX = Math.min(...rects.map((r) => r.x));
+    const minY = Math.min(...rects.map((r) => r.y));
+    const maxX = Math.max(...rects.map((r) => r.x + r.w));
+    const maxY = Math.max(...rects.map((r) => r.y + r.h));
+    const sx0 = minX * cam.scale + cam.x;
+    const sy0 = minY * cam.scale + cam.y;
+    const sx1 = maxX * cam.scale + cam.x;
+    const sy1 = maxY * cam.scale + cam.y;
+    const overlapW = Math.min(sx1, window.innerWidth) - Math.max(sx0, 0);
+    const overlapH = Math.min(sy1, window.innerHeight) - Math.max(sy0, 0);
+    return overlapW > 80 && overlapH > 60;
+  }
+
   function fitCamera(rects: Rect[]): Camera | null {
     if (!rects.length) return null;
     const minX = Math.min(...rects.map((r) => r.x));
@@ -550,7 +642,19 @@ export default function App() {
   // ---- Mutations ----
   const onMoveNode = useCallback(
     (id: string, pos: NodePos) => {
-      mutateLayout((l) => ({ ...l, pinned: { ...l.pinned, [id]: pos } }), { undoKey: `move-${id}` });
+      // Spread over any existing pin so a custom size survives a later drag.
+      mutateLayout((l) => ({ ...l, pinned: { ...l.pinned, [id]: { ...l.pinned[id], ...pos } } }), {
+        undoKey: `move-${id}`,
+      });
+    },
+    [mutateLayout],
+  );
+
+  // Resizing pins the card at its current spot with an explicit size
+  // (Auto-arrange clears it along with position pins).
+  const onResizeNode = useCallback(
+    (id: string, pos: NodePos) => {
+      mutateLayout((l) => ({ ...l, pinned: { ...l.pinned, [id]: pos } }), { undoKey: `resize-${id}` });
     },
     [mutateLayout],
   );
@@ -778,6 +882,7 @@ export default function App() {
         onCamera={setCamera}
         onSelect={setSelectedId}
         onMoveNode={onMoveNode}
+        onResizeNode={onResizeNode}
         onAddNode={onAddNode}
         onAddStroke={onAddStroke}
         onConnectClick={onConnectClick}

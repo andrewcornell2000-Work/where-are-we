@@ -67,6 +67,7 @@ interface Props {
   onCamera: (c: Camera) => void;
   onSelect: (id: string | null) => void;
   onMoveNode: (id: string, pos: NodePos) => void;
+  onResizeNode: (id: string, pos: NodePos) => void;
   onAddNode: (pos: { x: number; y: number }) => void;
   onAddStroke: (s: FreehandStroke) => void;
   onConnectClick: (nodeId: string) => void;
@@ -80,10 +81,14 @@ type Drag =
   | { kind: "none" }
   | { kind: "pan"; startX: number; startY: number; camX: number; camY: number }
   | { kind: "node"; id: string; offX: number; offY: number }
+  | { kind: "resize"; id: string; rx: number; ry: number }
   | { kind: "draw" };
 
 const MIN_SCALE = 0.15;
 const MAX_SCALE = 4;
+const MIN_NODE_W = 140;
+const MIN_NODE_H = 74;
+const RESIZE_GRAB = 16;
 
 export function CanvasView(props: Props) {
   const {
@@ -98,6 +103,7 @@ export function CanvasView(props: Props) {
     onCamera,
     onSelect,
     onMoveNode,
+    onResizeNode,
     onAddNode,
     onAddStroke,
     onConnectClick,
@@ -218,6 +224,20 @@ export function CanvasView(props: Props) {
       }
 
       // select / pan tools
+      // Resize handle of the selected card wins over everything (it hangs
+      // slightly outside the rect, so test before node hit).
+      if (tool === "select") {
+        const sel = nodes.find((n) => n.selected && n.interactive);
+        if (sel) {
+          const grab = RESIZE_GRAB / Math.max(0.4, cameraRef.current.scale);
+          const cx = sel.rect.x + sel.rect.w;
+          const cy = sel.rect.y + sel.rect.h;
+          if (Math.abs(wx - cx) <= grab && Math.abs(wy - cy) <= grab) {
+            dragRef.current = { kind: "resize", id: sel.node.id, rx: sel.rect.x, ry: sel.rect.y };
+            return;
+          }
+        }
+      }
       const dotHit = hitStatusDot(wx, wy);
       if (dotHit) {
         onCycleStatus(dotHit.node.id);
@@ -232,7 +252,7 @@ export function CanvasView(props: Props) {
       const cam = cameraRef.current;
       dragRef.current = { kind: "pan", startX: e.clientX, startY: e.clientY, camX: cam.x, camY: cam.y };
     },
-    [tool, toWorld, hitNode, hitEdge, hitStroke, hitStatusDot, onConnectClick, onAddNode, onErase, onSelect, onCycleStatus],
+    [tool, nodes, toWorld, hitNode, hitEdge, hitStroke, hitStatusDot, onConnectClick, onAddNode, onErase, onSelect, onCycleStatus],
   );
 
   const onPointerMove = useCallback(
@@ -250,6 +270,13 @@ export function CanvasView(props: Props) {
         });
       } else if (drag.kind === "node") {
         onMoveNode(drag.id, { x: wx - drag.offX, y: wy - drag.offY });
+      } else if (drag.kind === "resize") {
+        onResizeNode(drag.id, {
+          x: drag.rx,
+          y: drag.ry,
+          w: Math.max(MIN_NODE_W, wx - drag.rx),
+          h: Math.max(MIN_NODE_H, wy - drag.ry),
+        });
       } else if (drag.kind === "draw") {
         drawPtsRef.current = [...drawPtsRef.current, [wx, wy]];
         setDrawPts(drawPtsRef.current);
@@ -262,7 +289,7 @@ export function CanvasView(props: Props) {
         }
       }
     },
-    [tool, connectSourceId, toWorld, onCamera, onMoveNode, color],
+    [tool, connectSourceId, toWorld, onCamera, onMoveNode, onResizeNode, color],
   );
 
   const onPointerUp = useCallback(() => {
@@ -394,6 +421,27 @@ export function CanvasView(props: Props) {
             onDone={onAnimDone}
           />
         ))}
+
+        {/* resize handle: bottom-right corner of the selected card */}
+        {tool === "select" &&
+          nodes
+            .filter((n) => n.selected && n.interactive)
+            .map((n) => {
+              const cx = n.rect.x + n.rect.w;
+              const cy = n.rect.y + n.rect.h;
+              return (
+                <g key={`rs-${n.node.id}`} style={{ cursor: "nwse-resize" }}>
+                  <path
+                    d={`M${cx - 14},${cy + 4} L${cx + 4},${cy + 4} L${cx + 4},${cy - 14}`}
+                    fill="none"
+                    strokeWidth={3}
+                    strokeLinecap="round"
+                    opacity={0.85}
+                    style={{ stroke: CRAYON.chalkWhite }}
+                  />
+                </g>
+              );
+            })}
 
         {/* live freehand preview + crayon shavings at the pen tip */}
         {drawPts.length > 1 && (

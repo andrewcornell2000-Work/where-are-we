@@ -82,6 +82,10 @@ export function DrawnPath({
       cancelAnimationFrame(raf);
       anim.removeEventListener("finish", finish);
       anim.cancel();
+      // cancel() reverts to the inline dash styles set above (fully hidden);
+      // clear them so an interrupted draw-in can never leave the path invisible.
+      el.style.strokeDasharray = "";
+      el.style.strokeDashoffset = "";
       flakesRef.current?.replaceChildren();
     };
     // Re-run only when geometry or draw intent changes.
