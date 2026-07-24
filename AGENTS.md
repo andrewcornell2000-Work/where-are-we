@@ -71,6 +71,17 @@ dependencies that reflect the real structure, not guesses. After modifying code,
 }
 ```
 
+### Writing card copy
+
+Cards are small sticky notes, not paragraphs:
+
+- **`title`: ≤ ~6 words.** It's rendered big in a hand-written font and clamped at
+  3 lines — front-load the meaning ("Meta OAuth redirect URI", not "Set up the exact
+  Meta OAuth redirect URI in the dashboard").
+- **`note`: one short line** of detail (a command, a path, a number). It's clamped at
+  4 lines on the card; anything longer is lost. Put long explanations in your normal
+  docs, not the board.
+
 ### Hard rules
 
 - **Never change an existing `id`** to mean something new — ids anchor the user's

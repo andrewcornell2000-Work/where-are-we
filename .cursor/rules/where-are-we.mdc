@@ -34,6 +34,8 @@ reflect how the code actually connects. Run `graphify update .` after code chang
 - Always write valid JSON (read → modify → write the whole file).
 - Never set colors; color derives from `status`, gold highlighting is automatic.
 - Bump `updatedAt` on meaningful change (re-triggers the draw-in animation).
+- Card copy is sticky-note sized: `title` ≤ ~6 words, `note` one short line (the card
+  clamps the title at 3 lines and the note at 4 — long text is simply lost).
 
 ## Shapes
 
