@@ -17,6 +17,7 @@
     "dev:server": "node server/index.mjs",
     "dev:web": "vite",
     "build": "tsc -b && vite build",
+    "prepare": "npm run build",
     "preview": "vite preview"
   },
   "dependencies": {
