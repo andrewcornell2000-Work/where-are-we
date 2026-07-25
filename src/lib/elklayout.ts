@@ -35,6 +35,14 @@ export async function layoutFlow(
   edges: WawEdge[],
   sections: WawSection[],
   cardScale = 1,
+  /**
+   * Fold the board into rows instead of one long strip. Only safe when the
+   * edges form a single chain (flow mode): wrapping a branching dependency
+   * graph forces edges back across the whole board (measured: worst detour
+   * 7.25x, edge ink doubled). With a chain it costs 2.18x and turns a 23:1
+   * strip into roughly 2.7:1.
+   */
+  wrap = false,
 ): Promise<FlowLayout> {
   const nodeIds = new Set(nodes.map((n) => n.id));
   const usedSections = sections
@@ -80,11 +88,12 @@ export async function layoutFlow(
       "elk.layered.considerModelOrder.strategy": "NODES_AND_EDGES",
       "elk.layered.crossingMinimization.forceNodeModelOrder": "false",
       "elk.padding": "[top=32,left=32,bottom=32,right=32]",
-      // Deliberately NOT wrapped into rows. Wrapping squares up the board but
-      // forces edges to travel back across it to reach the next row (measured:
-      // worst edge 890px apart routed 6454px, total edge ink 2x). A single
-      // left-to-right ribbon keeps every edge a short local hop; readability at
-      // fit is handled by zoom level-of-detail instead (see canvas/lod.ts).
+      ...(wrap
+        ? {
+            "elk.aspectRatio": "1.7",
+            "elk.layered.wrapping.strategy": "MULTI_EDGE",
+          }
+        : {}),
     },
     children,
     edges: elkEdges,

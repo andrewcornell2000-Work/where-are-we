@@ -369,13 +369,13 @@ export default function App() {
       .join(";");
     const e = drawnEdges.map((x) => `${x.id}|${x.from}|${x.to}`).join(";");
     const s = sections.map((x) => `${x.id}|${x.order ?? 0}`).join(";");
-    return `${n}#${e}#${s}#${cardScale}`;
-  }, [view, projectNodes, drawnEdges, sections, cardScale]);
+    return `${n}#${e}#${s}#${cardScale}#${linearFlow}`;
+  }, [view, projectNodes, drawnEdges, sections, cardScale, linearFlow]);
 
   useEffect(() => {
     if (view !== "project" || projectNodes.length === 0) return;
     let cancelled = false;
-    layoutFlow(projectNodes, drawnEdges, sections, cardScale)
+    layoutFlow(projectNodes, drawnEdges, sections, cardScale, linearFlow)
       .then((f) => {
         if (!cancelled) setFlow(f);
       })

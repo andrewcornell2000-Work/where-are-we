@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-25T10:00:00.000Z",
+  "title": "Design System: Where Are We",
+  "extensions": {
+    "colorMeta": {
+      "board": {
+        "role": "neutral",
+        "displayName": "Slate Board",
+        "canonical": "#0b0b0d",
+        "tonalRamp": ["#050506", "#0b0b0d", "#16161a", "#232329", "#3a3a42", "#5c5c66", "#8a8a93", "#c3c3c9"]
+      },
+      "chalk": {
+        "role": "primary",
+        "displayName": "Chalk",
+        "canonical": "#f4efe6",
+        "tonalRamp": ["#2b2620", "#4a443a", "#6f6a5e", "#918b7c", "#b5ae9e", "#d6cfc1", "#f4efe6", "#fbf8f2"]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Signal Gold",
+        "canonical": "#ffd35c",
+        "tonalRamp": ["#3d3110", "#6b5000", "#7d5d00", "#a87d00", "#cf9c00", "#ffb830", "#ffd35c", "#ffe9a8"]
+      },
+      "status-done": {
+        "role": "secondary",
+        "displayName": "Done Green",
+        "canonical": "#8ce06a",
+        "tonalRamp": ["#16300d", "#22491a", "#2a5f1d", "#357a25", "#4d9e38", "#6cc94f", "#8ce06a", "#c2f0ad"]
+      },
+      "status-doing": {
+        "role": "secondary",
+        "displayName": "Doing Amber",
+        "canonical": "#ffd35c",
+        "tonalRamp": ["#3d3110", "#6b5000", "#7d5d00", "#a87d00", "#cf9c00", "#ffb830", "#ffd35c", "#ffe9a8"]
+      },
+      "status-todo": {
+        "role": "secondary",
+        "displayName": "To-do Blue",
+        "canonical": "#6cc4ff",
+        "tonalRamp": ["#0d2739", "#123852", "#174c6f", "#1f6493", "#2472a8", "#2e86c4", "#6cc4ff", "#bae2ff"]
+      },
+      "quiet-grey": {
+        "role": "neutral",
+        "displayName": "Quiet Grey",
+        "canonical": "#8a8a93",
+        "tonalRamp": ["#1c1c20", "#2e2e34", "#45454d", "#5c5c66", "#6f6a5e", "#8a8a93", "#adadb4", "#d2d2d7"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Section Title", "purpose": "Section frame headers only." },
+      "title": { "displayName": "Card Title", "purpose": "The card headline; grows as the board zooms out." },
+      "body": { "displayName": "Note", "purpose": "Supporting detail, clamped to 4 lines, dropped when zoomed out." },
+      "label": { "displayName": "Status", "purpose": "The status badge. Always written out, never colour alone." },
+      "control": { "displayName": "Control", "purpose": "Top bar and toolbar." }
+    },
+    "shadows": [
+      {
+        "name": "floating-chrome",
+        "value": "0 8px 30px rgba(0, 0, 0, 0.5)",
+        "purpose": "The only elevation in the system. Top bar and toolbar, which genuinely hover over live canvas."
+      },
+      {
+        "name": "next-up-glow",
+        "value": "drop-shadow(0 0 7px rgba(255, 184, 48, 0.75))",
+        "purpose": "Attention, not elevation. Exactly one card at a time."
+      }
+    ],
+    "motion": [
+      { "name": "draw-in", "value": "520ms ease-in-out on stroke-dashoffset", "purpose": "The signature: lines appear to be drawn. Resolves instantly under reduced motion." },
+      { "name": "write-in", "value": "420ms ease-out", "purpose": "Card text fades in after its box is sketched." },
+      { "name": "control", "value": "150ms", "purpose": "Hover and active feedback on chrome." }
+    ],
+    "breakpoints": [
+      { "name": "wrap", "value": "1000px" },
+      { "name": "compact", "value": "640px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Status Badge",
+      "kind": "chip",
+      "refersTo": "status-badge",
+      "description": "The word that carries a card's state. Never replaced by colour alone.",
+      "html": "<span class=\"ds-status\">in progress</span>",
+      "css": ".ds-status { font-family: var(--hand, 'Patrick Hand', cursive); font-size: 13px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: #ffd35c; border: 1px solid currentColor; border-radius: 999px; padding: 1px 7px; line-height: 1.35; white-space: nowrap; }"
+    },
+    {
+      "name": "Control Button",
+      "kind": "button",
+      "refersTo": "control",
+      "description": "A quiet instrument: invisible until reached for, crisp when engaged.",
+      "html": "<button class=\"ds-control\">Fit</button>",
+      "css": ".ds-control { font-family: var(--hand, 'Patrick Hand', cursive); font-size: 16px; color: #f4efe6; background: transparent; border: 1px solid transparent; border-radius: 10px; padding: 5px 12px; cursor: pointer; transition: background .15s, border-color .15s; } .ds-control:hover { background: rgba(255,255,255,0.08); } .ds-control:focus-visible { outline: 3px solid #ffd35c; outline-offset: 2px; } .ds-control[aria-pressed=\"true\"] { background: rgba(255, 211, 92, 0.18); }"
+    },
+    {
+      "name": "Next Banner",
+      "kind": "custom",
+      "refersTo": "next-banner",
+      "description": "The single loud thing: what to do next. Opaque, not glass.",
+      "html": "<button class=\"ds-next\"><span class=\"ds-next-label\">Do this next</span><span class=\"ds-next-title\">Fix the Meta payment account</span><span>&rarr;</span></button>",
+      "css": ".ds-next { display: inline-flex; align-items: center; gap: 10px; padding: 6px 18px; font-family: var(--hand, 'Patrick Hand', cursive); font-size: 16px; color: #f4efe6; background: #2a2110; border: 1.5px solid rgba(255,184,48,0.55); border-radius: 14px; cursor: pointer; } .ds-next-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.6px; color: #ffb830; } .ds-next:focus-visible { outline: 3px solid #ffd35c; outline-offset: 2px; }"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "A mark on the page, not an object resting on it: outline only, no fill, no shadow.",
+      "html": "<div class=\"ds-card\"><span class=\"ds-card-status\">to do</span><div class=\"ds-card-title\">Turn ads on for real</div><div class=\"ds-card-note\">After payment, smoke test and Stripe.</div></div>",
+      "css": ".ds-card { width: 220px; padding: 10px 14px 12px; border: 3px solid #6cc4ff; border-radius: 16px; background: transparent; display: flex; flex-direction: column; gap: 3px; font-family: var(--hand, 'Patrick Hand', cursive); } .ds-card-status { align-self: flex-start; font-size: 13px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: #6cc4ff; border: 1px solid currentColor; border-radius: 999px; padding: 1px 7px; } .ds-card-title { font-size: 21px; line-height: 1.05; color: #f4efe6; } .ds-card-note { font-size: 14px; line-height: 1.2; color: #9a978f; }"
+    },
+    {
+      "name": "Memory Slot",
+      "kind": "button",
+      "refersTo": "control",
+      "description": "Saved-arrangement recall, styled like a car's memory-seat button. Empty slots stay faint.",
+      "html": "<span class=\"ds-slots\"><button class=\"ds-slot ds-slot--filled\">1</button><button class=\"ds-slot\" disabled>2</button></span>",
+      "css": ".ds-slots { display: inline-flex; gap: 2px; } .ds-slot { min-width: 26px; padding: 5px 7px; font-family: var(--hand, 'Patrick Hand', cursive); font-size: 14px; color: #f4efe6; background: transparent; border: 1px solid transparent; border-radius: 10px; opacity: 0.4; cursor: pointer; } .ds-slot--filled { opacity: 1; background: rgba(255,255,255,0.06); border-color: rgba(244,239,230,0.14); } .ds-slot:disabled { cursor: default; } .ds-slot:focus-visible { outline: 3px solid #ffd35c; outline-offset: 2px; }"
+    },
+    {
+      "name": "Inline Editor Field",
+      "kind": "input",
+      "refersTo": "control",
+      "description": "Edits a card in place. Focus shifts the border to gold; the ring is never removed.",
+      "html": "<input class=\"ds-field\" value=\"Ads always start paused\" />",
+      "css": ".ds-field { font-family: var(--hand, 'Patrick Hand', cursive); font-size: 17px; color: #f4efe6; background: rgba(128,128,128,0.1); border: 1px solid rgba(244,239,230,0.14); border-radius: 8px; padding: 6px 10px; } .ds-field:focus { outline: none; border-color: rgba(255,211,92,0.6); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Architect's Sketchbook",
+    "overview": "Drafting pencil on dark paper. Every mark is hand-drawn, but by someone good at it doing serious technical work. That image resolves the system's central tension: the medium is literally crayon, and the constant risk is tipping into a children's app. The board is the product; chrome exists only to get out of its way. Colour is scarce and semantic, and the only thing permitted to shout is the single card that is next.",
+    "keyCharacteristics": [
+      "Hand-drawn surface, precise substructure - wobble on top, discipline beneath",
+      "Flat board; only genuinely floating chrome casts a shadow",
+      "One accent, one gold, and status colour used semantically and nowhere else",
+      "Legibility survives zoom: detail is dropped, never shrunk into illegibility",
+      "Nothing on the board is carried by colour alone"
+    ],
+    "rules": [
+      { "name": "The One Loud Thing Rule", "body": "Gold marks exactly one card: the next action. Highlighting the whole critical path highlights nothing.", "section": "colors" },
+      { "name": "The Semantic Pigment Rule", "body": "The status colours are prohibited as decoration. If a colour appears on something not conveying state, it is wrong.", "section": "colors" },
+      { "name": "The Contrast Floor Rule", "body": "Every status label clears 4.5:1 against its board in both themes.", "section": "colors" },
+      { "name": "The Grows-When-Small Rule", "body": "Text scales up as the board zooms out, never down. Shrinking type to fit more board is forbidden.", "section": "typography" },
+      { "name": "The Six Word Rule", "body": "Card titles run to about six words. Long titles are a content bug, not a layout problem.", "section": "typography" },
+      { "name": "The Ink-Not-Object Rule", "body": "A card is a mark on the page, never a card resting on the page. A shadow kills the sketchbook illusion.", "section": "elevation" },
+      { "name": "The Earned Blur Rule", "body": "backdrop-filter is permitted only on surfaces that persistently float over live canvas. Blur as a default look is prohibited.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep the board flat and let only the top bar and toolbar cast a shadow.",
+      "Do reserve gold for the single next action and the progress ring.",
+      "Do write out the status word - colour never carries state alone.",
+      "Do grow type and drop detail as the board zooms out.",
+      "Do keep every status label above 4.5:1 in both themes.",
+      "Do draw each stroke exactly once, with the wobble intact.",
+      "Do give every control a visible keyboard focus ring."
+    ],
+    "donts": [
+      "Don't build a generic SaaS dashboard - no purple gradients, no identical stat-card grids, no hero-metric block.",
+      "Don't let it become childish or toy-like: no bounce easing, no rainbow palettes, no cartoon stickers.",
+      "Don't turn it into a cluttered whiteboard - every new panel or control must displace one that exists.",
+      "Don't correct the childish risk by going cold and corporate.",
+      "Don't put a shadow on a card, a section, or an edge.",
+      "Don't use backdrop-filter on anything not persistently floating over the canvas.",
+      "Don't add a second font family.",
+      "Don't shrink text to make more of the board fit.",
+      "Don't highlight the whole critical path - one loud thing only.",
+      "Don't suppress an animation in a way that leaves geometry invisible."
+    ]
+  }
+}
