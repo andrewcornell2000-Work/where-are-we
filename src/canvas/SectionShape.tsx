@@ -16,6 +16,9 @@ interface Props {
   onDone?: (id: string) => void;
 }
 
+/** Height of the title band at the top of a section: its drag handle. */
+export const SECTION_HEADER_H = 56;
+
 export const SectionShape = memo(function SectionShape({
   id,
   title,
@@ -63,6 +66,18 @@ export const SectionShape = memo(function SectionShape({
           onDone={i === paths.length - 1 && onDone ? () => onDone(id) : undefined}
         />
       ))}
+
+      {/* Drag handle for moving the whole group. Transparent, but takes pointer
+          events so the cursor advertises it; the event bubbles to CanvasView. */}
+      <rect
+        x={rect.x}
+        y={rect.y}
+        width={rect.w}
+        height={SECTION_HEADER_H}
+        fill="transparent"
+        pointerEvents="all"
+        style={{ cursor: "grab" }}
+      />
 
       <text x={rect.x + 26} y={rect.y + 44} className="section-title" style={{ fill: color }}>
         {title}

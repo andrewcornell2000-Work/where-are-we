@@ -20,13 +20,13 @@
     "semantic_hash": ""
   },
   "src/App.tsx": {
-    "mtime": 1784939873.1434953,
-    "ast_hash": "5ad910af88f8bc60764ff1fec8ca96c8",
+    "mtime": 1784942749.3322902,
+    "ast_hash": "d5b23e74ca9daba057e410e38928d0ed",
     "semantic_hash": ""
   },
   "src/canvas/CanvasView.tsx": {
-    "mtime": 1784939355.7993684,
-    "ast_hash": "04e62dca75b370a300112e533b39deaf",
+    "mtime": 1784942737.633603,
+    "ast_hash": "e649058d284b426ae425681e762f29f8",
     "semantic_hash": ""
   },
   "src/canvas/DrawnPath.tsx": {
@@ -40,8 +40,8 @@
     "semantic_hash": ""
   },
   "src/canvas/NodeShape.tsx": {
-    "mtime": 1784939325.9748468,
-    "ast_hash": "5663f55d87cbfc860efbcaaf26913102",
+    "mtime": 1784942737.6326132,
+    "ast_hash": "155474b52932083aedab7bac638f8f69",
     "semantic_hash": ""
   },
   "src/canvas/StrokeShape.tsx": {
@@ -65,8 +65,8 @@
     "semantic_hash": ""
   },
   "src/lib/rough.ts": {
-    "mtime": 1784255034.8875647,
-    "ast_hash": "ddd1656d9d8f8bdfce697868ee5ca5b9",
+    "mtime": 1784942721.2340155,
+    "ast_hash": "dc2de298837d065ed916c6a9786ce284",
     "semantic_hash": ""
   },
   "src/lib/theme.ts": {

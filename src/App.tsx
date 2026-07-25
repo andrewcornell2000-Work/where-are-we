@@ -480,6 +480,7 @@ export default function App() {
         id: s.id,
         title: s.title,
         rect: { x: minX, y: minY, w: maxX - minX, h: maxY - minY },
+        nodeIds: members.filter((n) => viewRects.has(n.id)).map((n) => n.id),
         color: s.color,
         done: sp.done,
         total: sp.total,
@@ -536,6 +537,7 @@ export default function App() {
         id: `day-${h.id}`,
         title: h.title,
         rect: { x: minX, y: minY, w: maxX - minX, h: maxY - minY },
+        nodeIds: members.filter((n) => viewRects.has(n.id)).map((n) => n.id),
         done: 0,
         total: 0,
         draw: false,
@@ -671,6 +673,24 @@ export default function App() {
       mutateLayout((l) => ({ ...l, pinned: { ...l.pinned, [id]: { ...l.pinned[id], ...pos } } }), {
         undoKey: `move-${id}`,
       });
+    },
+    [mutateLayout],
+  );
+
+  // Dragging a section header moves every card in it as one, pinning them all.
+  // A single undo key means the whole drag collapses to one undo step.
+  const onMoveGroup = useCallback(
+    (positions: Record<string, NodePos>) => {
+      const ids = Object.keys(positions);
+      if (!ids.length) return;
+      mutateLayout(
+        (l) => {
+          const pinned = { ...l.pinned };
+          for (const id of ids) pinned[id] = { ...pinned[id], ...positions[id] };
+          return { ...l, pinned };
+        },
+        { undoKey: `group-${ids.slice().sort()[0]}` },
+      );
     },
     [mutateLayout],
   );
@@ -912,6 +932,7 @@ export default function App() {
         onCamera={setCamera}
         onSelect={setSelectedId}
         onMoveNode={onMoveNode}
+        onMoveGroup={onMoveGroup}
         onResizeNode={onResizeNode}
         onAddNode={onAddNode}
         onAddStroke={onAddStroke}

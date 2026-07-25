@@ -6,7 +6,7 @@ import { simplifyStroke } from "../lib/simplify";
 import { CRAYON } from "../lib/theme";
 import { NodeShape, statusDotCenter } from "./NodeShape";
 import { EdgeShape } from "./EdgeShape";
-import { SectionShape } from "./SectionShape";
+import { SectionShape, SECTION_HEADER_H } from "./SectionShape";
 import { StrokeShape } from "./StrokeShape";
 import type { Lod } from "./lod";
 import { strokePath } from "../lib/freehand";
@@ -42,6 +42,8 @@ export interface SectionItem {
   id: string;
   title: string;
   rect: Rect;
+  /** Cards inside this section, moved together when its header is dragged. */
+  nodeIds: string[];
   color?: string;
   done: number;
   total: number;
@@ -67,6 +69,7 @@ interface Props {
   onCamera: (c: Camera) => void;
   onSelect: (id: string | null) => void;
   onMoveNode: (id: string, pos: NodePos) => void;
+  onMoveGroup: (positions: Record<string, NodePos>) => void;
   onResizeNode: (id: string, pos: NodePos) => void;
   onAddNode: (pos: { x: number; y: number }) => void;
   onAddStroke: (s: FreehandStroke) => void;
@@ -82,6 +85,13 @@ type Drag =
   | { kind: "pan"; startX: number; startY: number; camX: number; camY: number }
   | { kind: "node"; id: string; offX: number; offY: number }
   | { kind: "resize"; id: string; rx: number; ry: number }
+  | {
+      kind: "section";
+      ids: string[];
+      startX: number;
+      startY: number;
+      origins: Record<string, { x: number; y: number }>;
+    }
   | { kind: "draw" };
 
 const MIN_SCALE = 0.15;
@@ -104,6 +114,7 @@ export function CanvasView(props: Props) {
     onCamera,
     onSelect,
     onMoveNode,
+    onMoveGroup,
     onResizeNode,
     onAddNode,
     onAddStroke,
@@ -169,6 +180,17 @@ export function CanvasView(props: Props) {
       return null;
     },
     [strokes],
+  );
+
+  const hitSectionHeader = useCallback(
+    (wx: number, wy: number): SectionItem | null => {
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const r = sections[i].rect;
+        if (wx >= r.x && wx <= r.x + r.w && wy >= r.y && wy <= r.y + SECTION_HEADER_H) return sections[i];
+      }
+      return null;
+    },
+    [sections],
   );
 
   const hitStatusDot = useCallback(
@@ -244,6 +266,20 @@ export function CanvasView(props: Props) {
         onCycleStatus(dotHit.node.id);
         return;
       }
+      // Group move: the section's title band drags every card inside it. Cards
+      // win where they overlap, so this only fires on empty header space.
+      if (!node) {
+        const sec = hitSectionHeader(wx, wy);
+        if (sec && sec.nodeIds.length) {
+          const origins: Record<string, { x: number; y: number }> = {};
+          const wanted = new Set(sec.nodeIds);
+          for (const n of nodes) {
+            if (wanted.has(n.node.id)) origins[n.node.id] = { x: n.rect.x, y: n.rect.y };
+          }
+          dragRef.current = { kind: "section", ids: sec.nodeIds, startX: wx, startY: wy, origins };
+          return;
+        }
+      }
       if (tool === "select" && node) {
         onSelect(node.node.id);
         dragRef.current = { kind: "node", id: node.node.id, offX: wx - node.rect.x, offY: wy - node.rect.y };
@@ -253,7 +289,7 @@ export function CanvasView(props: Props) {
       const cam = cameraRef.current;
       dragRef.current = { kind: "pan", startX: e.clientX, startY: e.clientY, camX: cam.x, camY: cam.y };
     },
-    [tool, nodes, toWorld, hitNode, hitEdge, hitStroke, hitStatusDot, onConnectClick, onAddNode, onErase, onSelect, onCycleStatus],
+    [tool, nodes, toWorld, hitNode, hitEdge, hitStroke, hitStatusDot, hitSectionHeader, onConnectClick, onAddNode, onErase, onSelect, onCycleStatus],
   );
 
   const onPointerMove = useCallback(
@@ -271,6 +307,15 @@ export function CanvasView(props: Props) {
         });
       } else if (drag.kind === "node") {
         onMoveNode(drag.id, { x: wx - drag.offX, y: wy - drag.offY });
+      } else if (drag.kind === "section") {
+        const dx = wx - drag.startX;
+        const dy = wy - drag.startY;
+        const next: Record<string, NodePos> = {};
+        for (const id of drag.ids) {
+          const o = drag.origins[id];
+          if (o) next[id] = { x: o.x + dx, y: o.y + dy };
+        }
+        onMoveGroup(next);
       } else if (drag.kind === "resize") {
         onResizeNode(drag.id, {
           x: drag.rx,
@@ -290,7 +335,7 @@ export function CanvasView(props: Props) {
         }
       }
     },
-    [tool, connectSourceId, toWorld, onCamera, onMoveNode, onResizeNode, color],
+    [tool, connectSourceId, toWorld, onCamera, onMoveNode, onMoveGroup, onResizeNode, color],
   );
 
   const onPointerUp = useCallback(() => {
