@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { Camera, FreehandStroke, NodePos, WawNode } from "../types";
 import type { Rect } from "../lib/geometry";
-import { distToPolyline, pointInRect, snapPosition } from "../lib/geometry";
+import { distToPolyline, pointInRect, snapPosition, SNAP_GRID } from "../lib/geometry";
 import { simplifyStroke } from "../lib/simplify";
 import { CRAYON } from "../lib/theme";
 import { NodeShape, statusDotCenter } from "./NodeShape";
@@ -211,6 +211,47 @@ export function CanvasView(props: Props) {
     [nodes],
   );
 
+  // Keyboard equivalent of every mouse gesture on a card, so the board is
+  // operable without a pointer (WCAG 2.1.1).
+  const onCardKeyDown = useCallback(
+    (id: string, e: React.KeyboardEvent<SVGGElement>) => {
+      const item = nodes.find((n) => n.node.id === id);
+      if (!item) return;
+      const STEP = e.shiftKey ? 4 : SNAP_GRID;
+      const nudge = (dx: number, dy: number) => {
+        e.preventDefault();
+        onMoveNode(id, { x: item.rect.x + dx, y: item.rect.y + dy });
+      };
+      switch (e.key) {
+        case "Enter":
+          e.preventDefault();
+          onEditRequest(id);
+          return;
+        case " ":
+        case "Spacebar":
+          e.preventDefault();
+          onCycleStatus(id);
+          return;
+        case "Delete":
+        case "Backspace":
+          e.preventDefault();
+          onErase({ kind: "node", id });
+          return;
+        case "ArrowLeft":
+          return nudge(-STEP, 0);
+        case "ArrowRight":
+          return nudge(STEP, 0);
+        case "ArrowUp":
+          return nudge(0, -STEP);
+        case "ArrowDown":
+          return nudge(0, STEP);
+        default:
+          return;
+      }
+    },
+    [nodes, onMoveNode, onEditRequest, onCycleStatus, onErase],
+  );
+
   const onPointerDown = useCallback(
     (e: React.PointerEvent<SVGSVGElement>) => {
       if (!e.isPrimary || (e.pointerType === "mouse" && e.button !== 0)) return;
@@ -379,6 +420,20 @@ export function CanvasView(props: Props) {
     [toWorld, hitNode, onEditRequest],
   );
 
+  // Selection follows keyboard focus. Bound natively on the SVG because
+  // React's synthetic onFocus does not fire for focused SVG <g> elements.
+  useEffect(() => {
+    const el = svgRef.current;
+    if (!el) return;
+    const onFocusIn = (e: FocusEvent) => {
+      const card = (e.target as Element | null)?.closest?.("[data-node-id]");
+      const id = card?.getAttribute("data-node-id");
+      if (id && card?.getAttribute("tabindex") === "0") onSelect(id);
+    };
+    el.addEventListener("focusin", onFocusIn);
+    return () => el.removeEventListener("focusin", onFocusIn);
+  }, [onSelect]);
+
   // Native wheel listener (React attaches wheel passively; we must preventDefault
   // so browser page-zoom via Ctrl+wheel doesn't fight canvas zoom).
   useEffect(() => {
@@ -419,6 +474,8 @@ export function CanvasView(props: Props) {
     <svg
       ref={svgRef}
       className="canvas"
+      role="application"
+      aria-label="Project board. Press Tab to move between cards, Enter to edit, Space to change status, arrow keys to move a card."
       style={{ cursor }}
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}
@@ -475,6 +532,8 @@ export function CanvasView(props: Props) {
             selected={it.selected}
             draw={it.draw}
             lod={lod}
+            interactive={it.interactive}
+            onCardKeyDown={it.interactive ? onCardKeyDown : undefined}
             dimmed={it.dimmed}
             isNext={it.isNext}
             baseDelayMs={it.delay}

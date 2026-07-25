@@ -20,8 +20,8 @@
     "semantic_hash": ""
   },
   "src/App.tsx": {
-    "mtime": 1784946470.220605,
-    "ast_hash": "0a5bab3dff0a52988bbced1c5c979f4f",
+    "mtime": 1784971665.0079758,
+    "ast_hash": "0f031bc87b4d0699f50483c2e3b034c4",
     "semantic_hash": ""
   },
   "src/canvas/CanvasView.tsx": {
@@ -30,8 +30,8 @@
     "semantic_hash": ""
   },
   "src/canvas/DrawnPath.tsx": {
-    "mtime": 1784857422.5030396,
-    "ast_hash": "ce74eeb21c273998e88901c92418d61e",
+    "mtime": 1784971575.4895077,
+    "ast_hash": "9764c23c8f108546917b110474913bff",
     "semantic_hash": ""
   },
   "src/canvas/EdgeShape.tsx": {
@@ -175,7 +175,7 @@
     "semantic_hash": ""
   },
   "HANDOFF-CANVAS-FIX.md": {
-    "mtime": 1784964327.4234693,
+    "mtime": 1784970943.0606596,
     "ast_hash": "e6f8611eb42a625029016f48e2e5288b",
     "semantic_hash": ""
   },
@@ -187,6 +187,11 @@
   "src/lib/flow.ts": {
     "mtime": 1784945588.3484683,
     "ast_hash": "0631460116e7e6fdd5966079cabe7e6e",
+    "semantic_hash": ""
+  },
+  "PRODUCT.md": {
+    "mtime": 1784971185.173234,
+    "ast_hash": "1e8bcc10153b044fffb9014268711519",
     "semantic_hash": ""
   }
 }

@@ -993,6 +993,13 @@ export default function App() {
     () => allNodesUnfiltered.filter((n) => layout.hiddenIds.includes(n.id)),
     [allNodesUnfiltered, layout.hiddenIds],
   );
+  // Spoken feedback for keyboard users: what is focused and how the board stands.
+  const announcement = useMemo(() => {
+    const sel = selectedId ? nodeById.get(selectedId) : null;
+    if (sel) return `${sel.title}. ${sel.status === "doing" ? "in progress" : sel.status === "done" ? "done" : "to do"}.`;
+    return `${analysis.doneCount} of ${analysis.totalCount} done.`;
+  }, [selectedId, nodeById, analysis.doneCount, analysis.totalCount]);
+
   const editingRect = editingId ? viewRects.get(editingId) : undefined;
   const editingNode = editingId ? nodeById.get(editingId) : undefined;
 
@@ -1067,6 +1074,9 @@ export default function App() {
           onCancel={() => setEditingId(null)}
         />
       )}
+      <div className="sr-only" role="status" aria-live="polite">
+        {announcement}
+      </div>
       {!content && <div className="loading">connecting to your live board…</div>}
       {content && view === "project" && !flow && viewNodes.length > 0 && (
         <div className="loading">sketching the layout…</div>

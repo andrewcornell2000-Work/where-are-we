@@ -20,13 +20,13 @@
     "semantic_hash": ""
   },
   "src/App.tsx": {
-    "mtime": 1784971665.0079758,
-    "ast_hash": "0f031bc87b4d0699f50483c2e3b034c4",
+    "mtime": 1784972420.5408435,
+    "ast_hash": "ed484721a58a277c2f4b97fa9dfd200a",
     "semantic_hash": ""
   },
   "src/canvas/CanvasView.tsx": {
-    "mtime": 1784945161.8331344,
-    "ast_hash": "75345ed7dcd430fc2ba53cf41201103d",
+    "mtime": 1784972650.4508772,
+    "ast_hash": "be8bf58a1abb4627ed730455688bf0a0",
     "semantic_hash": ""
   },
   "src/canvas/DrawnPath.tsx": {
@@ -40,8 +40,8 @@
     "semantic_hash": ""
   },
   "src/canvas/NodeShape.tsx": {
-    "mtime": 1784945634.453058,
-    "ast_hash": "14064082038588e10d35e6028b8a488e",
+    "mtime": 1784972650.4498813,
+    "ast_hash": "ff7b2d47c4b28206d006ec7947268be9",
     "semantic_hash": ""
   },
   "src/canvas/StrokeShape.tsx": {

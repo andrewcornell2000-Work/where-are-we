@@ -18,6 +18,9 @@ interface Props {
   baseDelayMs?: number;
   projectRefTitle?: string;
   onDone?: (id: string) => void;
+  /** Ghost/preview cards are inert: not focusable, not announced. */
+  interactive?: boolean;
+  onCardKeyDown?: (id: string, e: React.KeyboardEvent<SVGGElement>) => void;
 }
 
 const STROKE_STEP = 130;
@@ -38,6 +41,8 @@ export const NodeShape = memo(function NodeShape({
   baseDelayMs = 0,
   projectRefTitle,
   onDone,
+  interactive = false,
+  onCardKeyDown,
 }: Props) {
   const color = statusColor(node.status);
   const seed = useMemo(() => seedFrom(node.id), [node.id]);
@@ -60,8 +65,27 @@ export const NodeShape = memo(function NodeShape({
   const titleDelay = baseDelayMs + (draw ? paths.length * STROKE_STEP + 120 : 0);
   const groupOpacity = dimmed ? 0.42 : 1;
 
+  // Spoken form of everything the card conveys visually, so the status and the
+  // "next up" flag are not carried by colour and position alone.
+  const label = [
+    statusLabel(node.status),
+    node.title,
+    isNext ? "next up" : "",
+    node.note ?? "",
+  ]
+    .filter(Boolean)
+    .join(". ");
+
   return (
-    <g style={{ opacity: groupOpacity }} data-node-id={node.id}>
+    <g
+      style={{ opacity: groupOpacity }}
+      data-node-id={node.id}
+      className={`card${selected ? " is-selected" : ""}`}
+      tabIndex={interactive ? 0 : -1}
+      role={interactive ? "button" : undefined}
+      aria-label={interactive ? label : undefined}
+      onKeyDown={interactive ? (e) => onCardKeyDown?.(node.id, e) : undefined}
+    >
       {isNext && (
         <rect
           className="glow-gold"
