@@ -1,16 +1,16 @@
 # Graph Report - Where Are We  (2026-07-25)
 
 ## Corpus Check
-- 37 files · ~23,900 words
+- 37 files · ~24,239 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 277 nodes · 493 edges · 13 communities
+- 278 nodes · 494 edges · 14 communities
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `33a38f65`
+- Built from commit: `44daa82c`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -22,6 +22,7 @@
 - index.mjs
 - Where Are We
 - CanvasView.tsx
+- types.ts
 - Rect
 - elk-bundled.d.ts
 - Where things stand
@@ -35,27 +36,27 @@
 4. `WawNode` - 13 edges
 5. `CanvasView()` - 9 edges
 6. `HANDOFF — Where Are We: canvas reliability pass` - 9 edges
-7. `nodeSize()` - 8 edges
-8. `Phases (execute in order; verify before next)` - 8 edges
-9. `HANDOVER — Where Are We v2 (verification complete, ready to use)` - 8 edges
+7. `HANDOVER — Where Are We v2 (verification complete, ready to use)` - 9 edges
+8. `nodeSize()` - 8 edges
+9. `Phases (execute in order; verify before next)` - 8 edges
 10. `Where Are We` - 8 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `main()` --calls--> `startServer()`  [EXTRACTED]
   bin/waw.mjs → server/index.mjs
-- `App()` --calls--> `edgeAnchor()`  [EXTRACTED]
-  src/App.tsx → src/lib/geometry.ts
-- `App()` --calls--> `inflate()`  [EXTRACTED]
-  src/App.tsx → src/lib/geometry.ts
-- `App()` --calls--> `pointInRect()`  [EXTRACTED]
-  src/App.tsx → src/lib/geometry.ts
-- `App()` --calls--> `polylineHitsAny()`  [EXTRACTED]
-  src/App.tsx → src/lib/geometry.ts
+- `App()` --calls--> `useLive()`  [EXTRACTED]
+  src/App.tsx → src/lib/useLive.ts
+- `NodeItem` --references--> `WawNode`  [EXTRACTED]
+  src/canvas/CanvasView.tsx → src/types.ts
+- `Props` --references--> `Lod`  [EXTRACTED]
+  src/canvas/CanvasView.tsx → src/canvas/lod.ts
+- `Props` --references--> `NodePos`  [EXTRACTED]
+  src/canvas/CanvasView.tsx → src/types.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (13 total, 0 thin omitted)
+## Communities (14 total, 0 thin omitted)
 
 ### Community 0 - "App.tsx"
 Cohesion: 0.08
@@ -66,8 +67,8 @@ Cohesion: 0.08
 Nodes (23): chokidar, bin, where-are-we, dependencies, chokidar, ws, description, files (+15 more)
 
 ### Community 2 - "NodeShape.tsx"
-Cohesion: 0.14
-Nodes (21): EdgeShape, Props, detourRoute(), edgeAnchor(), inflate(), pointInRect(), polylineHitsAny(), polylineHitsRect() (+13 more)
+Cohesion: 0.10
+Nodes (25): DrawnPath(), Props, EdgeShape, Props, Lod, NodeShape, Props, SectionShape (+17 more)
 
 ### Community 3 - "compilerOptions"
 Cohesion: 0.09
@@ -82,47 +83,51 @@ Cohesion: 0.12
 Nodes (15): A good habit, Hard rules, Instructions for AI assistants working in this project, The file format, Use graphify for accurate connections, What you do, and when, Writing card copy, Data schema (`where-are-we.json`) (+7 more)
 
 ### Community 6 - "CanvasView.tsx"
-Cohesion: 0.10
-Nodes (31): CanvasView(), Drag, EdgeItem, EraseTarget, NodeItem, Props, SectionItem, DrawnPath() (+23 more)
+Cohesion: 0.14
+Nodes (22): CanvasView(), Drag, EdgeItem, EraseTarget, NodeItem, Props, SectionItem, statusDotCenter() (+14 more)
+
+### Community 7 - "types.ts"
+Cohesion: 0.20
+Nodes (13): Live, useLive(), wsUrl(), ClientMessage, EdgeStyle, EMPTY_LAYOUT, NodeLink, NodeOverride (+5 more)
 
 ### Community 9 - "Rect"
-Cohesion: 0.10
-Nodes (39): App(), nowIso(), PRESET_SLOTS, todayStr(), lodForScale(), Analysis, analyze(), DailyLayout (+31 more)
+Cohesion: 0.12
+Nodes (35): App(), nowIso(), PRESET_SLOTS, todayStr(), lodForScale(), Analysis, analyze(), DailyLayout (+27 more)
 
 ### Community 10 - "elk-bundled.d.ts"
 Cohesion: 0.20
 Nodes (7): ELK, ElkEdgeSection, ElkExtendedEdge, elkjs/lib/elk.bundled.js, ElkLabel, ElkNode, ElkPoint
 
 ### Community 11 - "Where things stand"
-Cohesion: 0.22
-Nodes (8): 2026-07-24 canvas reliability pass (HANDOFF-CANVAS-FIX.md), Board state (data/where-are-we.json), Gotchas that still apply, HANDOVER — Where Are We v2 (verification complete, ready to use), Machine setup notes (fresh machine), What this project is, What to do next (nothing is blocked), Where things stand
+Cohesion: 0.20
+Nodes (9): 2026-07-24 canvas reliability pass (HANDOFF-CANVAS-FIX.md), Board state (data/where-are-we.json), Data files in a data dir, Gotchas that still apply, HANDOVER — Where Are We v2 (verification complete, ready to use), Machine setup notes (fresh machine), What this project is, What to do next (nothing is blocked) (+1 more)
 
 ### Community 12 - "StrokeShape.tsx"
 Cohesion: 0.11
 Nodes (18): Constraints, Context, Do not, Escalate to owner (batch), Gotchas (from HANDOVER.md), HANDOFF — Where Are We: canvas reliability pass, Known bug cluster (Bugbot + prior audit), Outcome (+10 more)
 
 ### Community 13 - "Toolbar.tsx"
-Cohesion: 0.20
-Nodes (9): Tool, CRAYON_PICKS, NOTE: use these via `style={{ stroke/fill/color: ... }}` — SVG *presentation, statusColor(), statusLabel(), Status, Props, Toolbar() (+1 more)
+Cohesion: 0.40
+Nodes (5): Tool, CRAYON_PICKS, Props, Toolbar(), TOOLS
 
 ## Knowledge Gaps
-- **110 isolated node(s):** `args`, `cwd`, `dataDir`, `name`, `version` (+105 more)
+- **111 isolated node(s):** `args`, `cwd`, `dataDir`, `name`, `version` (+106 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `useLive()` connect `Rect` to `elk-bundled.d.ts`?**
+- **Why does `useLive()` connect `types.ts` to `Rect`, `elk-bundled.d.ts`?**
   _High betweenness centrality (0.034) - this node is a cross-community bridge._
 - **Why does `devDependencies` connect `App.tsx` to `devDependencies`?**
   _High betweenness centrality (0.022) - this node is a cross-community bridge._
 - **What connects `args`, `cwd`, `dataDir` to the rest of the system?**
-  _110 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _111 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `App.tsx` be split into smaller, more focused modules?**
   _Cohesion score 0.08 - nodes in this community are weakly interconnected._
 - **Should `devDependencies` be split into smaller, more focused modules?**
   _Cohesion score 0.08333333333333333 - nodes in this community are weakly interconnected._
 - **Should `NodeShape.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.14333333333333334 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09523809523809523 - nodes in this community are weakly interconnected._
 - **Should `compilerOptions` be split into smaller, more focused modules?**
   _Cohesion score 0.08695652173913043 - nodes in this community are weakly interconnected._

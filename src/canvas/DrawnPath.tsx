@@ -32,6 +32,15 @@ export function DrawnPath({
   useEffect(() => {
     const el = ref.current;
     if (!el || !draw) return;
+    // Reduced motion: show the finished stroke immediately. Skipping the
+    // animation is not enough -- the draw-in gates visibility behind
+    // strokeDashoffset, so "no animation" would mean "no board".
+    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) {
+      el.style.strokeDasharray = "";
+      el.style.strokeDashoffset = "";
+      onDone?.();
+      return;
+    }
     let len = 0;
     try {
       len = el.getTotalLength();

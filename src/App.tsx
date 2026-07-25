@@ -544,6 +544,35 @@ export default function App() {
     }, 60);
   }, []);
 
+  // Edge geometry is expensive: when a card has been moved, ELK's route no
+  // longer applies and each edge is re-routed with A* (~1ms each, ~19ms for a
+  // full board). It depends only on where things are, never on the camera, so
+  // it is memoized here -- otherwise every pan frame would pay for it.
+  const edgeRoutes = useMemo(() => {
+    const map = new Map<string, Array<[number, number]>>();
+    if (view !== "project" || !flow) return map;
+    for (const e of drawnEdges) {
+      const from = viewRects.get(e.from);
+      const to = viewRects.get(e.to);
+      if (!from || !to) continue;
+      // ELK's route is only trusted while it still matches reality: both
+      // endpoints must attach to the cards' current rects and the path must
+      // not cut through any other card (pins move cards after layout).
+      const obstacles = [...viewRects.entries()]
+        .filter(([id]) => id !== e.from && id !== e.to)
+        .map(([, r]) => r);
+      const route = flow.routes[e.id];
+      const usable =
+        route &&
+        route.length >= 2 &&
+        pointInRect(inflate(from, 20), route[0][0], route[0][1]) &&
+        pointInRect(inflate(to, 20), route[route.length - 1][0], route[route.length - 1][1]) &&
+        !polylineHitsAny(route, obstacles.map((r) => inflate(r, 9)));
+      map.set(e.id, usable ? route : routeEdge(from, to, obstacles));
+    }
+    return map;
+  }, [view, flow, drawnEdges, viewRects]);
+
   // ---- Build render items ----
   const nodeItems: NodeItem[] = [];
   const edgeItems: EdgeItem[] = [];
@@ -575,25 +604,8 @@ export default function App() {
     }
 
     for (const e of drawnEdges) {
-      const from = viewRects.get(e.from);
-      const to = viewRects.get(e.to);
-      if (!from || !to) continue;
-      // ELK's route is only trusted while it still matches reality: both
-      // endpoints must attach to the cards' current rects and the path must
-      // not cut through any other card (pins move cards after layout).
-      const obstacles = [...viewRects.entries()]
-        .filter(([id]) => id !== e.from && id !== e.to)
-        .map(([, r]) => r);
-      const route = flow.routes[e.id];
-      let points =
-        route &&
-        route.length >= 2 &&
-        pointInRect(inflate(from, 20), route[0][0], route[0][1]) &&
-        pointInRect(inflate(to, 20), route[route.length - 1][0], route[route.length - 1][1]) &&
-        !polylineHitsAny(route, obstacles.map((r) => inflate(r, 9)))
-          ? route
-          : undefined;
-      if (!points) points = routeEdge(from, to, obstacles);
+      const points = edgeRoutes.get(e.id);
+      if (!points) continue;
       const a = ensureAnim(e.id);
       // An edge that jumps more than one section is a long-range dependency.
       // It still matters, but drawn at full weight it competes with the

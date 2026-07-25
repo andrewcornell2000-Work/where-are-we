@@ -868,8 +868,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_canvas_canvasview_nodeitem",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 9,
+      "community_name": "Rect",
       "norm_label": "nodeitem"
     },
     {
@@ -890,8 +890,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "src_canvas_canvasview_sectionitem",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "sectionitem"
     },
     {
@@ -1044,8 +1044,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "src_canvas_nodeshape_nodeshape",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 6,
+      "community_name": "CanvasView.tsx",
       "norm_label": "nodeshape"
     },
     {
@@ -1077,8 +1077,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_canvas_sectionshape_props",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "props"
     },
     {
@@ -1484,8 +1484,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_lib_geometry_rect",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "rect"
     },
     {
@@ -1979,8 +1979,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_types_status",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 7,
+      "community_name": "types.ts",
       "norm_label": "status"
     },
     {
@@ -2089,8 +2089,8 @@
       "source_location": "L83",
       "_origin": "ast",
       "id": "src_types_camera",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 7,
+      "community_name": "types.ts",
       "norm_label": "camera"
     },
     {
@@ -2188,8 +2188,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_ui_inlineeditor",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 7,
+      "community_name": "types.ts",
       "norm_label": "inlineeditor.tsx"
     },
     {
@@ -2199,8 +2199,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_ui_inlineeditor_props",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 7,
+      "community_name": "types.ts",
       "norm_label": "props"
     },
     {
@@ -2210,8 +2210,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_ui_inlineeditor_inlineeditor",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 7,
+      "community_name": "types.ts",
       "norm_label": "inlineeditor()"
     },
     {
@@ -2961,6 +2961,105 @@
       "community": 11,
       "community_name": "Where things stand",
       "norm_label": "gotchas that still apply"
+    },
+    {
+      "label": "PRODUCT.md",
+      "file_type": "document",
+      "source_file": "PRODUCT.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "product",
+      "community": 14,
+      "community_name": "Product",
+      "norm_label": "product.md"
+    },
+    {
+      "label": "Product",
+      "file_type": "document",
+      "source_file": "PRODUCT.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "product_product",
+      "community": 14,
+      "community_name": "Product",
+      "norm_label": "product"
+    },
+    {
+      "label": "Register",
+      "file_type": "document",
+      "source_file": "PRODUCT.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "product_register",
+      "community": 14,
+      "community_name": "Product",
+      "norm_label": "register"
+    },
+    {
+      "label": "Users",
+      "file_type": "document",
+      "source_file": "PRODUCT.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "product_users",
+      "community": 14,
+      "community_name": "Product",
+      "norm_label": "users"
+    },
+    {
+      "label": "Product Purpose",
+      "file_type": "document",
+      "source_file": "PRODUCT.md",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "product_product_purpose",
+      "community": 14,
+      "community_name": "Product",
+      "norm_label": "product purpose"
+    },
+    {
+      "label": "Brand Personality",
+      "file_type": "document",
+      "source_file": "PRODUCT.md",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "product_brand_personality",
+      "community": 14,
+      "community_name": "Product",
+      "norm_label": "brand personality"
+    },
+    {
+      "label": "Anti-references",
+      "file_type": "document",
+      "source_file": "PRODUCT.md",
+      "source_location": "L39",
+      "_origin": "ast",
+      "id": "product_anti_references",
+      "community": 14,
+      "community_name": "Product",
+      "norm_label": "anti-references"
+    },
+    {
+      "label": "Design Principles",
+      "file_type": "document",
+      "source_file": "PRODUCT.md",
+      "source_location": "L53",
+      "_origin": "ast",
+      "id": "product_design_principles",
+      "community": 14,
+      "community_name": "Product",
+      "norm_label": "design principles"
+    },
+    {
+      "label": "Accessibility & Inclusion",
+      "file_type": "document",
+      "source_file": "PRODUCT.md",
+      "source_location": "L70",
+      "_origin": "ast",
+      "id": "product_accessibility_inclusion",
+      "community": 14,
+      "community_name": "Product",
+      "norm_label": "accessibility & inclusion"
     },
     {
       "label": "README.md",
@@ -4647,7 +4746,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/App.tsx",
-      "source_location": "L1032",
+      "source_location": "L1044",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_app",
@@ -4719,7 +4818,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/App.tsx",
-      "source_location": "L683",
+      "source_location": "L695",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_app",
@@ -4731,7 +4830,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/App.tsx",
-      "source_location": "L591",
+      "source_location": "L568",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_app",
@@ -4755,7 +4854,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/App.tsx",
-      "source_location": "L591",
+      "source_location": "L568",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_app",
@@ -4767,7 +4866,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/App.tsx",
-      "source_location": "L593",
+      "source_location": "L570",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_app",
@@ -4803,7 +4902,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/App.tsx",
-      "source_location": "L596",
+      "source_location": "L571",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_app",
@@ -4827,7 +4926,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/App.tsx",
-      "source_location": "L906",
+      "source_location": "L918",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_app",
@@ -5561,7 +5660,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/canvas/DrawnPath.tsx",
-      "source_location": "L64",
+      "source_location": "L73",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_canvas_drawnpath_drawnpath",
@@ -8683,6 +8782,94 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "PRODUCT.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "product",
+      "target": "product_product",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PRODUCT.md",
+      "source_location": "L70",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "product_product",
+      "target": "product_accessibility_inclusion",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PRODUCT.md",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "product_product",
+      "target": "product_anti_references",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PRODUCT.md",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "product_product",
+      "target": "product_brand_personality",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PRODUCT.md",
+      "source_location": "L53",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "product_product",
+      "target": "product_design_principles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PRODUCT.md",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "product_product",
+      "target": "product_product_purpose",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PRODUCT.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "product_product",
+      "target": "product_register",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PRODUCT.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "product_product",
+      "target": "product_users",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "README.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -8770,5 +8957,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "44daa82cbe27e5a350da5083a47d6f728cca49e4"
+  "built_at_commit": "e20418caf98be25d49c78979577f8fef6f008525"
 }

@@ -37,17 +37,20 @@
   --panel-border: rgba(43, 38, 32, 0.16);
   --accent: #b8860b;
 
+  /* Deepened so card text clears 4.5:1 on the light paper. The originals were
+     picked by eye and sat at 2.2-3.5:1, which is where the status label -- the
+     one word that carries the card's meaning -- became hard to read. */
   --c-white: #4a443a;
-  --c-yellow: #cf9c00;
-  --c-orange: #d8721f;
-  --c-red: #cf4a4a;
-  --c-pink: #c74f92;
-  --c-purple: #8757ce;
-  --c-blue: #2e86c4;
-  --c-teal: #1d9c80;
-  --c-green: #4d9e38;
-  --c-grey: #85806f;
-  --c-gold: #b8860b;
+  --c-yellow: #7d5d00;
+  --c-orange: #9e5014;
+  --c-red: #b83a3a;
+  --c-pink: #b03f7e;
+  --c-purple: #7245b8;
+  --c-blue: #2472a8;
+  --c-teal: #136f5a;
+  --c-green: #357a25;
+  --c-grey: #6f6a5e;
+  --c-gold: #7d5d00;
 
   --chip: #2e6da0;
   --chip-ref: #6a4fb0;
@@ -698,4 +701,65 @@ body {
 }
 .empty-hint {
   bottom: 26px;
+}
+
+/* ---------- Reduced motion ---------- */
+/* The draw-in is this app's signature, so it degrades to "already drawn"
+   rather than being suppressed: every stroke must end up visible. The JS side
+   of the draw-in is handled in canvas/DrawnPath.tsx. */
+@media (prefers-reduced-motion: reduce) {
+  .writein .node-title,
+  .writein .node-status,
+  .writein .node-note,
+  .writein .node-chip {
+    animation: none;
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+
+  .live-dot.on {
+    animation: none;
+  }
+
+  .paper,
+  .topbar button,
+  .toolbar button {
+    transition: none;
+  }
+}
+
+/* ---------- Narrow viewports ---------- */
+/* The board is a desktop tool, but the top bar had grown past 900px and simply
+   ran off a laptop or tablet screen. Let it wrap instead of overflowing. */
+@media (max-width: 1000px) {
+  .topbar {
+    max-width: calc(100vw - 24px);
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    gap: 8px;
+    padding: 8px 10px;
+  }
+
+  .topbar button {
+    padding: 7px 10px;
+  }
+
+  /* Coarse pointers need a real target, not a 26px pill. */
+  .preset-slot {
+    min-width: 34px;
+  }
+}
+
+@media (pointer: coarse) {
+  .topbar button,
+  .toolbar button {
+    min-height: 40px;
+  }
 }
