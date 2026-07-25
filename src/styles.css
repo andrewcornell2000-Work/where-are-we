@@ -127,13 +127,28 @@ body {
 }
 
 .node-status {
-  font-size: calc(12px * var(--card-scale, 1));
-  letter-spacing: 0.5px;
+  font-size: calc(13px * var(--card-scale, 1));
+  letter-spacing: 0.8px;
   text-transform: uppercase;
   display: flex;
   align-items: center;
   gap: 6px;
-  opacity: 0.9;
+}
+
+/* The status has to be readable at a glance, not a faint whisper: full
+   opacity, heavier weight, and a hairline pill in the status colour. */
+.status-badge {
+  font-weight: 700;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 1px calc(7px * var(--card-scale, 1));
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+/* Zoomed out, keep the badge legible instead of shrinking with the card. */
+.node-body.lod-compact .node-status {
+  font-size: calc(15px * var(--card-scale, 1));
 }
 
 .node-dot {
@@ -170,9 +185,12 @@ body {
 .node-body.lod-compact .node-note,
 .node-body.lod-compact .node-chip,
 .node-body.lod-minimal .node-note,
-.node-body.lod-minimal .node-chip,
-.node-body.lod-minimal .node-status {
+.node-body.lod-minimal .node-chip {
   display: none;
+}
+
+.node-body.lod-minimal .node-status {
+  font-size: calc(17px * var(--card-scale, 1));
 }
 
 .node-body.lod-compact .node-title {

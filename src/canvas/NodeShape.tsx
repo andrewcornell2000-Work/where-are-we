@@ -110,7 +110,7 @@ export const NodeShape = memo(function NodeShape({
           style={{ animationDelay: `${titleDelay}ms` }}
         >
           <div className="node-status" style={{ color }}>
-            {statusLabel(node.status)}
+            <span className="status-badge">{statusLabel(node.status)}</span>
             {isNext && <span className="next-tag">next up</span>}
           </div>
           <div className="node-title">{node.title}</div>

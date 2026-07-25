@@ -23,6 +23,8 @@ interface Props {
   onCardScale: (delta: number) => void;
   snap: boolean;
   onToggleSnap: () => void;
+  linearFlow: boolean;
+  onToggleFlow: () => void;
   onFit: () => void;
   onLatest: () => void;
   onAutoArrange: () => void;
@@ -50,6 +52,8 @@ export function TopBar({
   onCardScale,
   snap,
   onToggleSnap,
+  linearFlow,
+  onToggleFlow,
   onFit,
   onLatest,
   onAutoArrange,
@@ -135,6 +139,19 @@ export function TopBar({
           <button onClick={onLatest} title="Jump to the latest thing drawn">
             Latest
           </button>
+          {view === "project" && (
+            <button
+              className={linearFlow ? "active" : ""}
+              onClick={onToggleFlow}
+              title={
+                linearFlow
+                  ? "Flow: one step after another. Click to show every dependency instead."
+                  : "Showing all dependencies. Click for a single 1-2-3 flow."
+              }
+            >
+              Flow
+            </button>
+          )}
           <button
             className={snap ? "active" : ""}
             onClick={onToggleSnap}

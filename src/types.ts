@@ -122,6 +122,12 @@ export interface WawSettings {
   cardScale?: number;
   /** Snap dragged cards to a grid and to neighbours' edges. */
   snap?: boolean;
+  /**
+   * Draw the board as a single chain (1 -> 2 -> 3) instead of the branching
+   * dependency graph. Defaults on; the real dependencies are unchanged and
+   * still drive the critical path.
+   */
+  linearFlow?: boolean;
 }
 
 /** Messages exchanged over the WebSocket. */

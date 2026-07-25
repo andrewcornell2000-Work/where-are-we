@@ -9,6 +9,7 @@ import { useLive } from "./lib/useLive";
 import { layoutDaily } from "./lib/autolayout";
 import { layoutFlow, type FlowLayout } from "./lib/elklayout";
 import { analyze } from "./lib/analysis";
+import { linearOrder, spineEdges } from "./lib/flow";
 import {
   edgeAnchor,
   inflate,
@@ -184,6 +185,7 @@ export default function App() {
 
   const cardScale = layout.settings?.cardScale ?? 1;
   const snap = layout.settings?.snap ?? false;
+  const linearFlow = layout.settings?.linearFlow ?? true;
 
   // Apply + persist the theme on the root element so CSS variables flip.
   useEffect(() => {
@@ -208,6 +210,13 @@ export default function App() {
 
   const onToggleSnap = useCallback(() => {
     mutateLayout((l) => ({ ...l, settings: { ...l.settings, snap: !(l.settings?.snap ?? false) } }));
+  }, [mutateLayout]);
+
+  const onToggleFlow = useCallback(() => {
+    mutateLayout((l) => ({
+      ...l,
+      settings: { ...l.settings, linearFlow: !(l.settings?.linearFlow ?? true) },
+    }));
   }, [mutateLayout]);
 
   const onToggleTheme = useCallback(() => {
@@ -270,6 +279,18 @@ export default function App() {
   }, [sections]);
 
   const projectNodes = useMemo(() => allNodes.filter((n) => n.view === "project"), [allNodes]);
+
+  // Edges as DRAWN. In flow mode the fan-out of a dependency graph is replaced
+  // by a single chain so the board reads 1 -> 2 -> 3; hand-drawn connections are
+  // always kept. `allEdges` stays the real graph and still drives analysis.
+  const drawnEdges: WawEdge[] = useMemo(() => {
+    if (!linearFlow || view !== "project") return allEdges;
+    const manualIds = new Set(layout.manualEdges.map((m) => m.id));
+    return [
+      ...spineEdges(linearOrder(projectNodes, allEdges, sectionOrder)),
+      ...allEdges.filter((e) => manualIds.has(e.id)),
+    ];
+  }, [linearFlow, view, projectNodes, allEdges, sectionOrder, layout.manualEdges]);
   const analysis = useMemo(() => analyze(projectNodes, allEdges), [projectNodes, allEdges]);
 
   const availableDays = useMemo(() => {
@@ -303,15 +324,15 @@ export default function App() {
     const n = projectNodes
       .map((x) => `${x.id}|${x.section ?? ""}|${x.title.length}|${(x.note ?? "").length}|${x.link ? 1 : 0}|${x.projectRef ? 1 : 0}`)
       .join(";");
-    const e = allEdges.map((x) => `${x.id}|${x.from}|${x.to}`).join(";");
+    const e = drawnEdges.map((x) => `${x.id}|${x.from}|${x.to}`).join(";");
     const s = sections.map((x) => `${x.id}|${x.order ?? 0}`).join(";");
     return `${n}#${e}#${s}#${cardScale}`;
-  }, [view, projectNodes, allEdges, sections, cardScale]);
+  }, [view, projectNodes, drawnEdges, sections, cardScale]);
 
   useEffect(() => {
     if (view !== "project" || projectNodes.length === 0) return;
     let cancelled = false;
-    layoutFlow(projectNodes, allEdges, sections, cardScale)
+    layoutFlow(projectNodes, drawnEdges, sections, cardScale)
       .then((f) => {
         if (!cancelled) setFlow(f);
       })
@@ -510,7 +531,7 @@ export default function App() {
       });
     }
 
-    for (const e of allEdges) {
+    for (const e of drawnEdges) {
       const from = viewRects.get(e.from);
       const to = viewRects.get(e.to);
       if (!from || !to) continue;
@@ -942,6 +963,8 @@ export default function App() {
         onCardScale={onCardScale}
         snap={snap}
         onToggleSnap={onToggleSnap}
+        linearFlow={linearFlow}
+        onToggleFlow={onToggleFlow}
         onFit={onFit}
         onLatest={onLatest}
         onAutoArrange={onAutoArrange}
