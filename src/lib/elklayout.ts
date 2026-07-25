@@ -30,9 +30,6 @@ export interface FlowLayout {
 const SECTION_PAD_TOP = 56;
 const SECTION_PAD = 22;
 
-/** Roughly 16:9, so a fitted board fills the viewport instead of a thin ribbon. */
-const TARGET_ASPECT = 1.7;
-
 export async function layoutFlow(
   nodes: WawNode[],
   edges: WawEdge[],
@@ -82,13 +79,11 @@ export async function layoutFlow(
       "elk.layered.considerModelOrder.strategy": "NODES_AND_EDGES",
       "elk.layered.crossingMinimization.forceNodeModelOrder": "false",
       "elk.padding": "[top=32,left=32,bottom=32,right=32]",
-      // A long left-to-right chain lays out as a very wide ribbon (5:1+), and
-      // fitting that to a 16:9 screen zooms out so far the card text becomes
-      // unreadable. Wrapping folds the chain into rows near the screen's own
-      // aspect, so "fit the whole board" stays legible.
-      "elk.aspectRatio": String(TARGET_ASPECT),
-      "elk.layered.wrapping.strategy": "MULTI_EDGE",
-      "elk.layered.wrapping.correctionFactor": "1.0",
+      // Deliberately NOT wrapped into rows. Wrapping squares up the board but
+      // forces edges to travel back across it to reach the next row (measured:
+      // worst edge 890px apart routed 6454px, total edge ink 2x). A single
+      // left-to-right ribbon keeps every edge a short local hop; readability at
+      // fit is handled by zoom level-of-detail instead (see canvas/lod.ts).
     },
     children,
     edges: elkEdges,

@@ -1360,7 +1360,7 @@
       "label": "layoutFlow()",
       "file_type": "code",
       "source_file": "src/lib/elklayout.ts",
-      "source_location": "L36",
+      "source_location": "L33",
       "_origin": "ast",
       "id": "src_lib_elklayout_layoutflow",
       "community": 9,
@@ -6311,7 +6311,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/lib/elklayout.ts",
-      "source_location": "L36",
+      "source_location": "L33",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_lib_elklayout",
@@ -6407,7 +6407,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/lib/elklayout.ts",
-      "source_location": "L97",
+      "source_location": "L92",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_lib_elklayout_layoutflow",
@@ -6432,7 +6432,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/elklayout.ts",
-      "source_location": "L49",
+      "source_location": "L46",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_lib_elklayout_layoutflow",
@@ -8381,5 +8381,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "2acdda377e06c51c283f6e80c55754cd326809d9"
+  "built_at_commit": "5b46c2182f498787cb873b363fa41354b70b6003"
 }
