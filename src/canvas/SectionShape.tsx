@@ -36,7 +36,7 @@ export const SectionShape = memo(function SectionShape({
       crayonRoundedRect(rect.x, rect.y, rect.w, rect.h, 26, {
         color,
         seed,
-        strokeWidth: 2.2,
+        strokeWidth: 2.8,
         roughness: 2.6,
         bowing: 2,
       }),
@@ -58,7 +58,7 @@ export const SectionShape = memo(function SectionShape({
           key={i}
           d={p.d}
           stroke={p.stroke || color}
-          strokeWidth={p.strokeWidth || 2.2}
+          strokeWidth={p.strokeWidth || 2.8}
           draw={draw}
           delayMs={baseDelayMs + i * 110}
           durationMs={620}

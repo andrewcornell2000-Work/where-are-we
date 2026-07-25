@@ -120,6 +120,8 @@ export interface WawSettings {
    * as one so the JS-computed card geometry keeps matching the rendered text.
    */
   cardScale?: number;
+  /** Snap dragged cards to a grid and to neighbours' edges. */
+  snap?: boolean;
 }
 
 /** Messages exchanged over the WebSocket. */

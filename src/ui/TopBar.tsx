@@ -21,6 +21,8 @@ interface Props {
   onToggleTheme: () => void;
   cardScale: number;
   onCardScale: (delta: number) => void;
+  snap: boolean;
+  onToggleSnap: () => void;
   onFit: () => void;
   onLatest: () => void;
   onAutoArrange: () => void;
@@ -46,6 +48,8 @@ export function TopBar({
   onToggleTheme,
   cardScale,
   onCardScale,
+  snap,
+  onToggleSnap,
   onFit,
   onLatest,
   onAutoArrange,
@@ -130,6 +134,13 @@ export function TopBar({
           </button>
           <button onClick={onLatest} title="Jump to the latest thing drawn">
             Latest
+          </button>
+          <button
+            className={snap ? "active" : ""}
+            onClick={onToggleSnap}
+            title={snap ? "Snapping on: cards align to a grid and to each other" : "Snapping off: cards move freely"}
+          >
+            Snap
           </button>
           <span className="card-scale" title={`Card size ${Math.round(cardScale * 100)}%`}>
             <button disabled={cardScale <= 0.8} onClick={() => onCardScale(-0.1)} aria-label="Smaller cards">

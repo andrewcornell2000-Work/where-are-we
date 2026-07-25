@@ -42,7 +42,7 @@ export const NodeShape = memo(function NodeShape({
   const color = statusColor(node.status);
   const seed = useMemo(() => seedFrom(node.id), [node.id]);
   const paths = useMemo(
-    () => crayonRoundedRect(rect.x, rect.y, rect.w, rect.h, 16, { color, seed, strokeWidth: 3 }),
+    () => crayonRoundedRect(rect.x, rect.y, rect.w, rect.h, 16, { color, seed, strokeWidth: 3.6 }),
     [rect.x, rect.y, rect.w, rect.h, color, seed],
   );
   const dot = statusDotCenter(rect);

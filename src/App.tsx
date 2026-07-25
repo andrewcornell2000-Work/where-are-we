@@ -32,6 +32,13 @@ import type {
   WawNode,
 } from "./types";
 
+/**
+ * Gap left when shoving an auto-laid card off a pinned one. Must stay wider
+ * than twice the edge router's clearance, or the shove creates a corridor no
+ * edge can route through and lines end up cutting across cards.
+ */
+const NUDGE_GAP = 56;
+
 const FIT_MIN = 0.2;
 const FIT_MAX = 1.3;
 const GHOST_GAP = 140;
@@ -176,6 +183,7 @@ export default function App() {
   }, [live.serverRev]);
 
   const cardScale = layout.settings?.cardScale ?? 1;
+  const snap = layout.settings?.snap ?? false;
 
   // Apply + persist the theme on the root element so CSS variables flip.
   useEffect(() => {
@@ -197,6 +205,10 @@ export default function App() {
     },
     [mutateLayout],
   );
+
+  const onToggleSnap = useCallback(() => {
+    mutateLayout((l) => ({ ...l, settings: { ...l.settings, snap: !(l.settings?.snap ?? false) } }));
+  }, [mutateLayout]);
 
   const onToggleTheme = useCallback(() => {
     setTheme((t) => (t === "dark" ? "light" : "dark"));
@@ -355,7 +367,7 @@ export default function App() {
           while (guard++ < 20) {
             const hit = pinnedRects.find((p) => rectsOverlap(r!, p, 16));
             if (!hit) break;
-            r = { ...r!, y: hit.y + hit.h + 24 };
+            r = { ...r!, y: hit.y + hit.h + NUDGE_GAP };
             moved = true;
           }
           if (moved) map.set(n.id, r!);
@@ -505,7 +517,7 @@ export default function App() {
         route.length >= 2 &&
         pointInRect(inflate(from, 20), route[0][0], route[0][1]) &&
         pointInRect(inflate(to, 20), route[route.length - 1][0], route[route.length - 1][1]) &&
-        !polylineHitsAny(route, obstacles.map((r) => inflate(r, 4)))
+        !polylineHitsAny(route, obstacles.map((r) => inflate(r, 9)))
           ? route
           : undefined;
       if (!points) points = routeEdge(from, to, obstacles);
@@ -912,6 +924,8 @@ export default function App() {
         onToggleTheme={onToggleTheme}
         cardScale={cardScale}
         onCardScale={onCardScale}
+        snap={snap}
+        onToggleSnap={onToggleSnap}
         onFit={onFit}
         onLatest={onLatest}
         onAutoArrange={onAutoArrange}
@@ -928,6 +942,7 @@ export default function App() {
         color={color}
         camera={camera}
         lod={lodForScale(camera.scale)}
+        snap={snap}
         connectSourceId={connectSourceId}
         onCamera={setCamera}
         onSelect={setSelectedId}

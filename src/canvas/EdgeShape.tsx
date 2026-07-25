@@ -1,5 +1,5 @@
 import { memo, useMemo } from "react";
-import { polylineMidpoint } from "../lib/geometry";
+import { polylineMidpoint, roundCorners } from "../lib/geometry";
 import { crayonArrowHead, crayonPolyline, seedFrom } from "../lib/rough";
 import { CRAYON } from "../lib/theme";
 import { DrawnPath } from "./DrawnPath";
@@ -31,9 +31,12 @@ export const EdgeShape = memo(function EdgeShape({
   const seed = useMemo(() => seedFrom(id), [id]);
   const strokeColor = critical ? CRAYON.gold : color;
 
+  // Soften the orthogonal corners so the route reads as one flowing line.
+  const smoothed = useMemo(() => roundCorners(points), [points]);
+
   const linePaths = useMemo(
-    () => crayonPolyline(points, { color: strokeColor, seed, strokeWidth: critical ? 3 : 2.6 }),
-    [points, strokeColor, seed, critical],
+    () => crayonPolyline(smoothed, { color: strokeColor, seed, strokeWidth: critical ? 3.4 : 3 }),
+    [smoothed, strokeColor, seed, critical],
   );
 
   const headPaths = useMemo(() => {
@@ -43,7 +46,7 @@ export const EdgeShape = memo(function EdgeShape({
     return crayonArrowHead(x1, y1, x2, y2, {
       color: strokeColor,
       seed,
-      strokeWidth: critical ? 3 : 2.6,
+      strokeWidth: critical ? 3.4 : 3,
     });
   }, [points, strokeColor, seed, critical]);
 

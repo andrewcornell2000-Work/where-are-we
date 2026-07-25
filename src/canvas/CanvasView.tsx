@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { Camera, FreehandStroke, NodePos, WawNode } from "../types";
 import type { Rect } from "../lib/geometry";
-import { distToPolyline, pointInRect } from "../lib/geometry";
+import { distToPolyline, pointInRect, snapPosition } from "../lib/geometry";
 import { simplifyStroke } from "../lib/simplify";
 import { CRAYON } from "../lib/theme";
 import { NodeShape, statusDotCenter } from "./NodeShape";
@@ -65,6 +65,7 @@ interface Props {
   color: string;
   camera: Camera;
   lod: Lod;
+  snap: boolean;
   connectSourceId: string | null;
   onCamera: (c: Camera) => void;
   onSelect: (id: string | null) => void;
@@ -110,6 +111,7 @@ export function CanvasView(props: Props) {
     color,
     camera,
     lod,
+    snap,
     connectSourceId,
     onCamera,
     onSelect,
@@ -132,6 +134,8 @@ export function CanvasView(props: Props) {
   const drawPtsRef = useRef<Array<[number, number]>>([]);
   const [drawPts, setDrawPts] = useState<Array<[number, number]>>([]);
   const [cursorWorld, setCursorWorld] = useState<[number, number] | null>(null);
+  // Alignment guides shown while a snapped drag is in progress.
+  const [guides, setGuides] = useState<Array<{ axis: "x" | "y"; at: number }>>([]);
   // Shavings shed at the pen tip while the user draws by hand.
   const liveFlakesRef = useRef<SVGGElement | null>(null);
   const lastFlakePtRef = useRef<[number, number] | null>(null);
@@ -306,7 +310,15 @@ export function CanvasView(props: Props) {
           y: drag.camY + (e.clientY - drag.startY),
         });
       } else if (drag.kind === "node") {
-        onMoveNode(drag.id, { x: wx - drag.offX, y: wy - drag.offY });
+        let pos = { x: wx - drag.offX, y: wy - drag.offY };
+        if (snap) {
+          const me = nodes.find((n) => n.node.id === drag.id);
+          const others = nodes.filter((n) => n.interactive && n.node.id !== drag.id).map((n) => n.rect);
+          const snapped = snapPosition(pos, me ? me.rect : { w: 0, h: 0 }, others);
+          pos = { x: snapped.x, y: snapped.y };
+          setGuides(snapped.guides);
+        }
+        onMoveNode(drag.id, pos);
       } else if (drag.kind === "section") {
         const dx = wx - drag.startX;
         const dy = wy - drag.startY;
@@ -335,11 +347,12 @@ export function CanvasView(props: Props) {
         }
       }
     },
-    [tool, connectSourceId, toWorld, onCamera, onMoveNode, onMoveGroup, onResizeNode, color],
+    [tool, connectSourceId, toWorld, onCamera, onMoveNode, onMoveGroup, onResizeNode, color, snap, nodes],
   );
 
   const onPointerUp = useCallback(() => {
     lastFlakePtRef.current = null;
+    setGuides([]);
     const drag = dragRef.current;
     if (drag.kind === "draw" && drawPtsRef.current.length > 1) {
       const s: FreehandStroke = {
@@ -487,6 +500,17 @@ export function CanvasView(props: Props) {
                 </g>
               );
             })}
+
+        {/* alignment guides while snapping */}
+        {guides.map((g, i) =>
+          g.axis === "x" ? (
+            <line key={`gx${i}`} x1={g.at} y1={-100000} x2={g.at} y2={100000}
+              strokeWidth={1} strokeDasharray="6 6" opacity={0.5} style={{ stroke: CRAYON.chalkWhite }} />
+          ) : (
+            <line key={`gy${i}`} x1={-100000} y1={g.at} x2={100000} y2={g.at}
+              strokeWidth={1} strokeDasharray="6 6" opacity={0.5} style={{ stroke: CRAYON.chalkWhite }} />
+          ),
+        )}
 
         {/* live freehand preview + crayon shavings at the pen tip */}
         {drawPts.length > 1 && (

@@ -69,10 +69,11 @@ export async function layoutFlow(
       "elk.direction": "RIGHT",
       "elk.hierarchyHandling": "INCLUDE_CHILDREN",
       "elk.edgeRouting": "ORTHOGONAL",
-      // Spacing is deliberately tight: the board is read zoomed-to-fit, so every
-      // wasted gap costs zoom scale, and zoom scale is card legibility.
-      "elk.layered.spacing.nodeNodeBetweenLayers": "68",
-      "elk.spacing.nodeNode": "34",
+      // Spacing has to leave a routable lane between cards: too tight and the
+      // edge router cannot find a way through and has to detour. Legibility at
+      // fit is handled by zoom level-of-detail, not by cramming.
+      "elk.layered.spacing.nodeNodeBetweenLayers": "92",
+      "elk.spacing.nodeNode": "52",
       "elk.spacing.componentComponent": "52",
       "elk.spacing.edgeNode": "22",
       "elk.spacing.edgeEdge": "14",
