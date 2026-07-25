@@ -20,8 +20,8 @@
     "semantic_hash": ""
   },
   "src/App.tsx": {
-    "mtime": 1784972420.5408435,
-    "ast_hash": "ed484721a58a277c2f4b97fa9dfd200a",
+    "mtime": 1784976290.274884,
+    "ast_hash": "8cd2b2deda791471290a2823a02c949c",
     "semantic_hash": ""
   },
   "src/canvas/CanvasView.tsx": {
@@ -120,8 +120,8 @@
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1784253350.2861207,
-    "ast_hash": "90fbef7425fe5d5f5a962a84d539f180",
+    "mtime": 1784973427.6034675,
+    "ast_hash": "7748a17e8c980f7622b53a28bec1907d",
     "semantic_hash": ""
   },
   "bin/waw.mjs": {
@@ -145,8 +145,8 @@
     "semantic_hash": ""
   },
   "src/lib/elklayout.ts": {
-    "mtime": 1784944008.3761902,
-    "ast_hash": "00500143fcaa94d9410e6ad351b3b944",
+    "mtime": 1784976290.2728329,
+    "ast_hash": "79daebb6ca06d2daa5590f572a187791",
     "semantic_hash": ""
   },
   "src/lib/flakes.ts": {
@@ -192,6 +192,21 @@
   "PRODUCT.md": {
     "mtime": 1784971185.173234,
     "ast_hash": "1e8bcc10153b044fffb9014268711519",
+    "semantic_hash": ""
+  },
+  ".impeccable/design.json": {
+    "mtime": 1784973417.873844,
+    "ast_hash": "9f6bfd951edf5cd264c8929ee8cede10",
+    "semantic_hash": ""
+  },
+  ".impeccable/live/config.json": {
+    "mtime": 1784973089.5591316,
+    "ast_hash": "a285d9b6c0d56139c0b85c425c8c23ab",
+    "semantic_hash": ""
+  },
+  "DESIGN.md": {
+    "mtime": 1784973365.0820065,
+    "ast_hash": "a5fe0a2cd13bb67d26492718e177bc63",
     "semantic_hash": ""
   }
 }

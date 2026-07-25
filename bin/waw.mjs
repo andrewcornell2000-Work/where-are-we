@@ -41,6 +41,10 @@ Rules:
 - Write titles a human can read cold. No invented internal nouns, no flag names,
   no acronyms in the title: say what the thing DOES. "Pause-on-post hard rail"
   is meaningless; "Ads always start paused" is not. Mechanism goes in the note.
+- Use plain ASCII in card text: \`->\` not an arrow glyph, a plain hyphen not an
+  em dash, straight quotes not curly. Some toolchains write this file as UTF-8
+  then re-read it as Windows-1252, which corrupts those characters into stray
+  \`a\`-with-accent sequences that get saved back into the file.
 
 Node shape: { id, title, status, note?, view: "project"|"daily", day?, section?,
 projectRef?, blockedBy?, link?: {file, line?}, createdAt, updatedAt }
@@ -58,7 +62,11 @@ alwaysApply: true
 Keep the visual board current by editing \`${dataPath}/where-are-we.json\` (valid JSON,
 stable ids, bump updatedAt on change). Add project nodes with a section + blockedBy,
 daily nodes with day + projectRef, and edges for flow. Keep titles ≤ ~6 words and
-notes to one short line (cards clamp long text). Never edit
+notes to one short line (cards clamp long text). Write titles a human can read
+cold: no invented internal nouns, no flag names, no acronyms — say what the thing
+does. Use plain ASCII in card text (\`->\` not an arrow glyph, plain hyphens,
+straight quotes); a UTF-8/Windows-1252 round-trip in some toolchains corrupts
+those characters and saves the damage back into the file. Never edit
 \`${dataPath}/layout.local.json\`. Read \`${dataPath}/NEXT.md\` for the next move.
 `;
 

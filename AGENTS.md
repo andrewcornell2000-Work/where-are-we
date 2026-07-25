@@ -97,6 +97,15 @@ cold.
 Quick test: if a friend who has never seen the codebase read the title aloud, would
 they know what finishing it means? If not, rewrite it.
 
+**Stick to plain ASCII in card text.** Use `->` not `→`, a plain hyphen not `—`, and
+straight quotes not curly ones. This is not a style preference: some toolchains write
+this file as UTF-8 and then re-read it as Windows-1252, which silently turns `→` into
+`â†’` and `—` into `â€”`. The damage is saved back into the file and shows on the
+board as stray `â` characters. ASCII cannot be corrupted this way.
+
+If you do find mangled text already in the file, repair it rather than leaving it —
+the common sequences are `â†’` (was `→`), `â€”` (was `—`), and `â€™` (was `'`).
+
 ### Hard rules
 
 - **Never change an existing `id`** to mean something new — ids anchor the user's

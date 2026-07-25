@@ -846,8 +846,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_canvas_canvasview",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "canvasview.tsx"
     },
     {
@@ -879,8 +879,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "src_canvas_canvasview_edgeitem",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "edgeitem"
     },
     {
@@ -890,8 +890,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "src_canvas_canvasview_sectionitem",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 9,
+      "community_name": "Rect",
       "norm_label": "sectionitem"
     },
     {
@@ -901,8 +901,8 @@
       "source_location": "L56",
       "_origin": "ast",
       "id": "src_canvas_canvasview_erasetarget",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "erasetarget"
     },
     {
@@ -912,8 +912,8 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "src_canvas_canvasview_props",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "props"
     },
     {
@@ -923,8 +923,8 @@
       "source_location": "L86",
       "_origin": "ast",
       "id": "src_canvas_canvasview_drag",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "drag"
     },
     {
@@ -934,8 +934,8 @@
       "source_location": "L106",
       "_origin": "ast",
       "id": "src_canvas_canvasview_canvasview",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "canvasview()"
     },
     {
@@ -1033,8 +1033,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "src_canvas_nodeshape_statusdotcenter",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "statusdotcenter()"
     },
     {
@@ -1044,8 +1044,8 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "src_canvas_nodeshape_nodeshape",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "nodeshape"
     },
     {
@@ -1099,8 +1099,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_canvas_strokeshape",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "strokeshape.tsx"
     },
     {
@@ -1110,8 +1110,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_canvas_strokeshape_props",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "props"
     },
     {
@@ -1121,8 +1121,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_canvas_strokeshape_strokeshape",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "strokeshape()"
     },
     {
@@ -1154,8 +1154,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_canvas_lod_lodforscale",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "lodforscale()"
     },
     {
@@ -1440,8 +1440,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_lib_freehand",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "freehand.ts"
     },
     {
@@ -1451,8 +1451,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "src_lib_freehand_strokepath",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "strokepath()"
     },
     {
@@ -1462,8 +1462,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "src_lib_freehand_outlinetopath",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "outlinetopath()"
     },
     {
@@ -1484,8 +1484,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_lib_geometry_rect",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 9,
+      "community_name": "Rect",
       "norm_label": "rect"
     },
     {
@@ -1605,8 +1605,8 @@
       "source_location": "L116",
       "_origin": "ast",
       "id": "src_lib_geometry_snapposition",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "snapposition()"
     },
     {
@@ -1660,8 +1660,8 @@
       "source_location": "L414",
       "_origin": "ast",
       "id": "src_lib_geometry_disttosegment",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "disttosegment()"
     },
     {
@@ -1671,8 +1671,8 @@
       "source_location": "L430",
       "_origin": "ast",
       "id": "src_lib_geometry_disttopolyline",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "disttopolyline()"
     },
     {
@@ -1803,8 +1803,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_lib_simplify",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "simplify.ts"
     },
     {
@@ -1814,8 +1814,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_lib_simplify_simplifystroke",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "simplifystroke()"
     },
     {
@@ -2078,8 +2078,8 @@
       "source_location": "L76",
       "_origin": "ast",
       "id": "src_types_freehandstroke",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "freehandstroke"
     },
     {
@@ -2089,8 +2089,8 @@
       "source_location": "L83",
       "_origin": "ast",
       "id": "src_types_camera",
-      "community": 7,
-      "community_name": "types.ts",
+      "community": 9,
+      "community_name": "Rect",
       "norm_label": "camera"
     },
     {
@@ -2188,8 +2188,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_ui_inlineeditor",
-      "community": 7,
-      "community_name": "types.ts",
+      "community": 9,
+      "community_name": "Rect",
       "norm_label": "inlineeditor.tsx"
     },
     {
@@ -2199,8 +2199,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_ui_inlineeditor_props",
-      "community": 7,
-      "community_name": "types.ts",
+      "community": 9,
+      "community_name": "Rect",
       "norm_label": "props"
     },
     {
@@ -2210,8 +2210,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_ui_inlineeditor_inlineeditor",
-      "community": 7,
-      "community_name": "types.ts",
+      "community": 9,
+      "community_name": "Rect",
       "norm_label": "inlineeditor()"
     },
     {
@@ -2642,6 +2642,281 @@
       "community": 5,
       "community_name": "Where Are We",
       "norm_label": "a good habit"
+    },
+    {
+      "label": "DESIGN.md",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "design",
+      "community": 6,
+      "community_name": "CanvasView.tsx",
+      "norm_label": "design.md"
+    },
+    {
+      "label": "Design System: Where Are We",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L91",
+      "_origin": "ast",
+      "id": "design_design_system_where_are_we",
+      "community": 6,
+      "community_name": "CanvasView.tsx",
+      "norm_label": "design system: where are we"
+    },
+    {
+      "label": "1. Overview",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L93",
+      "_origin": "ast",
+      "id": "design_1_overview",
+      "community": 6,
+      "community_name": "CanvasView.tsx",
+      "norm_label": "1. overview"
+    },
+    {
+      "label": "2. Colors: Slate and Chalk",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L123",
+      "_origin": "ast",
+      "id": "design_2_colors_slate_and_chalk",
+      "community": 6,
+      "community_name": "CanvasView.tsx",
+      "norm_label": "2. colors: slate and chalk"
+    },
+    {
+      "label": "Primary",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L128",
+      "_origin": "ast",
+      "id": "design_primary",
+      "community": 6,
+      "community_name": "CanvasView.tsx",
+      "norm_label": "primary"
+    },
+    {
+      "label": "Secondary",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L136",
+      "_origin": "ast",
+      "id": "design_secondary",
+      "community": 6,
+      "community_name": "CanvasView.tsx",
+      "norm_label": "secondary"
+    },
+    {
+      "label": "Tertiary",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L144",
+      "_origin": "ast",
+      "id": "design_tertiary",
+      "community": 6,
+      "community_name": "CanvasView.tsx",
+      "norm_label": "tertiary"
+    },
+    {
+      "label": "Neutral",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L149",
+      "_origin": "ast",
+      "id": "design_neutral",
+      "community": 6,
+      "community_name": "CanvasView.tsx",
+      "norm_label": "neutral"
+    },
+    {
+      "label": "Named Rules",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L158",
+      "_origin": "ast",
+      "id": "design_named_rules",
+      "community": 6,
+      "community_name": "CanvasView.tsx",
+      "norm_label": "named rules"
+    },
+    {
+      "label": "3. Typography",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L171",
+      "_origin": "ast",
+      "id": "design_3_typography",
+      "community": 6,
+      "community_name": "CanvasView.tsx",
+      "norm_label": "3. typography"
+    },
+    {
+      "label": "Hierarchy",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L181",
+      "_origin": "ast",
+      "id": "design_hierarchy",
+      "community": 6,
+      "community_name": "CanvasView.tsx",
+      "norm_label": "hierarchy"
+    },
+    {
+      "label": "Named Rules",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L192",
+      "_origin": "ast",
+      "id": "design_named_rules_192",
+      "community": 6,
+      "community_name": "CanvasView.tsx",
+      "norm_label": "named rules"
+    },
+    {
+      "label": "4. Elevation",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L201",
+      "_origin": "ast",
+      "id": "design_4_elevation",
+      "community": 6,
+      "community_name": "CanvasView.tsx",
+      "norm_label": "4. elevation"
+    },
+    {
+      "label": "Shadow Vocabulary",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L209",
+      "_origin": "ast",
+      "id": "design_shadow_vocabulary",
+      "community": 6,
+      "community_name": "CanvasView.tsx",
+      "norm_label": "shadow vocabulary"
+    },
+    {
+      "label": "Named Rules",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L216",
+      "_origin": "ast",
+      "id": "design_named_rules_216",
+      "community": 6,
+      "community_name": "CanvasView.tsx",
+      "norm_label": "named rules"
+    },
+    {
+      "label": "5. Components",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L227",
+      "_origin": "ast",
+      "id": "design_5_components",
+      "community": 6,
+      "community_name": "CanvasView.tsx",
+      "norm_label": "5. components"
+    },
+    {
+      "label": "Buttons",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L229",
+      "_origin": "ast",
+      "id": "design_buttons",
+      "community": 6,
+      "community_name": "CanvasView.tsx",
+      "norm_label": "buttons"
+    },
+    {
+      "label": "Chips",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L239",
+      "_origin": "ast",
+      "id": "design_chips",
+      "community": 6,
+      "community_name": "CanvasView.tsx",
+      "norm_label": "chips"
+    },
+    {
+      "label": "Cards / Containers",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L245",
+      "_origin": "ast",
+      "id": "design_cards_containers",
+      "community": 6,
+      "community_name": "CanvasView.tsx",
+      "norm_label": "cards / containers"
+    },
+    {
+      "label": "Inputs / Fields",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L256",
+      "_origin": "ast",
+      "id": "design_inputs_fields",
+      "community": 6,
+      "community_name": "CanvasView.tsx",
+      "norm_label": "inputs / fields"
+    },
+    {
+      "label": "Navigation",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L261",
+      "_origin": "ast",
+      "id": "design_navigation",
+      "community": 6,
+      "community_name": "CanvasView.tsx",
+      "norm_label": "navigation"
+    },
+    {
+      "label": "Signature Component: the drawn stroke",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L267",
+      "_origin": "ast",
+      "id": "design_signature_component_the_drawn_stroke",
+      "community": 6,
+      "community_name": "CanvasView.tsx",
+      "norm_label": "signature component: the drawn stroke"
+    },
+    {
+      "label": "6. Do's and Don'ts",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L276",
+      "_origin": "ast",
+      "id": "design_6_do_s_and_don_ts",
+      "community": 6,
+      "community_name": "CanvasView.tsx",
+      "norm_label": "6. do's and don'ts"
+    },
+    {
+      "label": "Do:",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L278",
+      "_origin": "ast",
+      "id": "design_do",
+      "community": 6,
+      "community_name": "CanvasView.tsx",
+      "norm_label": "do:"
+    },
+    {
+      "label": "Don't:",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L288",
+      "_origin": "ast",
+      "id": "design_don_t",
+      "community": 6,
+      "community_name": "CanvasView.tsx",
+      "norm_label": "don't:"
     },
     {
       "label": "HANDOFF-CANVAS-FIX.md",
@@ -6723,7 +6998,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/lib/elklayout.ts",
-      "source_location": "L93",
+      "source_location": "L102",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_lib_elklayout_layoutflow",
@@ -6748,7 +7023,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/elklayout.ts",
-      "source_location": "L46",
+      "source_location": "L54",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_lib_elklayout_layoutflow",
@@ -8485,6 +8760,270 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L91",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "design",
+      "target": "design_design_system_where_are_we",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L93",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "design_design_system_where_are_we",
+      "target": "design_1_overview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L123",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "design_design_system_where_are_we",
+      "target": "design_2_colors_slate_and_chalk",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L171",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "design_design_system_where_are_we",
+      "target": "design_3_typography",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L201",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "design_design_system_where_are_we",
+      "target": "design_4_elevation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L227",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "design_design_system_where_are_we",
+      "target": "design_5_components",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L276",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "design_design_system_where_are_we",
+      "target": "design_6_do_s_and_don_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L158",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "design_2_colors_slate_and_chalk",
+      "target": "design_named_rules",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L149",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "design_2_colors_slate_and_chalk",
+      "target": "design_neutral",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L128",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "design_2_colors_slate_and_chalk",
+      "target": "design_primary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L136",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "design_2_colors_slate_and_chalk",
+      "target": "design_secondary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L144",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "design_2_colors_slate_and_chalk",
+      "target": "design_tertiary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L181",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "design_3_typography",
+      "target": "design_hierarchy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L192",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "design_3_typography",
+      "target": "design_named_rules_192",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L216",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "design_4_elevation",
+      "target": "design_named_rules_216",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L209",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "design_4_elevation",
+      "target": "design_shadow_vocabulary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L229",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "design_5_components",
+      "target": "design_buttons",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L245",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "design_5_components",
+      "target": "design_cards_containers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L239",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "design_5_components",
+      "target": "design_chips",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L256",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "design_5_components",
+      "target": "design_inputs_fields",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L261",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "design_5_components",
+      "target": "design_navigation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L267",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "design_5_components",
+      "target": "design_signature_component_the_drawn_stroke",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L278",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "design_6_do_s_and_don_ts",
+      "target": "design_do",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L288",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "design_6_do_s_and_don_ts",
+      "target": "design_don_t",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "HANDOFF-CANVAS-FIX.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -8957,5 +9496,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "f25448de07c46cedb035f26dea62a354f2f88723"
+  "built_at_commit": "396f81544ad5ed126bcc1785001fbc878ef89cf0"
 }

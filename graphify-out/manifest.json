@@ -110,8 +110,8 @@
     "semantic_hash": ""
   },
   "AGENTS.md": {
-    "mtime": 1784945880.4114044,
-    "ast_hash": "67a40d609017e7f4e32f3d83c0b56bde",
+    "mtime": 1784978550.6011744,
+    "ast_hash": "59391af6aca871e4510bacdbc0dff884",
     "semantic_hash": ""
   },
   "README.md": {
@@ -120,13 +120,13 @@
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1784973427.6034675,
-    "ast_hash": "7748a17e8c980f7622b53a28bec1907d",
+    "mtime": 1784978178.5645041,
+    "ast_hash": "90fbef7425fe5d5f5a962a84d539f180",
     "semantic_hash": ""
   },
   "bin/waw.mjs": {
-    "mtime": 1784945894.803211,
-    "ast_hash": "e2203457f9af407087ad4ea1903bfd94",
+    "mtime": 1784978611.8796742,
+    "ast_hash": "9423a68e0be32b769c5527c673751380",
     "semantic_hash": ""
   },
   "src/canvas/SectionShape.tsx": {

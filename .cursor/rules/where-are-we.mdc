@@ -39,6 +39,9 @@ reflect how the code actually connects. Run `graphify update .` after code chang
 - Titles must be readable cold, by a human, weeks later. No invented internal nouns
   ("pause-on-post hard rail"), no flag names (`META_LIVE`), no unexplained acronyms —
   say what it does ("Ads always start paused"). Mechanism belongs in the note.
+- Plain ASCII only in card text: `->` not an arrow glyph, plain hyphens not em
+  dashes, straight quotes. A UTF-8/Windows-1252 round-trip elsewhere in the
+  toolchain corrupts those characters and saves the damage back into the file.
 
 ## Shapes
 
