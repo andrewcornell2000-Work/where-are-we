@@ -93,6 +93,17 @@ export interface NodeOverride {
   status?: Status;
 }
 
+/**
+ * A saved arrangement, recalled from a numbered slot. Like the memory seat
+ * buttons in a car: press to go back to a position you set earlier.
+ */
+export interface WawPreset {
+  /** Card positions and sizes exactly as they were when saved. */
+  pinned: Record<string, NodePos>;
+  camera?: Camera;
+  savedAt: string;
+}
+
 /** Contents of layout.local.json (app-owned). */
 export interface WawLayout {
   version: number;
@@ -111,6 +122,8 @@ export interface WawLayout {
   overrides: Record<string, NodeOverride>;
   camera?: Camera;
   settings?: WawSettings;
+  /** Saved arrangements by slot ("1" | "2" | "3"). */
+  presets?: Record<string, WawPreset>;
 }
 
 /** Display preferences. Optional so pre-existing layout files stay valid. */

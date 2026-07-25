@@ -90,13 +90,13 @@
     "semantic_hash": ""
   },
   "src/ui/Toolbar.tsx": {
-    "mtime": 1784255824.150452,
-    "ast_hash": "068a44ae42ce2021a057e61ad82b6fa4",
+    "mtime": 1784945862.3129318,
+    "ast_hash": "d5729f7d91614fa53960f7098b9ea265",
     "semantic_hash": ""
   },
   "src/ui/TopBar.tsx": {
-    "mtime": 1784945618.895579,
-    "ast_hash": "e8c072854d06f7fe8331f18eb1c99e36",
+    "mtime": 1784945862.3119326,
+    "ast_hash": "56f89bba399c2e320cd78bef3d484fd1",
     "semantic_hash": ""
   },
   "tsconfig.json": {
@@ -110,8 +110,8 @@
     "semantic_hash": ""
   },
   "AGENTS.md": {
-    "mtime": 1784857422.4747245,
-    "ast_hash": "b7ea14231be550395e2ea4ebe060c98b",
+    "mtime": 1784945880.4114044,
+    "ast_hash": "67a40d609017e7f4e32f3d83c0b56bde",
     "semantic_hash": ""
   },
   "README.md": {
@@ -125,8 +125,8 @@
     "semantic_hash": ""
   },
   "bin/waw.mjs": {
-    "mtime": 1784857422.4772444,
-    "ast_hash": "8790f07a7c832d883d8f7a1c03d59c81",
+    "mtime": 1784945894.803211,
+    "ast_hash": "e2203457f9af407087ad4ea1903bfd94",
     "semantic_hash": ""
   },
   "src/canvas/SectionShape.tsx": {

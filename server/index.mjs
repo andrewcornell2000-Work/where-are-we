@@ -60,6 +60,7 @@ function normalizeLayout(raw) {
     overrides: l.overrides && typeof l.overrides === "object" ? l.overrides : {},
     camera: l.camera,
     settings: l.settings && typeof l.settings === "object" ? l.settings : undefined,
+    presets: l.presets && typeof l.presets === "object" ? l.presets : undefined,
   };
 }
 

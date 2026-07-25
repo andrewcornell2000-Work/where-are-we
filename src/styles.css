@@ -382,6 +382,29 @@ body {
   text-align: center;
 }
 
+.presets {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.preset-slot {
+  min-width: 26px;
+  padding: 5px 7px !important;
+  opacity: 0.4;
+}
+
+/* A filled slot looks like a real button; an empty one stays faint. */
+.preset-slot.filled {
+  opacity: 1;
+  border-color: var(--panel-border) !important;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.preset-slot:disabled {
+  cursor: default;
+}
+
 .card-scale {
   display: inline-flex;
   gap: 2px;

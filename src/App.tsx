@@ -40,6 +40,9 @@ import type {
  */
 const NUDGE_GAP = 56;
 
+/** Memory-seat style slots for saved arrangements. */
+const PRESET_SLOTS = ["1", "2", "3"];
+
 const FIT_MIN = 0.2;
 const FIT_MAX = 1.3;
 const GHOST_GAP = 140;
@@ -186,6 +189,14 @@ export default function App() {
   const cardScale = layout.settings?.cardScale ?? 1;
   const snap = layout.settings?.snap ?? false;
   const linearFlow = layout.settings?.linearFlow ?? true;
+  const presets = layout.presets ?? {};
+  // Which memory slots are filled, so the buttons can show it.
+  const filledSlots = useMemo(
+    () => PRESET_SLOTS.filter((k) => !!presets[k]),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [layout.presets],
+  );
+  const [armSlot, setArmSlot] = useState(false);
 
   // Apply + persist the theme on the root element so CSS variables flip.
   useEffect(() => {
@@ -211,6 +222,38 @@ export default function App() {
   const onToggleSnap = useCallback(() => {
     mutateLayout((l) => ({ ...l, settings: { ...l.settings, snap: !(l.settings?.snap ?? false) } }));
   }, [mutateLayout]);
+
+  // Memory slots, like the seat buttons in a car: arm "Set", press a number to
+  // store the current arrangement; press a number on its own to go back to it.
+  const onSavePreset = useCallback(
+    (slot: string) => {
+      mutateLayout((l) => ({
+        ...l,
+        presets: {
+          ...l.presets,
+          [slot]: {
+            pinned: JSON.parse(JSON.stringify(l.pinned)),
+            camera: cameraRef.current,
+            savedAt: nowIso(),
+          },
+        },
+      }));
+      setArmSlot(false);
+    },
+    [mutateLayout],
+  );
+
+  const onRecallPreset = useCallback(
+    (slot: string) => {
+      const p = layoutRef.current.presets?.[slot];
+      if (!p) return;
+      // Replace rather than merge: going back to a saved arrangement means
+      // exactly that arrangement, including cards that are no longer pinned.
+      mutateLayout((l) => ({ ...l, pinned: JSON.parse(JSON.stringify(p.pinned)) }));
+      if (p.camera) setCamera(p.camera);
+    },
+    [mutateLayout, setCamera],
+  );
 
   const onToggleFlow = useCallback(() => {
     mutateLayout((l) => ({
@@ -965,6 +1008,12 @@ export default function App() {
         onToggleSnap={onToggleSnap}
         linearFlow={linearFlow}
         onToggleFlow={onToggleFlow}
+        presetSlots={PRESET_SLOTS}
+        filledSlots={filledSlots}
+        armSlot={armSlot}
+        onArmSlot={setArmSlot}
+        onSavePreset={onSavePreset}
+        onRecallPreset={onRecallPreset}
         onFit={onFit}
         onLatest={onLatest}
         onAutoArrange={onAutoArrange}

@@ -25,6 +25,12 @@ interface Props {
   onToggleSnap: () => void;
   linearFlow: boolean;
   onToggleFlow: () => void;
+  presetSlots: string[];
+  filledSlots: string[];
+  armSlot: boolean;
+  onArmSlot: (v: boolean) => void;
+  onSavePreset: (slot: string) => void;
+  onRecallPreset: (slot: string) => void;
   onFit: () => void;
   onLatest: () => void;
   onAutoArrange: () => void;
@@ -54,6 +60,12 @@ export function TopBar({
   onToggleSnap,
   linearFlow,
   onToggleFlow,
+  presetSlots,
+  filledSlots,
+  armSlot,
+  onArmSlot,
+  onSavePreset,
+  onRecallPreset,
   onFit,
   onLatest,
   onAutoArrange,
@@ -161,6 +173,39 @@ export function TopBar({
           >
             Align
           </button>
+          <span className="presets">
+            <button
+              className={armSlot ? "active" : ""}
+              onClick={() => onArmSlot(!armSlot)}
+              title={
+                armSlot
+                  ? "Now pick a number to save this arrangement into it."
+                  : "Save this arrangement: click Set, then a number."
+              }
+            >
+              Set
+            </button>
+            {presetSlots.map((slot) => {
+              const filled = filledSlots.includes(slot);
+              return (
+                <button
+                  key={slot}
+                  className={`preset-slot${filled ? " filled" : ""}`}
+                  disabled={!armSlot && !filled}
+                  onClick={() => (armSlot ? onSavePreset(slot) : onRecallPreset(slot))}
+                  title={
+                    armSlot
+                      ? `Save this arrangement to slot ${slot}`
+                      : filled
+                        ? `Go back to the arrangement saved in slot ${slot}`
+                        : `Slot ${slot} is empty. Click Set, then ${slot}, to save one.`
+                  }
+                >
+                  {slot}
+                </button>
+              );
+            })}
+          </span>
           <span className="card-scale" title={`Card size ${Math.round(cardScale * 100)}%`}>
             <button disabled={cardScale <= 0.8} onClick={() => onCardScale(-0.1)} aria-label="Smaller cards">
               A－
