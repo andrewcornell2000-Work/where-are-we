@@ -15,8 +15,8 @@
     "semantic_hash": ""
   },
   "server/index.mjs": {
-    "mtime": 1784946455.1267374,
-    "ast_hash": "c3fd65f473183666c00136aa28ca6ad0",
+    "mtime": 1784964444.779456,
+    "ast_hash": "5ea0f1f7d0668b066e92691e4da44464",
     "semantic_hash": ""
   },
   "src/App.tsx": {
@@ -165,8 +165,8 @@
     "semantic_hash": ""
   },
   "HANDOVER.md": {
-    "mtime": 1784857422.4762356,
-    "ast_hash": "fecb65d4083ac904873014f8ff2219ae",
+    "mtime": 1784964600.988717,
+    "ast_hash": "bd822c289290870a6a4fec3f339c3235",
     "semantic_hash": ""
   },
   ".claude/settings.local.json": {
@@ -175,7 +175,7 @@
     "semantic_hash": ""
   },
   "HANDOFF-CANVAS-FIX.md": {
-    "mtime": 1784941575.8856342,
+    "mtime": 1784964327.4234693,
     "ast_hash": "e6f8611eb42a625029016f48e2e5288b",
     "semantic_hash": ""
   },

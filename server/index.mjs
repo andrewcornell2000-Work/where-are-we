@@ -179,6 +179,10 @@ export async function startServer(options = {}) {
 
   const CONTENT_FILE = path.join(dataDir, "where-are-we.json");
   const LAYOUT_FILE = path.join(dataDir, "layout.local.json");
+  // Saved arrangements live in their own file so they can be committed and
+  // travel between machines, while the volatile bits of the layout (camera,
+  // scribbles, in-progress pins) stay local and out of git.
+  const PRESETS_FILE = path.join(dataDir, "presets.json");
   const NEXT_FILE = path.join(dataDir, "NEXT.md");
 
   await fsp.mkdir(dataDir, { recursive: true });
@@ -186,7 +190,24 @@ export async function startServer(options = {}) {
   if (!fs.existsSync(LAYOUT_FILE)) await writeJsonAtomic(LAYOUT_FILE, EMPTY_LAYOUT);
   if (options.writeGitignore) {
     const gi = path.join(dataDir, ".gitignore");
+    // presets.json is deliberately absent from this list: saved arrangements
+    // are the one part of the layout worth committing and sharing.
     if (!fs.existsSync(gi)) await fsp.writeFile(gi, "layout.local.json\nNEXT.md\n*.tmp-*\n");
+  }
+
+  // One-time migration: saved arrangements used to live inside layout.local.json.
+  if (!fs.existsSync(PRESETS_FILE)) {
+    try {
+      const old = JSON.parse(await fsp.readFile(LAYOUT_FILE, "utf8"));
+      if (old?.presets && Object.keys(old.presets).length) {
+        await writeJsonAtomic(PRESETS_FILE, old.presets);
+        delete old.presets;
+        await writeJsonAtomic(LAYOUT_FILE, old);
+        log("moved saved arrangements out of layout.local.json into presets.json");
+      }
+    } catch {
+      /* nothing to migrate */
+    }
   }
 
   let lastContent = EMPTY_CONTENT;
@@ -209,6 +230,9 @@ export async function startServer(options = {}) {
     const layout = await readJson(LAYOUT_FILE, EMPTY_LAYOUT);
     if (content) lastContent = content;
     if (layout) lastLayout = normalizeLayout(layout);
+    // The client sees one layout object; the split into two files is ours.
+    const presets = fs.existsSync(PRESETS_FILE) ? await readJson(PRESETS_FILE, {}) : {};
+    lastLayout = { ...lastLayout, presets: presets && typeof presets === "object" ? presets : {} };
     return { type: "state", content: lastContent, layout: lastLayout };
   }
 
@@ -284,9 +308,16 @@ export async function startServer(options = {}) {
       if (msg?.type === "saveLayout" && isValidLayoutPayload(msg.layout)) {
         try {
           const normalized = normalizeLayout(msg.layout);
+          // Split on the way out: saved arrangements to their own committable
+          // file, everything else to the machine-local one.
+          const { presets, ...localOnly } = normalized;
           suppressLayoutUntil = Date.now() + 1500;
-          await writeJsonAtomic(LAYOUT_FILE, normalized);
-          lastLayout = normalized;
+          await writeJsonAtomic(LAYOUT_FILE, localOnly);
+          const nextPresets = presets && typeof presets === "object" ? presets : {};
+          if (JSON.stringify(nextPresets) !== JSON.stringify(lastLayout.presets ?? {})) {
+            await writeJsonAtomic(PRESETS_FILE, nextPresets);
+          }
+          lastLayout = { ...localOnly, presets: nextPresets };
           broadcast({ type: "state", content: lastContent, layout: lastLayout }, socket);
         } catch (err) {
           log("failed to write layout:", err.message);
@@ -297,7 +328,7 @@ export async function startServer(options = {}) {
     socket.on("close", () => log("client disconnected"));
   });
 
-  const watcher = chokidar.watch([CONTENT_FILE, LAYOUT_FILE], {
+  const watcher = chokidar.watch([CONTENT_FILE, LAYOUT_FILE, PRESETS_FILE], {
     ignoreInitial: true,
     // Editors and AI tools often save via write-temp-then-rename, which emits
     // add/unlink instead of change — handle all three.
@@ -306,7 +337,9 @@ export async function startServer(options = {}) {
 
   const onFsEvent = async (file) => {
     const base = path.basename(file);
-    if (base === path.basename(LAYOUT_FILE) && Date.now() < suppressLayoutUntil) return;
+    const isLocalLayout =
+      base === path.basename(LAYOUT_FILE) || base === path.basename(PRESETS_FILE);
+    if (isLocalLayout && Date.now() < suppressLayoutUntil) return;
     log(`${base} changed -> pushing update`);
     broadcast(await buildState());
     if (base === path.basename(CONTENT_FILE)) await refreshNextMd();

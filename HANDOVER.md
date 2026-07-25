@@ -50,6 +50,21 @@ long-title card sizes exactly to its rendered height; resize persists across rel
   `0.0.0.0` and `http://localhost:8787` can hit the wrong process. Use `127.0.0.1` or
   another port if the board looks like someone else's 404.
 
+## Data files in a data dir
+
+| File | Owner | Committed? | Holds |
+|---|---|---|---|
+| `where-are-we.json` | AI | **yes** | sections, cards, edges |
+| `presets.json` | app | **yes** | saved arrangements (memory slots 1-3) |
+| `layout.local.json` | app | no (gitignored) | pins, camera, scribbles, overrides, settings |
+| `NEXT.md` | generated | no | "do this next" breadcrumb |
+
+The split exists so saved arrangements travel between machines while the
+volatile per-machine state (camera position, in-progress pins, scribbles) does
+not create merge conflicts. The server owns the split: the browser still sees
+one `layout` object with `presets` on it, and `startServer` migrates presets out
+of an older `layout.local.json` on first run.
+
 ## What this project is
 
 A live, infinite, black crayon-sketch canvas that an AI keeps updated as it works, so

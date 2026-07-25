@@ -15,13 +15,13 @@
     "semantic_hash": ""
   },
   "server/index.mjs": {
-    "mtime": 1784939688.5920339,
-    "ast_hash": "fda4b79a40ae83186279d0caee170f90",
+    "mtime": 1784946455.1267374,
+    "ast_hash": "c3fd65f473183666c00136aa28ca6ad0",
     "semantic_hash": ""
   },
   "src/App.tsx": {
-    "mtime": 1784945607.9380233,
-    "ast_hash": "a2a82ee5f43e02c3abd541ca23dc76d9",
+    "mtime": 1784946470.220605,
+    "ast_hash": "0a5bab3dff0a52988bbced1c5c979f4f",
     "semantic_hash": ""
   },
   "src/canvas/CanvasView.tsx": {
@@ -85,8 +85,8 @@
     "semantic_hash": ""
   },
   "src/types.ts": {
-    "mtime": 1784945618.8945806,
-    "ast_hash": "313b5b36daa980a2c4b16bc1e29a7013",
+    "mtime": 1784946455.1262314,
+    "ast_hash": "bf3fc9601be942e0f363bb85437c7923",
     "semantic_hash": ""
   },
   "src/ui/Toolbar.tsx": {
@@ -95,8 +95,8 @@
     "semantic_hash": ""
   },
   "src/ui/TopBar.tsx": {
-    "mtime": 1784945862.3119326,
-    "ast_hash": "56f89bba399c2e320cd78bef3d484fd1",
+    "mtime": 1784946487.4081507,
+    "ast_hash": "c2ad2178856e54340db2fb78dfdcf062",
     "semantic_hash": ""
   },
   "tsconfig.json": {

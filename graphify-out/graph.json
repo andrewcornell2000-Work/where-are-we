@@ -945,8 +945,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_canvas_drawnpath",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "drawnpath.tsx"
     },
     {
@@ -956,8 +956,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "src_canvas_drawnpath_props",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "props"
     },
     {
@@ -967,8 +967,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "src_canvas_drawnpath_drawnpath",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "drawnpath()"
     },
     {
@@ -1011,8 +1011,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_canvas_nodeshape",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "nodeshape.tsx"
     },
     {
@@ -1022,8 +1022,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_canvas_nodeshape_props",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "props"
     },
     {
@@ -1044,8 +1044,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "src_canvas_nodeshape_nodeshape",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "nodeshape"
     },
     {
@@ -1055,8 +1055,8 @@
       "source_location": "L150",
       "_origin": "ast",
       "id": "src_canvas_nodeshape_shortfile",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "shortfile()"
     },
     {
@@ -1066,8 +1066,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_canvas_sectionshape",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "sectionshape.tsx"
     },
     {
@@ -1088,8 +1088,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "src_canvas_sectionshape_sectionshape",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "sectionshape"
     },
     {
@@ -1132,8 +1132,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_canvas_lod",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "lod.ts"
     },
     {
@@ -1143,8 +1143,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_canvas_lod_lod",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "lod"
     },
     {
@@ -1363,8 +1363,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "src_lib_elklayout_flowlayout",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 9,
+      "community_name": "Rect",
       "norm_label": "flowlayout"
     },
     {
@@ -1385,8 +1385,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_lib_flakes",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "flakes.ts"
     },
     {
@@ -1396,8 +1396,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_lib_flakes_emitflakes",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "emitflakes()"
     },
     {
@@ -1473,8 +1473,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_lib_geometry",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 9,
+      "community_name": "Rect",
       "norm_label": "geometry.ts"
     },
     {
@@ -1517,8 +1517,8 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "src_lib_geometry_rectcenter",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 9,
+      "community_name": "Rect",
       "norm_label": "rectcenter()"
     },
     {
@@ -1528,8 +1528,8 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "src_lib_geometry_edgeanchor",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 9,
+      "community_name": "Rect",
       "norm_label": "edgeanchor()"
     },
     {
@@ -1550,8 +1550,8 @@
       "source_location": "L74",
       "_origin": "ast",
       "id": "src_lib_geometry_pointinrect",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 9,
+      "community_name": "Rect",
       "norm_label": "pointinrect()"
     },
     {
@@ -1561,8 +1561,8 @@
       "source_location": "L78",
       "_origin": "ast",
       "id": "src_lib_geometry_inflate",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 9,
+      "community_name": "Rect",
       "norm_label": "inflate()"
     },
     {
@@ -1583,8 +1583,8 @@
       "source_location": "L92",
       "_origin": "ast",
       "id": "src_lib_geometry_polylinehitsrect",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 9,
+      "community_name": "Rect",
       "norm_label": "polylinehitsrect()"
     },
     {
@@ -1594,8 +1594,8 @@
       "source_location": "L105",
       "_origin": "ast",
       "id": "src_lib_geometry_polylinehitsany",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 9,
+      "community_name": "Rect",
       "norm_label": "polylinehitsany()"
     },
     {
@@ -1627,8 +1627,8 @@
       "source_location": "L201",
       "_origin": "ast",
       "id": "src_lib_geometry_detourroute",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 9,
+      "community_name": "Rect",
       "norm_label": "detourroute()"
     },
     {
@@ -1638,8 +1638,8 @@
       "source_location": "L246",
       "_origin": "ast",
       "id": "src_lib_geometry_routeedge",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 9,
+      "community_name": "Rect",
       "norm_label": "routeedge()"
     },
     {
@@ -1649,8 +1649,8 @@
       "source_location": "L267",
       "_origin": "ast",
       "id": "src_lib_geometry_routewithclearance",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 9,
+      "community_name": "Rect",
       "norm_label": "routewithclearance()"
     },
     {
@@ -1726,8 +1726,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "src_lib_rough_seedfrom",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "seedfrom()"
     },
     {
@@ -1825,8 +1825,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_lib_theme",
-      "community": 13,
-      "community_name": "Toolbar.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "theme.ts"
     },
     {
@@ -1836,8 +1836,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_lib_theme_crayon",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "crayon"
     },
     {
@@ -1858,8 +1858,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "src_lib_theme_statuscolor",
-      "community": 13,
-      "community_name": "Toolbar.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "statuscolor()"
     },
     {
@@ -1869,8 +1869,8 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "src_lib_theme_statuslabel",
-      "community": 13,
-      "community_name": "Toolbar.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "statuslabel()"
     },
     {
@@ -1880,8 +1880,8 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "src_lib_theme_categorycolor",
-      "community": 13,
-      "community_name": "Toolbar.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "categorycolor()"
     },
     {
@@ -1891,8 +1891,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_lib_theme_rationale_5",
-      "community": 13,
-      "community_name": "Toolbar.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "note: use these via `style={{ stroke/fill/color: ... }}` \u2014 svg *presentation"
     },
     {
@@ -1902,8 +1902,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_lib_uselive",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 7,
+      "community_name": "types.ts",
       "norm_label": "uselive.ts"
     },
     {
@@ -1913,8 +1913,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "src_lib_uselive_wsurl",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 7,
+      "community_name": "types.ts",
       "norm_label": "wsurl()"
     },
     {
@@ -1924,8 +1924,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_lib_uselive_live",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 7,
+      "community_name": "types.ts",
       "norm_label": "live"
     },
     {
@@ -1935,8 +1935,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "src_lib_uselive_uselive",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 7,
+      "community_name": "types.ts",
       "norm_label": "uselive()"
     },
     {
@@ -1968,8 +1968,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_types",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 7,
+      "community_name": "types.ts",
       "norm_label": "types.ts"
     },
     {
@@ -1979,8 +1979,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_types_status",
-      "community": 13,
-      "community_name": "Toolbar.tsx",
+      "community": 2,
+      "community_name": "NodeShape.tsx",
       "norm_label": "status"
     },
     {
@@ -2001,8 +2001,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_types_nodelink",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 7,
+      "community_name": "types.ts",
       "norm_label": "nodelink"
     },
     {
@@ -2034,8 +2034,8 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "src_types_edgestyle",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 7,
+      "community_name": "types.ts",
       "norm_label": "edgestyle"
     },
     {
@@ -2056,8 +2056,8 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "src_types_wawcontent",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 7,
+      "community_name": "types.ts",
       "norm_label": "wawcontent"
     },
     {
@@ -2100,8 +2100,8 @@
       "source_location": "L90",
       "_origin": "ast",
       "id": "src_types_nodeoverride",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 7,
+      "community_name": "types.ts",
       "norm_label": "nodeoverride"
     },
     {
@@ -2111,8 +2111,8 @@
       "source_location": "L100",
       "_origin": "ast",
       "id": "src_types_wawpreset",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 7,
+      "community_name": "types.ts",
       "norm_label": "wawpreset"
     },
     {
@@ -2122,8 +2122,8 @@
       "source_location": "L108",
       "_origin": "ast",
       "id": "src_types_wawlayout",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 7,
+      "community_name": "types.ts",
       "norm_label": "wawlayout"
     },
     {
@@ -2133,8 +2133,8 @@
       "source_location": "L130",
       "_origin": "ast",
       "id": "src_types_wawsettings",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 7,
+      "community_name": "types.ts",
       "norm_label": "wawsettings"
     },
     {
@@ -2144,8 +2144,8 @@
       "source_location": "L147",
       "_origin": "ast",
       "id": "src_types_servermessage",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 7,
+      "community_name": "types.ts",
       "norm_label": "servermessage"
     },
     {
@@ -2155,8 +2155,8 @@
       "source_location": "L151",
       "_origin": "ast",
       "id": "src_types_clientmessage",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 7,
+      "community_name": "types.ts",
       "norm_label": "clientmessage"
     },
     {
@@ -2166,8 +2166,8 @@
       "source_location": "L153",
       "_origin": "ast",
       "id": "src_types_empty_layout",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 7,
+      "community_name": "types.ts",
       "norm_label": "empty_layout"
     },
     {
@@ -2886,10 +2886,21 @@
       "norm_label": "2026-07-24 canvas reliability pass (handoff-canvas-fix.md)"
     },
     {
-      "label": "What this project is",
+      "label": "Data files in a data dir",
       "file_type": "document",
       "source_file": "HANDOVER.md",
       "source_location": "L53",
+      "_origin": "ast",
+      "id": "handover_data_files_in_a_data_dir",
+      "community": 11,
+      "community_name": "Where things stand",
+      "norm_label": "data files in a data dir"
+    },
+    {
+      "label": "What this project is",
+      "file_type": "document",
+      "source_file": "HANDOVER.md",
+      "source_location": "L68",
       "_origin": "ast",
       "id": "handover_what_this_project_is",
       "community": 11,
@@ -2900,7 +2911,7 @@
       "label": "Where things stand",
       "file_type": "document",
       "source_file": "HANDOVER.md",
-      "source_location": "L64",
+      "source_location": "L79",
       "_origin": "ast",
       "id": "handover_where_things_stand",
       "community": 11,
@@ -2911,7 +2922,7 @@
       "label": "Board state (data/where-are-we.json)",
       "file_type": "document",
       "source_file": "HANDOVER.md",
-      "source_location": "L88",
+      "source_location": "L103",
       "_origin": "ast",
       "id": "handover_board_state_data_where_are_we_json",
       "community": 11,
@@ -2922,7 +2933,7 @@
       "label": "What to do next (nothing is blocked)",
       "file_type": "document",
       "source_file": "HANDOVER.md",
-      "source_location": "L94",
+      "source_location": "L109",
       "_origin": "ast",
       "id": "handover_what_to_do_next_nothing_is_blocked",
       "community": 11,
@@ -2933,7 +2944,7 @@
       "label": "Machine setup notes (fresh machine)",
       "file_type": "document",
       "source_file": "HANDOVER.md",
-      "source_location": "L104",
+      "source_location": "L119",
       "_origin": "ast",
       "id": "handover_machine_setup_notes_fresh_machine",
       "community": 11,
@@ -2944,7 +2955,7 @@
       "label": "Gotchas that still apply",
       "file_type": "document",
       "source_file": "HANDOVER.md",
-      "source_location": "L120",
+      "source_location": "L135",
       "_origin": "ast",
       "id": "handover_gotchas_that_still_apply",
       "community": 11,
@@ -3907,7 +3918,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "server/index.mjs",
-      "source_location": "L273",
+      "source_location": "L206",
       "weight": 1.0,
       "_origin": "ast",
       "source": "server_index_startserver",
@@ -3919,7 +3930,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "server/index.mjs",
-      "source_location": "L286",
+      "source_location": "L310",
       "weight": 1.0,
       "_origin": "ast",
       "source": "server_index_startserver",
@@ -3931,7 +3942,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "server/index.mjs",
-      "source_location": "L284",
+      "source_location": "L308",
       "weight": 1.0,
       "_origin": "ast",
       "source": "server_index_startserver",
@@ -3943,7 +3954,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "server/index.mjs",
-      "source_location": "L185",
+      "source_location": "L189",
       "weight": 1.0,
       "_origin": "ast",
       "source": "server_index_startserver",
@@ -8596,7 +8607,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "HANDOVER.md",
-      "source_location": "L88",
+      "source_location": "L103",
       "weight": 1.0,
       "_origin": "ast",
       "source": "handover_handover_where_are_we_v2_verification_complete_ready_to_use",
@@ -8607,7 +8618,18 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "HANDOVER.md",
-      "source_location": "L120",
+      "source_location": "L53",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "handover_handover_where_are_we_v2_verification_complete_ready_to_use",
+      "target": "handover_data_files_in_a_data_dir",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HANDOVER.md",
+      "source_location": "L135",
       "weight": 1.0,
       "_origin": "ast",
       "source": "handover_handover_where_are_we_v2_verification_complete_ready_to_use",
@@ -8618,7 +8640,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "HANDOVER.md",
-      "source_location": "L104",
+      "source_location": "L119",
       "weight": 1.0,
       "_origin": "ast",
       "source": "handover_handover_where_are_we_v2_verification_complete_ready_to_use",
@@ -8629,7 +8651,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "HANDOVER.md",
-      "source_location": "L53",
+      "source_location": "L68",
       "weight": 1.0,
       "_origin": "ast",
       "source": "handover_handover_where_are_we_v2_verification_complete_ready_to_use",
@@ -8640,7 +8662,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "HANDOVER.md",
-      "source_location": "L94",
+      "source_location": "L109",
       "weight": 1.0,
       "_origin": "ast",
       "source": "handover_handover_where_are_we_v2_verification_complete_ready_to_use",
@@ -8651,7 +8673,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "HANDOVER.md",
-      "source_location": "L64",
+      "source_location": "L79",
       "weight": 1.0,
       "_origin": "ast",
       "source": "handover_handover_where_are_we_v2_verification_complete_ready_to_use",
@@ -8748,5 +8770,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "33a38f655b6b55abe0a507d3749e0cba4b4997c4"
+  "built_at_commit": "44daa82cbe27e5a350da5083a47d6f728cca49e4"
 }
