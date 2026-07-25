@@ -14,7 +14,6 @@ interface Props {
   /** Zoom band: drops detail and enlarges the title as the board zooms out. */
   lod: Lod;
   dimmed?: boolean;
-  critical?: boolean;
   isNext?: boolean;
   baseDelayMs?: number;
   projectRefTitle?: string;
@@ -35,7 +34,6 @@ export const NodeShape = memo(function NodeShape({
   draw,
   lod,
   dimmed = false,
-  critical = false,
   isNext = false,
   baseDelayMs = 0,
   projectRefTitle,
@@ -64,7 +62,7 @@ export const NodeShape = memo(function NodeShape({
 
   return (
     <g style={{ opacity: groupOpacity }} data-node-id={node.id}>
-      {critical && (
+      {isNext && (
         <rect
           className="glow-gold"
           x={rect.x - 5}

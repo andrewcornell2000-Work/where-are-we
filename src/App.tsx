@@ -515,7 +515,6 @@ export default function App() {
         label: e.label,
         draw: a.draw,
         delay: a.delay,
-        critical: analysis.criticalEdges.has(e.id),
         erasable: true,
       });
     }
@@ -555,7 +554,6 @@ export default function App() {
       draw: a.draw,
       delay: a.delay,
       selected: selectedId === n.id,
-      critical: view === "project" && analysis.criticalNodes.has(n.id),
       isNext: view === "project" && analysis.nextId === n.id,
       interactive: true,
       projectRefTitle: n.view === "daily" && n.projectRef ? nodeById.get(n.projectRef)?.title : undefined,

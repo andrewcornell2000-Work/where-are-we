@@ -21,7 +21,6 @@ export interface NodeItem {
   delay: number;
   selected: boolean;
   dimmed?: boolean;
-  critical?: boolean;
   isNext?: boolean;
   /** Ghost/preview cards are rendered but never hit-tested or persisted. */
   interactive: boolean;
@@ -36,7 +35,6 @@ export interface EdgeItem {
   draw: boolean;
   delay: number;
   dimmed?: boolean;
-  critical?: boolean;
   erasable: boolean;
 }
 
@@ -397,7 +395,6 @@ export function CanvasView(props: Props) {
             label={ed.label}
             draw={ed.draw}
             dimmed={ed.dimmed}
-            critical={ed.critical}
             baseDelayMs={ed.delay}
             onDone={onAnimDone}
           />
@@ -418,7 +415,6 @@ export function CanvasView(props: Props) {
             draw={it.draw}
             lod={lod}
             dimmed={it.dimmed}
-            critical={it.critical}
             isNext={it.isNext}
             baseDelayMs={it.delay}
             projectRefTitle={it.projectRefTitle}

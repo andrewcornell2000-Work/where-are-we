@@ -4,6 +4,11 @@ import { roundedRectPath } from "./geometry";
 // One shared generator. We use the *generator* (not the canvas/svg renderer) so
 // we get raw SVG path strings back and can animate them ourselves via
 // stroke-dashoffset (the "line draws itself" effect).
+//
+// Every shape sets disableMultiStroke: true. rough.js defaults to sketching each
+// outline twice, which at these line weights reads as a confusing double line
+// rather than a crayon stroke. One wobbly pass plus the page's chalk grain gives
+// the hand-drawn feel without the doubling (and halves the paths we animate).
 const generator = rough.generator();
 
 export interface RoughPath {
@@ -54,7 +59,7 @@ export function crayonRoundedRect(
     fillStyle: opts.fillStyle ?? "hachure",
     fillWeight: opts.fillWeight ?? 1.4,
     hachureGap: 7,
-    disableMultiStroke: false,
+    disableMultiStroke: true,
     preserveVertices: false,
   });
   return generator.toPaths(drawable);
@@ -75,6 +80,7 @@ export function crayonPolyline(
     roughness: opts.roughness ?? 1.4,
     bowing: opts.bowing ?? 1.2,
     seed: opts.seed ?? 1,
+    disableMultiStroke: true,
   });
   return generator.toPaths(drawable);
 }
@@ -94,6 +100,7 @@ export function crayonCircle(
     seed: opts.seed ?? 1,
     fill: opts.fill,
     fillStyle: opts.fillStyle ?? "solid",
+    disableMultiStroke: true,
   });
   return generator.toPaths(drawable);
 }
@@ -111,6 +118,7 @@ export function crayonLine(
     roughness: opts.roughness ?? 1.8,
     bowing: opts.bowing ?? 2.2,
     seed: opts.seed ?? 1,
+    disableMultiStroke: true,
   });
   return generator.toPaths(drawable);
 }
@@ -137,6 +145,7 @@ export function crayonArrowHead(
     roughness: opts.roughness ?? 1.6,
     bowing: opts.bowing ?? 1,
     seed: opts.seed ?? 1,
+    disableMultiStroke: true,
   });
   return generator.toPaths(drawable);
 }
