@@ -133,10 +133,10 @@ export function TopBar({
         )}
 
         <div className="cam-tools">
-          <button onClick={onFit} title="Fit everything in view">
+          <button onClick={onFit} title="Zoom out until the whole board fits on screen">
             Fit
           </button>
-          <button onClick={onLatest} title="Jump to the latest thing drawn">
+          <button onClick={onLatest} title="Jump to the card that changed most recently">
             Latest
           </button>
           {view === "project" && (
@@ -145,8 +145,8 @@ export function TopBar({
               onClick={onToggleFlow}
               title={
                 linearFlow
-                  ? "Flow: one step after another. Click to show every dependency instead."
-                  : "Showing all dependencies. Click for a single 1-2-3 flow."
+                  ? "Showing one step after another. Click to see everything each card unlocks."
+                  : "Showing everything each card unlocks. Click for a simple step-by-step order."
               }
             >
               Flow
@@ -155,9 +155,11 @@ export function TopBar({
           <button
             className={snap ? "active" : ""}
             onClick={onToggleSnap}
-            title={snap ? "Snapping on: cards align to a grid and to each other" : "Snapping off: cards move freely"}
+            title={snap
+                ? "Cards line up with each other as you drag them. Click to turn off."
+                : "Cards move wherever you drop them. Click to make them line up."}
           >
-            Snap
+            Align
           </button>
           <span className="card-scale" title={`Card size ${Math.round(cardScale * 100)}%`}>
             <button disabled={cardScale <= 0.8} onClick={() => onCardScale(-0.1)} aria-label="Smaller cards">
@@ -168,7 +170,7 @@ export function TopBar({
             </button>
           </span>
           {view === "project" && (
-            <button onClick={onAutoArrange} title="Re-flow the whole chart (clears pinned positions)">
+            <button onClick={onAutoArrange} title="Tidy the board back to its automatic layout. Anything you moved by hand goes back.">
               Auto-arrange
             </button>
           )}
@@ -176,7 +178,7 @@ export function TopBar({
             <button
               className={showHidden ? "active" : ""}
               onClick={() => setShowHidden((v) => !v)}
-              title="Cards you hid with the eraser"
+              title="Cards you erased. They are hidden, not deleted."
             >
               Hidden ({hiddenNodes.length})
             </button>

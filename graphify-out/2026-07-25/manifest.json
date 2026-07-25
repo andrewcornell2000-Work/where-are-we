@@ -20,8 +20,8 @@
     "semantic_hash": ""
   },
   "src/App.tsx": {
-    "mtime": 1784945189.28275,
-    "ast_hash": "b50d0bfa7009a8493525f3ca54a25723",
+    "mtime": 1784945607.9380233,
+    "ast_hash": "a2a82ee5f43e02c3abd541ca23dc76d9",
     "semantic_hash": ""
   },
   "src/canvas/CanvasView.tsx": {
@@ -40,8 +40,8 @@
     "semantic_hash": ""
   },
   "src/canvas/NodeShape.tsx": {
-    "mtime": 1784944257.3535612,
-    "ast_hash": "c338f66db06f7236407117b276f97fd4",
+    "mtime": 1784945634.453058,
+    "ast_hash": "14064082038588e10d35e6028b8a488e",
     "semantic_hash": ""
   },
   "src/canvas/StrokeShape.tsx": {
@@ -85,8 +85,8 @@
     "semantic_hash": ""
   },
   "src/types.ts": {
-    "mtime": 1784944275.8443003,
-    "ast_hash": "b0bf4fc871f6a056e428dd50b91a21ea",
+    "mtime": 1784945618.8945806,
+    "ast_hash": "313b5b36daa980a2c4b16bc1e29a7013",
     "semantic_hash": ""
   },
   "src/ui/Toolbar.tsx": {
@@ -95,8 +95,8 @@
     "semantic_hash": ""
   },
   "src/ui/TopBar.tsx": {
-    "mtime": 1784944313.446411,
-    "ast_hash": "ea8c77ae5397165503f5929447b16b42",
+    "mtime": 1784945618.895579,
+    "ast_hash": "e8c072854d06f7fe8331f18eb1c99e36",
     "semantic_hash": ""
   },
   "tsconfig.json": {
@@ -182,6 +182,11 @@
   "src/canvas/lod.ts": {
     "mtime": 1784939332.839568,
     "ast_hash": "701c880bd8c0d1cd30ceca5d057041f2",
+    "semantic_hash": ""
+  },
+  "src/lib/flow.ts": {
+    "mtime": 1784945588.3484683,
+    "ast_hash": "0631460116e7e6fdd5966079cabe7e6e",
     "semantic_hash": ""
   }
 }

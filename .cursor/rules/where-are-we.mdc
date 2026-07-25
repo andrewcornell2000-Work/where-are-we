@@ -36,6 +36,9 @@ reflect how the code actually connects. Run `graphify update .` after code chang
 - Bump `updatedAt` on meaningful change (re-triggers the draw-in animation).
 - Card copy is sticky-note sized: `title` ≤ ~6 words, `note` one short line (the card
   clamps the title at 3 lines and the note at 4 — long text is simply lost).
+- Titles must be readable cold, by a human, weeks later. No invented internal nouns
+  ("pause-on-post hard rail"), no flag names (`META_LIVE`), no unexplained acronyms —
+  say what it does ("Ads always start paused"). Mechanism belongs in the note.
 
 ## Shapes
 

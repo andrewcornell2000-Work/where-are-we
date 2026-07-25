@@ -76,11 +76,26 @@ dependencies that reflect the real structure, not guesses. After modifying code,
 Cards are small sticky notes, not paragraphs:
 
 - **`title`: ≤ ~6 words.** It's rendered big in a hand-written font and clamped at
-  3 lines — front-load the meaning ("Meta OAuth redirect URI", not "Set up the exact
-  Meta OAuth redirect URI in the dashboard").
+  3 lines — front-load the meaning.
 - **`note`: one short line** of detail (a command, a path, a number). It's clamped at
   4 lines on the card; anything longer is lost. Put long explanations in your normal
   docs, not the board.
+
+**Write it so a person can read it, not a compiler.** The board is glanced at, often
+weeks later, often by someone who has forgotten the details. A title has to make sense
+cold.
+
+- **No invented internal nouns.** "Pause-on-post hard rail" means nothing to a reader.
+  Say what it *does*: "Ads always start paused".
+- **No unexplained acronyms or flag names in the title.** `META_LIVE`, `CONNECT_ONLY`
+  and the like belong in the `note`, not the headline. Title: "Turn ads on for real".
+- **Say the outcome, not the mechanism.** "Fee cron live-only guard" → "Only charge
+  fees on real campaigns".
+- **Plain verbs beat nouns.** "Meta payment account restored" reads better as
+  "Fix the Meta payment account".
+
+Quick test: if a friend who has never seen the codebase read the title aloud, would
+they know what finishing it means? If not, rewrite it.
 
 ### Hard rules
 

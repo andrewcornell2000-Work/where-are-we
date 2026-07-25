@@ -11,12 +11,12 @@ interface Props {
 }
 
 const TOOLS: Array<{ id: Tool; label: string; glyph: string; hint: string }> = [
-  { id: "pan", label: "Pan", glyph: "✋", hint: "Drag the page around" },
-  { id: "select", label: "Move", glyph: "➤", hint: "Select & move cards" },
-  { id: "draw", label: "Draw", glyph: "✎", hint: "Freehand crayon" },
-  { id: "connect", label: "Connect", glyph: "↝", hint: "Link two cards" },
+  { id: "pan", label: "Pan", glyph: "✋", hint: "Drag the board around" },
+  { id: "select", label: "Move", glyph: "➤", hint: "Pick up and move a card" },
+  { id: "draw", label: "Draw", glyph: "✎", hint: "Scribble on the board" },
+  { id: "connect", label: "Connect", glyph: "↝", hint: "Draw an arrow between two cards" },
   { id: "text", label: "Card", glyph: "＋", hint: "Add a card" },
-  { id: "eraser", label: "Erase", glyph: "⌫", hint: "Remove / hide" },
+  { id: "eraser", label: "Erase", glyph: "⌫", hint: "Hide a card, or rub out a scribble" },
 ];
 
 export function Toolbar({ tool, color, cardPinned, onTool, onColor }: Props) {

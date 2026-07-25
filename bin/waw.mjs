@@ -38,6 +38,9 @@ Rules:
 - Keep ids stable; always write valid JSON; never edit \`layout.local.json\`.
 - Card copy is sticky-note sized: \`title\` ≤ ~6 words, \`note\` one short line
   (both are clamped on the card — long text is lost).
+- Write titles a human can read cold. No invented internal nouns, no flag names,
+  no acronyms in the title: say what the thing DOES. "Pause-on-post hard rail"
+  is meaningless; "Ads always start paused" is not. Mechanism goes in the note.
 
 Node shape: { id, title, status, note?, view: "project"|"daily", day?, section?,
 projectRef?, blockedBy?, link?: {file, line?}, createdAt, updatedAt }
