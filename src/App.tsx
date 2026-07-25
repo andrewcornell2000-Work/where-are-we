@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from "react";
 import { CanvasView } from "./canvas/CanvasView";
+import { lodForScale } from "./canvas/lod";
 import type { EdgeItem, EraseTarget, NodeItem, SectionItem, Tool } from "./canvas/CanvasView";
 import { Toolbar } from "./ui/Toolbar";
 import { TopBar } from "./ui/TopBar";
@@ -174,11 +175,28 @@ export default function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [live.serverRev]);
 
+  const cardScale = layout.settings?.cardScale ?? 1;
+
   // Apply + persist the theme on the root element so CSS variables flip.
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
     localStorage.setItem("waw-theme", theme);
   }, [theme]);
+
+  // Card text scales with the card geometry computed in nodeSize().
+  useEffect(() => {
+    document.documentElement.style.setProperty("--card-scale", String(cardScale));
+  }, [cardScale]);
+
+  const onCardScale = useCallback(
+    (delta: number) => {
+      mutateLayout((l) => {
+        const next = Math.round(Math.min(1.6, Math.max(0.8, (l.settings?.cardScale ?? 1) + delta)) * 100) / 100;
+        return { ...l, settings: { ...l.settings, cardScale: next } };
+      });
+    },
+    [mutateLayout],
+  );
 
   const onToggleTheme = useCallback(() => {
     setTheme((t) => (t === "dark" ? "light" : "dark"));
@@ -243,6 +261,15 @@ export default function App() {
   const effectiveDay =
     dailyDay ?? (availableDays.includes(today) ? today : availableDays[availableDays.length - 1] ?? today);
 
+  // Progress logged against the day currently on screen.
+  const dayCounts = useMemo(() => {
+    const onDay = allNodes.filter((n) => n.view === "daily" && n.day === effectiveDay);
+    return {
+      done: onDay.filter((n) => n.status === "done").length,
+      doing: onDay.filter((n) => n.status === "doing").length,
+    };
+  }, [allNodes, effectiveDay]);
+
   const viewNodes = useMemo(() => {
     if (view === "project") return projectNodes;
     return allNodes.filter((n) => n.view === "daily" && n.day === effectiveDay);
@@ -257,13 +284,13 @@ export default function App() {
       .join(";");
     const e = allEdges.map((x) => `${x.id}|${x.from}|${x.to}`).join(";");
     const s = sections.map((x) => `${x.id}|${x.order ?? 0}`).join(";");
-    return `${n}#${e}#${s}`;
-  }, [view, projectNodes, allEdges, sections]);
+    return `${n}#${e}#${s}#${cardScale}`;
+  }, [view, projectNodes, allEdges, sections, cardScale]);
 
   useEffect(() => {
     if (view !== "project" || projectNodes.length === 0) return;
     let cancelled = false;
-    layoutFlow(projectNodes, allEdges, sections)
+    layoutFlow(projectNodes, allEdges, sections, cardScale)
       .then((f) => {
         if (!cancelled) setFlow(f);
       })
@@ -292,7 +319,7 @@ export default function App() {
           missing.push(n); // brand-new node: ELK pass still in flight
           continue;
         }
-        map.set(n.id, rectOf(n, pos));
+        map.set(n.id, rectOf(n, pos, cardScale));
       }
       // Temporary placeholder for brand-new nodes so they render immediately:
       // below their section's cards, or right of all content.
@@ -301,7 +328,7 @@ export default function App() {
           .filter((p) => p.section === n.section && map.has(p.id))
           .map((p) => map.get(p.id)!);
         const all = [...map.values()];
-        const { w, h } = nodeSize(n);
+        const { w, h } = nodeSize(n, undefined, cardScale);
         let x = 120;
         let y = 120;
         if (peers.length) {
@@ -337,11 +364,11 @@ export default function App() {
     } else if (daily) {
       for (const n of viewNodes) {
         const pos = daily.positions[n.id];
-        if (pos) map.set(n.id, rectOf(n, pos));
+        if (pos) map.set(n.id, rectOf(n, pos, cardScale));
       }
     }
     return map;
-  }, [view, viewNodes, flow, layout.pinned, daily]);
+  }, [view, viewNodes, flow, layout.pinned, daily, cardScale]);
 
   // ---- Re-animate nodes whose content changed; drop stale user overrides when
   // the AI itself updates a card. ----
@@ -597,7 +624,7 @@ export default function App() {
     const minY = Math.min(...rects.map((r) => r.y));
     const maxX = Math.max(...rects.map((r) => r.x + r.w));
     const maxY = Math.max(...rects.map((r) => r.y + r.h));
-    const pad = 100;
+    const pad = 44;
     const vw = window.innerWidth;
     const vh = window.innerHeight;
     const scale = Math.max(FIT_MIN, Math.min(FIT_MAX, Math.min(vw / (maxX - minX + pad * 2), vh / (maxY - minY + pad * 2))));
@@ -857,12 +884,16 @@ export default function App() {
         availableDays={availableDays}
         onDay={setDailyDay}
         isToday={effectiveDay === today}
+        dayDone={dayCounts.done}
+        dayDoing={dayCounts.doing}
         connected={live.connected}
         donePct={analysis.donePct}
         nextNode={nextNode ?? null}
         hiddenNodes={hiddenNodes}
         theme={theme}
         onToggleTheme={onToggleTheme}
+        cardScale={cardScale}
+        onCardScale={onCardScale}
         onFit={onFit}
         onLatest={onLatest}
         onAutoArrange={onAutoArrange}
@@ -878,6 +909,7 @@ export default function App() {
         tool={tool}
         color={color}
         camera={camera}
+        lod={lodForScale(camera.scale)}
         connectSourceId={connectSourceId}
         onCamera={setCamera}
         onSelect={setSelectedId}

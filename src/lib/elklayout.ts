@@ -27,13 +27,17 @@ export interface FlowLayout {
   routes: Record<string, Array<[number, number]>>;
 }
 
-const SECTION_PAD_TOP = 78;
-const SECTION_PAD = 34;
+const SECTION_PAD_TOP = 56;
+const SECTION_PAD = 22;
+
+/** Roughly 16:9, so a fitted board fills the viewport instead of a thin ribbon. */
+const TARGET_ASPECT = 1.7;
 
 export async function layoutFlow(
   nodes: WawNode[],
   edges: WawEdge[],
   sections: WawSection[],
+  cardScale = 1,
 ): Promise<FlowLayout> {
   const nodeIds = new Set(nodes.map((n) => n.id));
   const usedSections = sections
@@ -42,7 +46,7 @@ export async function layoutFlow(
   const sectionIds = new Set(usedSections.map((s) => s.id));
 
   const cardChild = (n: WawNode): ElkNode => {
-    const { w, h } = nodeSize(n);
+    const { w, h } = nodeSize(n, undefined, cardScale);
     return { id: n.id, width: w, height: h };
   };
 
@@ -68,14 +72,23 @@ export async function layoutFlow(
       "elk.direction": "RIGHT",
       "elk.hierarchyHandling": "INCLUDE_CHILDREN",
       "elk.edgeRouting": "ORTHOGONAL",
-      "elk.layered.spacing.nodeNodeBetweenLayers": "110",
-      "elk.spacing.nodeNode": "56",
-      "elk.spacing.componentComponent": "90",
-      "elk.spacing.edgeNode": "28",
-      "elk.spacing.edgeEdge": "18",
+      // Spacing is deliberately tight: the board is read zoomed-to-fit, so every
+      // wasted gap costs zoom scale, and zoom scale is card legibility.
+      "elk.layered.spacing.nodeNodeBetweenLayers": "68",
+      "elk.spacing.nodeNode": "34",
+      "elk.spacing.componentComponent": "52",
+      "elk.spacing.edgeNode": "22",
+      "elk.spacing.edgeEdge": "14",
       "elk.layered.considerModelOrder.strategy": "NODES_AND_EDGES",
       "elk.layered.crossingMinimization.forceNodeModelOrder": "false",
-      "elk.padding": "[top=60,left=60,bottom=60,right=60]",
+      "elk.padding": "[top=32,left=32,bottom=32,right=32]",
+      // A long left-to-right chain lays out as a very wide ribbon (5:1+), and
+      // fitting that to a 16:9 screen zooms out so far the card text becomes
+      // unreadable. Wrapping folds the chain into rows near the screen's own
+      // aspect, so "fit the whole board" stays legible.
+      "elk.aspectRatio": String(TARGET_ASPECT),
+      "elk.layered.wrapping.strategy": "MULTI_EDGE",
+      "elk.layered.wrapping.correctionFactor": "1.0",
     },
     children,
     edges: elkEdges,

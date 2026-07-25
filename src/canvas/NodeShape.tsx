@@ -1,5 +1,6 @@
 import { memo, useMemo } from "react";
 import type { WawNode } from "../types";
+import type { Lod } from "./lod";
 import type { Rect } from "../lib/geometry";
 import { crayonCircle, crayonRoundedRect, seedFrom } from "../lib/rough";
 import { statusColor, statusLabel, CRAYON } from "../lib/theme";
@@ -10,6 +11,8 @@ interface Props {
   rect: Rect;
   selected: boolean;
   draw: boolean;
+  /** Zoom band: drops detail and enlarges the title as the board zooms out. */
+  lod: Lod;
   dimmed?: boolean;
   critical?: boolean;
   isNext?: boolean;
@@ -30,6 +33,7 @@ export const NodeShape = memo(function NodeShape({
   rect,
   selected,
   draw,
+  lod,
   dimmed = false,
   critical = false,
   isNext = false,
@@ -104,7 +108,7 @@ export const NodeShape = memo(function NodeShape({
 
       <foreignObject x={rect.x} y={rect.y} width={rect.w} height={rect.h} pointerEvents="none">
         <div
-          className={`node-body ${draw ? "writein" : ""}`}
+          className={`node-body lod-${lod} ${draw ? "writein" : ""}`}
           style={{ animationDelay: `${titleDelay}ms` }}
         >
           <div className="node-status" style={{ color }}>

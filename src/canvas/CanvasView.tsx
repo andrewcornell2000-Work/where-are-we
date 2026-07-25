@@ -8,6 +8,7 @@ import { NodeShape, statusDotCenter } from "./NodeShape";
 import { EdgeShape } from "./EdgeShape";
 import { SectionShape } from "./SectionShape";
 import { StrokeShape } from "./StrokeShape";
+import type { Lod } from "./lod";
 import { strokePath } from "../lib/freehand";
 import { emitFlakes } from "../lib/flakes";
 
@@ -63,6 +64,7 @@ interface Props {
   tool: Tool;
   color: string;
   camera: Camera;
+  lod: Lod;
   connectSourceId: string | null;
   onCamera: (c: Camera) => void;
   onSelect: (id: string | null) => void;
@@ -99,6 +101,7 @@ export function CanvasView(props: Props) {
     tool,
     color,
     camera,
+    lod,
     connectSourceId,
     onCamera,
     onSelect,
@@ -413,6 +416,7 @@ export function CanvasView(props: Props) {
             rect={it.rect}
             selected={it.selected}
             draw={it.draw}
+            lod={lod}
             dimmed={it.dimmed}
             critical={it.critical}
             isNext={it.isNext}

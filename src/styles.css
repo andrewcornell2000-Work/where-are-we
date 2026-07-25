@@ -118,7 +118,7 @@ body {
 .node-body {
   width: 100%;
   height: 100%;
-  padding: 10px 14px 12px;
+  padding: calc(10px * var(--card-scale, 1)) calc(14px * var(--card-scale, 1)) calc(12px * var(--card-scale, 1));
   display: flex;
   flex-direction: column;
   gap: 3px;
@@ -127,7 +127,7 @@ body {
 }
 
 .node-status {
-  font-size: 12px;
+  font-size: calc(12px * var(--card-scale, 1));
   letter-spacing: 0.5px;
   text-transform: uppercase;
   display: flex;
@@ -145,7 +145,7 @@ body {
 
 .node-title {
   font-family: var(--hand);
-  font-size: 21px;
+  font-size: calc(21px * var(--card-scale, 1));
   line-height: 1.05;
   color: var(--chalk);
   overflow-wrap: break-word;
@@ -156,7 +156,7 @@ body {
 }
 
 .node-note {
-  font-size: 14px;
+  font-size: calc(14px * var(--card-scale, 1));
   line-height: 1.2;
   color: var(--muted);
   display: -webkit-box;
@@ -165,9 +165,34 @@ body {
   overflow: hidden;
 }
 
+/* Level of detail: zoomed out, drop the supporting text and spend the card on a
+   bigger title, so a fitted board stays readable instead of turning to specks. */
+.node-body.lod-compact .node-note,
+.node-body.lod-compact .node-chip,
+.node-body.lod-minimal .node-note,
+.node-body.lod-minimal .node-chip,
+.node-body.lod-minimal .node-status {
+  display: none;
+}
+
+.node-body.lod-compact .node-title {
+  font-size: calc(26px * var(--card-scale, 1));
+  -webkit-line-clamp: 4;
+}
+
+.node-body.lod-minimal {
+  justify-content: center;
+}
+
+.node-body.lod-minimal .node-title {
+  font-size: calc(34px * var(--card-scale, 1));
+  line-height: 1.02;
+  -webkit-line-clamp: 4;
+}
+
 .node-chip {
   margin-top: 2px;
-  font-size: 12.5px;
+  font-size: calc(12.5px * var(--card-scale, 1));
   color: var(--chip);
   opacity: 0.85;
   white-space: nowrap;
@@ -337,6 +362,35 @@ body {
   color: var(--muted);
   min-width: 130px;
   text-align: center;
+}
+
+.card-scale {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.card-scale button {
+  padding: 5px 7px;
+  font-size: 14px;
+}
+
+.card-scale button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.day-digest {
+  font-size: 14px;
+  color: var(--muted);
+  padding-left: 10px;
+  margin-left: 4px;
+  border-left: 1px solid var(--hairline, rgba(128, 128, 128, 0.3));
+  white-space: nowrap;
+}
+
+.day-digest b {
+  color: var(--chalk);
+  font-weight: 600;
 }
 
 /* ---------- Toolbar ---------- */

@@ -10,26 +10,31 @@ export interface Rect {
 export const NODE_W = 220;
 export const NODE_MIN_H = 74;
 
-export function nodeSize(node: WawNode, override?: NodePos): { w: number; h: number } {
-  const w = override?.w ?? NODE_W;
+export function nodeSize(node: WawNode, override?: NodePos, cardScale = 1): { w: number; h: number } {
+  const w = override?.w ?? NODE_W * cardScale;
   if (override?.h) return { w, h: override.h };
   // Mirror the rendered card: 22px v-padding + 15px status row, then the
   // hand-written title (21px/1.05 ≈ 22px per line, clamped to 3 in CSS) and
   // the note (14px/1.2 ≈ 17px per line, clamped to 4).
-  const textW = w - 28;
-  const titleLines = Math.min(3, Math.max(1, Math.ceil(node.title.length / Math.max(1, Math.floor(textW / 10.5)))));
-  let h = 40 + titleLines * 22;
+  // Text and padding scale with the card, so line counts are scale-invariant
+  // and only the vertical metrics need multiplying.
+  const textW = w - 28 * cardScale;
+  const titleLines = Math.min(
+    3,
+    Math.max(1, Math.ceil(node.title.length / Math.max(1, Math.floor(textW / (10.5 * cardScale))))),
+  );
+  let h = (40 + titleLines * 22) * cardScale;
   if (node.note) {
-    const perLine = Math.max(1, Math.floor(textW / 8.2));
+    const perLine = Math.max(1, Math.floor(textW / (8.2 * cardScale)));
     const noteLines = Math.min(4, Math.max(1, Math.ceil(node.note.length / perLine)));
-    h += 3 + noteLines * 17;
+    h += (3 + noteLines * 17) * cardScale;
   }
-  if (node.link || node.projectRef) h += 20;
-  return { w, h: Math.max(NODE_MIN_H, h + 8) };
+  if (node.link || node.projectRef) h += 20 * cardScale;
+  return { w, h: Math.max(NODE_MIN_H * cardScale, h + 8 * cardScale) };
 }
 
-export function rectOf(node: WawNode, pos: NodePos): Rect {
-  const { w, h } = nodeSize(node, pos);
+export function rectOf(node: WawNode, pos: NodePos, cardScale = 1): Rect {
+  const { w, h } = nodeSize(node, pos, cardScale);
   return { x: pos.x, y: pos.y, w, h };
 }
 

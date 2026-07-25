@@ -110,6 +110,16 @@ export interface WawLayout {
   /** User edits (title/note/status) layered over AI cards. */
   overrides: Record<string, NodeOverride>;
   camera?: Camera;
+  settings?: WawSettings;
+}
+
+/** Display preferences. Optional so pre-existing layout files stay valid. */
+export interface WawSettings {
+  /**
+   * Scales card width and card text together (0.8-1.6, default 1). Both move
+   * as one so the JS-computed card geometry keeps matching the rendered text.
+   */
+  cardScale?: number;
 }
 
 /** Messages exchanged over the WebSocket. */

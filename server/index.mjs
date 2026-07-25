@@ -59,6 +59,7 @@ function normalizeLayout(raw) {
     hiddenEdgeIds: Array.isArray(l.hiddenEdgeIds) ? l.hiddenEdgeIds : [],
     overrides: l.overrides && typeof l.overrides === "object" ? l.overrides : {},
     camera: l.camera,
+    settings: l.settings && typeof l.settings === "object" ? l.settings : undefined,
   };
 }
 

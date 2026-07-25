@@ -10,12 +10,17 @@ interface Props {
   availableDays: string[];
   onDay: (d: string) => void;
   isToday: boolean;
+  /** Counts for the day being shown, so "what did I finish?" is answerable at a glance. */
+  dayDone: number;
+  dayDoing: number;
   connected: boolean;
   donePct: number;
   nextNode: WawNode | null;
   hiddenNodes: WawNode[];
   theme: "dark" | "light";
   onToggleTheme: () => void;
+  cardScale: number;
+  onCardScale: (delta: number) => void;
   onFit: () => void;
   onLatest: () => void;
   onAutoArrange: () => void;
@@ -31,12 +36,16 @@ export function TopBar({
   availableDays,
   onDay,
   isToday,
+  dayDone,
+  dayDoing,
   connected,
   donePct,
   nextNode,
   hiddenNodes,
   theme,
   onToggleTheme,
+  cardScale,
+  onCardScale,
   onFit,
   onLatest,
   onAutoArrange,
@@ -102,6 +111,16 @@ export function TopBar({
             <button disabled={!nextDay} onClick={() => nextDay && onDay(nextDay)} title="Next day">
               ›
             </button>
+            <span className="day-digest">
+              {dayDone === 0 && dayDoing === 0 ? (
+                "nothing logged"
+              ) : (
+                <>
+                  <b>{dayDone}</b> done
+                  {dayDoing > 0 && <> · {dayDoing} in progress</>}
+                </>
+              )}
+            </span>
           </div>
         )}
 
@@ -112,6 +131,14 @@ export function TopBar({
           <button onClick={onLatest} title="Jump to the latest thing drawn">
             Latest
           </button>
+          <span className="card-scale" title={`Card size ${Math.round(cardScale * 100)}%`}>
+            <button disabled={cardScale <= 0.8} onClick={() => onCardScale(-0.1)} aria-label="Smaller cards">
+              A－
+            </button>
+            <button disabled={cardScale >= 1.6} onClick={() => onCardScale(0.1)} aria-label="Bigger cards">
+              A＋
+            </button>
+          </span>
           {view === "project" && (
             <button onClick={onAutoArrange} title="Re-flow the whole chart (clears pinned positions)">
               Auto-arrange
