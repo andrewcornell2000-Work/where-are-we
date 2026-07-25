@@ -12,6 +12,7 @@ interface Props {
   label?: string;
   draw: boolean;
   dimmed?: boolean;
+  quiet?: boolean;
   critical?: boolean;
   baseDelayMs?: number;
   onDone?: (id: string) => void;
@@ -24,6 +25,7 @@ export const EdgeShape = memo(function EdgeShape({
   label,
   draw,
   dimmed = false,
+  quiet = false,
   critical = false,
   baseDelayMs = 0,
   onDone,
@@ -35,8 +37,8 @@ export const EdgeShape = memo(function EdgeShape({
   const smoothed = useMemo(() => roundCorners(points), [points]);
 
   const linePaths = useMemo(
-    () => crayonPolyline(smoothed, { color: strokeColor, seed, strokeWidth: critical ? 3.4 : 3 }),
-    [smoothed, strokeColor, seed, critical],
+    () => crayonPolyline(smoothed, { color: strokeColor, seed, strokeWidth: quiet ? 2.2 : 3 }),
+    [smoothed, strokeColor, seed, quiet],
   );
 
   const headPaths = useMemo(() => {
@@ -46,15 +48,15 @@ export const EdgeShape = memo(function EdgeShape({
     return crayonArrowHead(x1, y1, x2, y2, {
       color: strokeColor,
       seed,
-      strokeWidth: critical ? 3.4 : 3,
+      strokeWidth: quiet ? 2.2 : 3,
     });
-  }, [points, strokeColor, seed, critical]);
+  }, [points, strokeColor, seed, quiet]);
 
   if (points.length < 2) return null;
   const [mx, my] = polylineMidpoint(points);
 
   return (
-    <g style={{ opacity: dimmed ? 0.3 : 1 }} className={critical ? "glow-gold" : undefined}>
+    <g style={{ opacity: dimmed ? 0.3 : quiet ? 0.45 : 1 }} className={critical ? "glow-gold" : undefined}>
       {linePaths.map((p, i) => (
         <DrawnPath
           key={`l${i}`}

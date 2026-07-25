@@ -20,13 +20,13 @@
     "semantic_hash": ""
   },
   "src/App.tsx": {
-    "mtime": 1784943563.0283687,
-    "ast_hash": "bea9f517145f5fec61afe54e508b01f1",
+    "mtime": 1784944313.445411,
+    "ast_hash": "d31b3f3baa51657ace2688075ed10eb0",
     "semantic_hash": ""
   },
   "src/canvas/CanvasView.tsx": {
-    "mtime": 1784943531.692408,
-    "ast_hash": "d6c1c751e1f48e82bba3febb414ac92a",
+    "mtime": 1784944298.1458185,
+    "ast_hash": "eec0c47c79c5e03feb6962891b51c14d",
     "semantic_hash": ""
   },
   "src/canvas/DrawnPath.tsx": {
@@ -35,13 +35,13 @@
     "semantic_hash": ""
   },
   "src/canvas/EdgeShape.tsx": {
-    "mtime": 1784255098.6452913,
-    "ast_hash": "96c4fe695b4dc23a0046716b9b3b85b4",
+    "mtime": 1784944257.3535612,
+    "ast_hash": "e1406869e0dc650783851b30a6967e7c",
     "semantic_hash": ""
   },
   "src/canvas/NodeShape.tsx": {
-    "mtime": 1784942737.6326132,
-    "ast_hash": "155474b52932083aedab7bac638f8f69",
+    "mtime": 1784944257.3535612,
+    "ast_hash": "c338f66db06f7236407117b276f97fd4",
     "semantic_hash": ""
   },
   "src/canvas/StrokeShape.tsx": {
@@ -60,8 +60,8 @@
     "semantic_hash": ""
   },
   "src/lib/geometry.ts": {
-    "mtime": 1784939716.463745,
-    "ast_hash": "11a76f5277c0a2b358cc59aee7872146",
+    "mtime": 1784944541.6665058,
+    "ast_hash": "951a18d5e82c43fbca72a83755f68d0e",
     "semantic_hash": ""
   },
   "src/lib/rough.ts": {
@@ -85,8 +85,8 @@
     "semantic_hash": ""
   },
   "src/types.ts": {
-    "mtime": 1784939677.6611438,
-    "ast_hash": "5fb23ed344b5ded22d0008becec803f6",
+    "mtime": 1784944275.8443003,
+    "ast_hash": "b0bf4fc871f6a056e428dd50b91a21ea",
     "semantic_hash": ""
   },
   "src/ui/Toolbar.tsx": {
@@ -95,8 +95,8 @@
     "semantic_hash": ""
   },
   "src/ui/TopBar.tsx": {
-    "mtime": 1784939817.868423,
-    "ast_hash": "bca2e66b7b723d2929e274e39412dced",
+    "mtime": 1784944313.446411,
+    "ast_hash": "ea8c77ae5397165503f5929447b16b42",
     "semantic_hash": ""
   },
   "tsconfig.json": {
@@ -130,8 +130,8 @@
     "semantic_hash": ""
   },
   "src/canvas/SectionShape.tsx": {
-    "mtime": 1784943490.8124778,
-    "ast_hash": "1527578765f8b6acab3bd1a7dc127f83",
+    "mtime": 1784944257.3545628,
+    "ast_hash": "7c30acfe3078c609f48bc15ed87e3d73",
     "semantic_hash": ""
   },
   "src/elk-bundled.d.ts": {
@@ -145,8 +145,8 @@
     "semantic_hash": ""
   },
   "src/lib/elklayout.ts": {
-    "mtime": 1784942291.8796027,
-    "ast_hash": "ba5fa4e50e7d726e183b0b9be561e24a",
+    "mtime": 1784944008.3761902,
+    "ast_hash": "00500143fcaa94d9410e6ad351b3b944",
     "semantic_hash": ""
   },
   "src/lib/flakes.ts": {

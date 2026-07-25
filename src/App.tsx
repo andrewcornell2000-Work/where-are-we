@@ -260,6 +260,15 @@ export default function App() {
 
   const sections = useMemo(() => content?.sections ?? [], [content]);
 
+  /** section id -> its order, for judging how far an edge reaches. */
+  const sectionOrder = useMemo(() => {
+    const m = new Map<string, number>();
+    [...sections]
+      .sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
+      .forEach((s, i) => m.set(s.id, s.order ?? i));
+    return m;
+  }, [sections]);
+
   const projectNodes = useMemo(() => allNodes.filter((n) => n.view === "project"), [allNodes]);
   const analysis = useMemo(() => analyze(projectNodes, allEdges), [projectNodes, allEdges]);
 
@@ -522,10 +531,17 @@ export default function App() {
           : undefined;
       if (!points) points = routeEdge(from, to, obstacles);
       const a = ensureAnim(e.id);
+      // An edge that jumps more than one section is a long-range dependency.
+      // It still matters, but drawn at full weight it competes with the
+      // step-by-step flow; quieting it lets the eye follow the spine first.
+      const fromSec = sectionOrder.get(nodeById.get(e.from)?.section ?? "");
+      const toSec = sectionOrder.get(nodeById.get(e.to)?.section ?? "");
+      const quiet = fromSec !== undefined && toSec !== undefined && toSec - fromSec > 1;
       edgeItems.push({
         id: e.id,
         points,
         label: e.label,
+        quiet,
         draw: a.draw,
         delay: a.delay,
         erasable: true,

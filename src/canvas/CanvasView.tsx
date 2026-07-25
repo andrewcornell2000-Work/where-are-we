@@ -35,6 +35,8 @@ export interface EdgeItem {
   draw: boolean;
   delay: number;
   dimmed?: boolean;
+  /** Long-range dependency: drawn quieter so the local flow reads first. */
+  quiet?: boolean;
   erasable: boolean;
 }
 
@@ -453,6 +455,7 @@ export function CanvasView(props: Props) {
             label={ed.label}
             draw={ed.draw}
             dimmed={ed.dimmed}
+            quiet={ed.quiet}
             baseDelayMs={ed.delay}
             onDone={onAnimDone}
           />
