@@ -1,17 +1,1 @@
-{
-  "0": "App.tsx",
-  "1": "devDependencies",
-  "2": "NodeShape.tsx",
-  "3": "compilerOptions",
-  "4": "index.mjs",
-  "5": "Where Are We",
-  "6": "CanvasView.tsx",
-  "7": "types.ts",
-  "8": "vite.config.ts",
-  "9": "Rect",
-  "10": "elk-bundled.d.ts",
-  "11": "Where things stand",
-  "12": "StrokeShape.tsx",
-  "13": "Toolbar.tsx",
-  "14": "Product"
-}
+{"0": "App.tsx", "1": "Canvas reliability phased plan (0-6)", "2": "NodeShape.tsx", "3": "devDependencies", "4": "package.json", "5": "compilerOptions", "6": "index.mjs", "7": "CanvasView.tsx", "8": "types.ts", "9": "elk-bundled.d.ts", "10": "The Architect's Sketchbook (creative north star)", "11": "Toolbar.tsx", "12": "Elevation model (flat board, floating tools)", "13": "Product purpose (live board, believed not groomed)", "14": "Fresh machine setup notes", "15": "vite.config.ts"}
