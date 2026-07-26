@@ -1,7 +1,49 @@
 {
   "directed": false,
   "multigraph": false,
-  "graph": {},
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "canvas_reliability_pass_flow",
+        "label": "Canvas reliability pass: plan, bug cluster, and shipped fixes",
+        "nodes": [
+          "handoff_canvas_fix_phased_plan",
+          "handoff_canvas_fix_bug_cluster",
+          "handover_canvas_reliability_pass"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 0.95,
+        "source_file": "HANDOVER.md"
+      },
+      {
+        "id": "where_are_we_json_data_contract",
+        "label": "where-are-we.json shared data contract across AI-editing, README schema, and handover file split",
+        "nodes": [
+          "agents_where_are_we_json",
+          "readme_data_schema",
+          "handover_data_files_split"
+        ],
+        "relation": "form",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85,
+        "source_file": "README.md"
+      },
+      {
+        "id": "crayon_brand_identity",
+        "label": "Crayon brand identity: north star, anti-references, and design principles together define the product's visual/voice contract",
+        "nodes": [
+          "design_architects_sketchbook",
+          "product_anti_references",
+          "product_design_principles"
+        ],
+        "relation": "form",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85,
+        "source_file": "PRODUCT.md"
+      }
+    ]
+  },
   "nodes": [
     {
       "label": "waw.mjs",
@@ -10,8 +52,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "bin_waw",
-      "community": 4,
-      "community_name": "index.mjs",
+      "community": 6,
       "norm_label": "waw.mjs"
     },
     {
@@ -21,8 +62,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "bin_waw_args",
-      "community": 4,
-      "community_name": "index.mjs",
+      "community": 6,
       "norm_label": "args"
     },
     {
@@ -32,8 +72,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "bin_waw_getflag",
-      "community": 4,
-      "community_name": "index.mjs",
+      "community": 6,
       "norm_label": "getflag()"
     },
     {
@@ -43,8 +82,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "bin_waw_cwd",
-      "community": 4,
-      "community_name": "index.mjs",
+      "community": 6,
       "norm_label": "cwd"
     },
     {
@@ -54,8 +92,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "bin_waw_datadir",
-      "community": 4,
-      "community_name": "index.mjs",
+      "community": 6,
       "norm_label": "datadir"
     },
     {
@@ -65,8 +102,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "bin_waw_agents_snippet",
-      "community": 4,
-      "community_name": "index.mjs",
+      "community": 6,
       "norm_label": "agents_snippet()"
     },
     {
@@ -76,8 +112,7 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "bin_waw_cursor_rule",
-      "community": 4,
-      "community_name": "index.mjs",
+      "community": 6,
       "norm_label": "cursor_rule()"
     },
     {
@@ -87,8 +122,7 @@
       "source_location": "L73",
       "_origin": "ast",
       "id": "bin_waw_init",
-      "community": 4,
-      "community_name": "index.mjs",
+      "community": 6,
       "norm_label": "init()"
     },
     {
@@ -98,8 +132,7 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "bin_waw_main",
-      "community": 4,
-      "community_name": "index.mjs",
+      "community": 6,
       "norm_label": "main()"
     },
     {
@@ -108,9 +141,8 @@
       "source_file": "package.json",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "package",
-      "community": 1,
-      "community_name": "devDependencies",
+      "id": "c_users_andre_where_are_we_package_json",
+      "community": 4,
       "norm_label": "package.json"
     },
     {
@@ -119,9 +151,8 @@
       "source_file": "package.json",
       "source_location": "L2",
       "_origin": "ast",
-      "id": "package_name",
-      "community": 1,
-      "community_name": "devDependencies",
+      "id": "c_users_andre_where_are_we_package_name",
+      "community": 4,
       "norm_label": "name"
     },
     {
@@ -130,9 +161,8 @@
       "source_file": "package.json",
       "source_location": "L3",
       "_origin": "ast",
-      "id": "package_version",
-      "community": 1,
-      "community_name": "devDependencies",
+      "id": "c_users_andre_where_are_we_package_version",
+      "community": 4,
       "norm_label": "version"
     },
     {
@@ -141,9 +171,8 @@
       "source_file": "package.json",
       "source_location": "L4",
       "_origin": "ast",
-      "id": "package_type",
-      "community": 1,
-      "community_name": "devDependencies",
+      "id": "c_users_andre_where_are_we_package_type",
+      "community": 4,
       "norm_label": "type"
     },
     {
@@ -152,9 +181,8 @@
       "source_file": "package.json",
       "source_location": "L5",
       "_origin": "ast",
-      "id": "package_description",
-      "community": 1,
-      "community_name": "devDependencies",
+      "id": "c_users_andre_where_are_we_package_description",
+      "community": 4,
       "norm_label": "description"
     },
     {
@@ -163,9 +191,8 @@
       "source_file": "package.json",
       "source_location": "L6",
       "_origin": "ast",
-      "id": "package_bin",
-      "community": 1,
-      "community_name": "devDependencies",
+      "id": "c_users_andre_where_are_we_package_bin",
+      "community": 4,
       "norm_label": "bin"
     },
     {
@@ -174,9 +201,8 @@
       "source_file": "package.json",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "package_bin_where_are_we",
-      "community": 1,
-      "community_name": "devDependencies",
+      "id": "c_users_andre_where_are_we_package_bin_where_are_we",
+      "community": 4,
       "norm_label": "where-are-we"
     },
     {
@@ -185,9 +211,8 @@
       "source_file": "package.json",
       "source_location": "L9",
       "_origin": "ast",
-      "id": "package_files",
-      "community": 1,
-      "community_name": "devDependencies",
+      "id": "c_users_andre_where_are_we_package_files",
+      "community": 4,
       "norm_label": "files"
     },
     {
@@ -197,8 +222,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "ref_bin",
-      "community": 1,
-      "community_name": "devDependencies",
+      "community": 4,
       "norm_label": "bin"
     },
     {
@@ -208,8 +232,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "ref_server",
-      "community": 1,
-      "community_name": "devDependencies",
+      "community": 4,
       "norm_label": "server"
     },
     {
@@ -219,8 +242,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "ref_dist",
-      "community": 1,
-      "community_name": "devDependencies",
+      "community": 4,
       "norm_label": "dist"
     },
     {
@@ -230,8 +252,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "ref_readme_md",
-      "community": 1,
-      "community_name": "devDependencies",
+      "community": 4,
       "norm_label": "readme.md"
     },
     {
@@ -240,9 +261,8 @@
       "source_file": "package.json",
       "source_location": "L15",
       "_origin": "ast",
-      "id": "package_scripts",
-      "community": 1,
-      "community_name": "devDependencies",
+      "id": "c_users_andre_where_are_we_package_scripts",
+      "community": 4,
       "norm_label": "scripts"
     },
     {
@@ -251,9 +271,8 @@
       "source_file": "package.json",
       "source_location": "L16",
       "_origin": "ast",
-      "id": "package_scripts_dev",
-      "community": 1,
-      "community_name": "devDependencies",
+      "id": "c_users_andre_where_are_we_package_scripts_dev",
+      "community": 4,
       "norm_label": "dev"
     },
     {
@@ -262,9 +281,8 @@
       "source_file": "package.json",
       "source_location": "L17",
       "_origin": "ast",
-      "id": "package_scripts_dev_server",
-      "community": 1,
-      "community_name": "devDependencies",
+      "id": "c_users_andre_where_are_we_package_scripts_dev_server",
+      "community": 4,
       "norm_label": "dev:server"
     },
     {
@@ -273,9 +291,8 @@
       "source_file": "package.json",
       "source_location": "L18",
       "_origin": "ast",
-      "id": "package_scripts_dev_web",
-      "community": 1,
-      "community_name": "devDependencies",
+      "id": "c_users_andre_where_are_we_package_scripts_dev_web",
+      "community": 4,
       "norm_label": "dev:web"
     },
     {
@@ -284,9 +301,8 @@
       "source_file": "package.json",
       "source_location": "L19",
       "_origin": "ast",
-      "id": "package_scripts_build",
-      "community": 1,
-      "community_name": "devDependencies",
+      "id": "c_users_andre_where_are_we_package_scripts_build",
+      "community": 4,
       "norm_label": "build"
     },
     {
@@ -295,9 +311,8 @@
       "source_file": "package.json",
       "source_location": "L20",
       "_origin": "ast",
-      "id": "package_scripts_prepare",
-      "community": 1,
-      "community_name": "devDependencies",
+      "id": "c_users_andre_where_are_we_package_scripts_prepare",
+      "community": 4,
       "norm_label": "prepare"
     },
     {
@@ -306,9 +321,8 @@
       "source_file": "package.json",
       "source_location": "L21",
       "_origin": "ast",
-      "id": "package_scripts_preview",
-      "community": 1,
-      "community_name": "devDependencies",
+      "id": "c_users_andre_where_are_we_package_scripts_preview",
+      "community": 4,
       "norm_label": "preview"
     },
     {
@@ -317,9 +331,8 @@
       "source_file": "package.json",
       "source_location": "L23",
       "_origin": "ast",
-      "id": "package_dependencies",
-      "community": 1,
-      "community_name": "devDependencies",
+      "id": "c_users_andre_where_are_we_package_dependencies",
+      "community": 4,
       "norm_label": "dependencies"
     },
     {
@@ -328,9 +341,8 @@
       "source_file": "package.json",
       "source_location": "L24",
       "_origin": "ast",
-      "id": "package_dependencies_chokidar",
-      "community": 1,
-      "community_name": "devDependencies",
+      "id": "c_users_andre_where_are_we_package_dependencies_chokidar",
+      "community": 4,
       "norm_label": "chokidar"
     },
     {
@@ -340,8 +352,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "chokidar",
-      "community": 1,
-      "community_name": "devDependencies",
+      "community": 4,
       "norm_label": "chokidar"
     },
     {
@@ -350,9 +361,8 @@
       "source_file": "package.json",
       "source_location": "L25",
       "_origin": "ast",
-      "id": "package_dependencies_ws",
-      "community": 1,
-      "community_name": "devDependencies",
+      "id": "c_users_andre_where_are_we_package_dependencies_ws",
+      "community": 4,
       "norm_label": "ws"
     },
     {
@@ -362,8 +372,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "ws",
-      "community": 1,
-      "community_name": "devDependencies",
+      "community": 4,
       "norm_label": "ws"
     },
     {
@@ -372,9 +381,8 @@
       "source_file": "package.json",
       "source_location": "L27",
       "_origin": "ast",
-      "id": "package_devdependencies",
-      "community": 0,
-      "community_name": "App.tsx",
+      "id": "c_users_andre_where_are_we_package_devdependencies",
+      "community": 3,
       "norm_label": "devdependencies"
     },
     {
@@ -383,9 +391,8 @@
       "source_file": "package.json",
       "source_location": "L28",
       "_origin": "ast",
-      "id": "package_devdependencies_types_react",
-      "community": 0,
-      "community_name": "App.tsx",
+      "id": "c_users_andre_where_are_we_package_devdependencies_types_react",
+      "community": 3,
       "norm_label": "@types/react"
     },
     {
@@ -395,8 +402,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "types_react",
-      "community": 0,
-      "community_name": "App.tsx",
+      "community": 3,
       "norm_label": "@types/react"
     },
     {
@@ -405,9 +411,8 @@
       "source_file": "package.json",
       "source_location": "L29",
       "_origin": "ast",
-      "id": "package_devdependencies_types_react_dom",
-      "community": 0,
-      "community_name": "App.tsx",
+      "id": "c_users_andre_where_are_we_package_devdependencies_types_react_dom",
+      "community": 3,
       "norm_label": "@types/react-dom"
     },
     {
@@ -417,8 +422,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "types_react_dom",
-      "community": 0,
-      "community_name": "App.tsx",
+      "community": 3,
       "norm_label": "@types/react-dom"
     },
     {
@@ -427,9 +431,8 @@
       "source_file": "package.json",
       "source_location": "L30",
       "_origin": "ast",
-      "id": "package_devdependencies_types_ws",
-      "community": 0,
-      "community_name": "App.tsx",
+      "id": "c_users_andre_where_are_we_package_devdependencies_types_ws",
+      "community": 3,
       "norm_label": "@types/ws"
     },
     {
@@ -439,8 +442,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "types_ws",
-      "community": 0,
-      "community_name": "App.tsx",
+      "community": 3,
       "norm_label": "@types/ws"
     },
     {
@@ -449,9 +451,8 @@
       "source_file": "package.json",
       "source_location": "L31",
       "_origin": "ast",
-      "id": "package_devdependencies_vitejs_plugin_react",
-      "community": 0,
-      "community_name": "App.tsx",
+      "id": "c_users_andre_where_are_we_package_devdependencies_vitejs_plugin_react",
+      "community": 3,
       "norm_label": "@vitejs/plugin-react"
     },
     {
@@ -461,8 +462,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "vitejs_plugin_react",
-      "community": 0,
-      "community_name": "App.tsx",
+      "community": 3,
       "norm_label": "@vitejs/plugin-react"
     },
     {
@@ -471,9 +471,8 @@
       "source_file": "package.json",
       "source_location": "L32",
       "_origin": "ast",
-      "id": "package_devdependencies_concurrently",
-      "community": 0,
-      "community_name": "App.tsx",
+      "id": "c_users_andre_where_are_we_package_devdependencies_concurrently",
+      "community": 3,
       "norm_label": "concurrently"
     },
     {
@@ -483,8 +482,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "concurrently",
-      "community": 0,
-      "community_name": "App.tsx",
+      "community": 3,
       "norm_label": "concurrently"
     },
     {
@@ -493,9 +491,8 @@
       "source_file": "package.json",
       "source_location": "L33",
       "_origin": "ast",
-      "id": "package_devdependencies_elkjs",
-      "community": 0,
-      "community_name": "App.tsx",
+      "id": "c_users_andre_where_are_we_package_devdependencies_elkjs",
+      "community": 3,
       "norm_label": "elkjs"
     },
     {
@@ -505,8 +502,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "elkjs",
-      "community": 0,
-      "community_name": "App.tsx",
+      "community": 3,
       "norm_label": "elkjs"
     },
     {
@@ -515,9 +511,8 @@
       "source_file": "package.json",
       "source_location": "L34",
       "_origin": "ast",
-      "id": "package_devdependencies_perfect_freehand",
-      "community": 0,
-      "community_name": "App.tsx",
+      "id": "c_users_andre_where_are_we_package_devdependencies_perfect_freehand",
+      "community": 3,
       "norm_label": "perfect-freehand"
     },
     {
@@ -527,8 +522,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "perfect_freehand",
-      "community": 0,
-      "community_name": "App.tsx",
+      "community": 3,
       "norm_label": "perfect-freehand"
     },
     {
@@ -537,9 +531,8 @@
       "source_file": "package.json",
       "source_location": "L35",
       "_origin": "ast",
-      "id": "package_devdependencies_react",
-      "community": 0,
-      "community_name": "App.tsx",
+      "id": "c_users_andre_where_are_we_package_devdependencies_react",
+      "community": 3,
       "norm_label": "react"
     },
     {
@@ -549,8 +542,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "react",
-      "community": 0,
-      "community_name": "App.tsx",
+      "community": 3,
       "norm_label": "react"
     },
     {
@@ -559,9 +551,8 @@
       "source_file": "package.json",
       "source_location": "L36",
       "_origin": "ast",
-      "id": "package_devdependencies_react_dom",
-      "community": 0,
-      "community_name": "App.tsx",
+      "id": "c_users_andre_where_are_we_package_devdependencies_react_dom",
+      "community": 3,
       "norm_label": "react-dom"
     },
     {
@@ -571,8 +562,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "react_dom",
-      "community": 0,
-      "community_name": "App.tsx",
+      "community": 3,
       "norm_label": "react-dom"
     },
     {
@@ -581,9 +571,8 @@
       "source_file": "package.json",
       "source_location": "L37",
       "_origin": "ast",
-      "id": "package_devdependencies_roughjs",
-      "community": 0,
-      "community_name": "App.tsx",
+      "id": "c_users_andre_where_are_we_package_devdependencies_roughjs",
+      "community": 3,
       "norm_label": "roughjs"
     },
     {
@@ -593,8 +582,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "roughjs",
-      "community": 0,
-      "community_name": "App.tsx",
+      "community": 3,
       "norm_label": "roughjs"
     },
     {
@@ -603,9 +591,8 @@
       "source_file": "package.json",
       "source_location": "L38",
       "_origin": "ast",
-      "id": "package_devdependencies_typescript",
-      "community": 0,
-      "community_name": "App.tsx",
+      "id": "c_users_andre_where_are_we_package_devdependencies_typescript",
+      "community": 3,
       "norm_label": "typescript"
     },
     {
@@ -615,8 +602,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "typescript",
-      "community": 0,
-      "community_name": "App.tsx",
+      "community": 3,
       "norm_label": "typescript"
     },
     {
@@ -625,9 +611,8 @@
       "source_file": "package.json",
       "source_location": "L39",
       "_origin": "ast",
-      "id": "package_devdependencies_vite",
-      "community": 0,
-      "community_name": "App.tsx",
+      "id": "c_users_andre_where_are_we_package_devdependencies_vite",
+      "community": 3,
       "norm_label": "vite"
     },
     {
@@ -637,8 +622,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "vite",
-      "community": 0,
-      "community_name": "App.tsx",
+      "community": 3,
       "norm_label": "vite"
     },
     {
@@ -648,8 +632,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "server_index",
-      "community": 4,
-      "community_name": "index.mjs",
+      "community": 6,
       "norm_label": "index.mjs"
     },
     {
@@ -659,8 +642,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "server_index_dirname",
-      "community": 4,
-      "community_name": "index.mjs",
+      "community": 6,
       "norm_label": "__dirname"
     },
     {
@@ -670,8 +652,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "server_index_pkg_root",
-      "community": 4,
-      "community_name": "index.mjs",
+      "community": 6,
       "norm_label": "pkg_root"
     },
     {
@@ -681,8 +662,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "server_index_empty_content",
-      "community": 4,
-      "community_name": "index.mjs",
+      "community": 6,
       "norm_label": "empty_content"
     },
     {
@@ -692,8 +672,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "server_index_empty_layout",
-      "community": 4,
-      "community_name": "index.mjs",
+      "community": 6,
       "norm_label": "empty_layout"
     },
     {
@@ -703,8 +682,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "server_index_mime",
-      "community": 4,
-      "community_name": "index.mjs",
+      "community": 6,
       "norm_label": "mime"
     },
     {
@@ -714,8 +692,7 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "server_index_log",
-      "community": 4,
-      "community_name": "index.mjs",
+      "community": 6,
       "norm_label": "log()"
     },
     {
@@ -725,8 +702,7 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "server_index_normalizelayout",
-      "community": 4,
-      "community_name": "index.mjs",
+      "community": 6,
       "norm_label": "normalizelayout()"
     },
     {
@@ -736,8 +712,7 @@
       "source_location": "L67",
       "_origin": "ast",
       "id": "server_index_isvalidlayoutpayload",
-      "community": 4,
-      "community_name": "index.mjs",
+      "community": 6,
       "norm_label": "isvalidlayoutpayload()"
     },
     {
@@ -747,8 +722,7 @@
       "source_location": "L81",
       "_origin": "ast",
       "id": "server_index_writejsonatomic",
-      "community": 4,
-      "community_name": "index.mjs",
+      "community": 6,
       "norm_label": "writejsonatomic()"
     },
     {
@@ -758,8 +732,7 @@
       "source_location": "L89",
       "_origin": "ast",
       "id": "server_index_analyzecontent",
-      "community": 4,
-      "community_name": "index.mjs",
+      "community": 6,
       "norm_label": "analyzecontent()"
     },
     {
@@ -769,8 +742,7 @@
       "source_location": "L145",
       "_origin": "ast",
       "id": "server_index_rendernextmd",
-      "community": 4,
-      "community_name": "index.mjs",
+      "community": 6,
       "norm_label": "rendernextmd()"
     },
     {
@@ -780,8 +752,7 @@
       "source_location": "L173",
       "_origin": "ast",
       "id": "server_index_startserver",
-      "community": 4,
-      "community_name": "index.mjs",
+      "community": 6,
       "norm_label": "startserver()"
     },
     {
@@ -791,8 +762,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_app",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "app.tsx"
     },
     {
@@ -802,8 +772,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "src_app_preset_slots",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "preset_slots"
     },
     {
@@ -813,8 +782,7 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "src_app_todaystr",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "todaystr()"
     },
     {
@@ -824,8 +792,7 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "src_app_nowiso",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "nowiso()"
     },
     {
@@ -835,8 +802,7 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "src_app_app",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "app()"
     },
     {
@@ -846,8 +812,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_canvas_canvasview",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 7,
       "norm_label": "canvasview.tsx"
     },
     {
@@ -857,8 +822,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_canvas_canvasview_tool",
-      "community": 13,
-      "community_name": "Toolbar.tsx",
+      "community": 11,
       "norm_label": "tool"
     },
     {
@@ -868,8 +832,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_canvas_canvasview_nodeitem",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "nodeitem"
     },
     {
@@ -879,8 +842,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "src_canvas_canvasview_edgeitem",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 7,
       "norm_label": "edgeitem"
     },
     {
@@ -890,8 +852,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "src_canvas_canvasview_sectionitem",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "sectionitem"
     },
     {
@@ -901,8 +862,7 @@
       "source_location": "L56",
       "_origin": "ast",
       "id": "src_canvas_canvasview_erasetarget",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 7,
       "norm_label": "erasetarget"
     },
     {
@@ -912,8 +872,7 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "src_canvas_canvasview_props",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 7,
       "norm_label": "props"
     },
     {
@@ -923,8 +882,7 @@
       "source_location": "L86",
       "_origin": "ast",
       "id": "src_canvas_canvasview_drag",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 7,
       "norm_label": "drag"
     },
     {
@@ -934,8 +892,7 @@
       "source_location": "L106",
       "_origin": "ast",
       "id": "src_canvas_canvasview_canvasview",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 7,
       "norm_label": "canvasview()"
     },
     {
@@ -946,7 +903,6 @@
       "_origin": "ast",
       "id": "src_canvas_drawnpath",
       "community": 2,
-      "community_name": "NodeShape.tsx",
       "norm_label": "drawnpath.tsx"
     },
     {
@@ -957,7 +913,6 @@
       "_origin": "ast",
       "id": "src_canvas_drawnpath_props",
       "community": 2,
-      "community_name": "NodeShape.tsx",
       "norm_label": "props"
     },
     {
@@ -968,7 +923,6 @@
       "_origin": "ast",
       "id": "src_canvas_drawnpath_drawnpath",
       "community": 2,
-      "community_name": "NodeShape.tsx",
       "norm_label": "drawnpath()"
     },
     {
@@ -979,7 +933,6 @@
       "_origin": "ast",
       "id": "src_canvas_edgeshape",
       "community": 2,
-      "community_name": "NodeShape.tsx",
       "norm_label": "edgeshape.tsx"
     },
     {
@@ -990,7 +943,6 @@
       "_origin": "ast",
       "id": "src_canvas_edgeshape_props",
       "community": 2,
-      "community_name": "NodeShape.tsx",
       "norm_label": "props"
     },
     {
@@ -1001,7 +953,6 @@
       "_origin": "ast",
       "id": "src_canvas_edgeshape_edgeshape",
       "community": 2,
-      "community_name": "NodeShape.tsx",
       "norm_label": "edgeshape"
     },
     {
@@ -1012,7 +963,6 @@
       "_origin": "ast",
       "id": "src_canvas_nodeshape",
       "community": 2,
-      "community_name": "NodeShape.tsx",
       "norm_label": "nodeshape.tsx"
     },
     {
@@ -1022,8 +972,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_canvas_nodeshape_props",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 7,
       "norm_label": "props"
     },
     {
@@ -1033,8 +982,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "src_canvas_nodeshape_statusdotcenter",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 7,
       "norm_label": "statusdotcenter()"
     },
     {
@@ -1044,8 +992,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "src_canvas_nodeshape_nodeshape",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 7,
       "norm_label": "nodeshape"
     },
     {
@@ -1056,7 +1003,6 @@
       "_origin": "ast",
       "id": "src_canvas_nodeshape_shortfile",
       "community": 2,
-      "community_name": "NodeShape.tsx",
       "norm_label": "shortfile()"
     },
     {
@@ -1067,7 +1013,6 @@
       "_origin": "ast",
       "id": "src_canvas_sectionshape",
       "community": 2,
-      "community_name": "NodeShape.tsx",
       "norm_label": "sectionshape.tsx"
     },
     {
@@ -1078,7 +1023,6 @@
       "_origin": "ast",
       "id": "src_canvas_sectionshape_props",
       "community": 2,
-      "community_name": "NodeShape.tsx",
       "norm_label": "props"
     },
     {
@@ -1089,7 +1033,6 @@
       "_origin": "ast",
       "id": "src_canvas_sectionshape_sectionshape",
       "community": 2,
-      "community_name": "NodeShape.tsx",
       "norm_label": "sectionshape"
     },
     {
@@ -1099,8 +1042,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_canvas_strokeshape",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 7,
       "norm_label": "strokeshape.tsx"
     },
     {
@@ -1110,8 +1052,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_canvas_strokeshape_props",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 7,
       "norm_label": "props"
     },
     {
@@ -1121,8 +1062,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_canvas_strokeshape_strokeshape",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 7,
       "norm_label": "strokeshape()"
     },
     {
@@ -1132,8 +1072,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_canvas_lod",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 0,
       "norm_label": "lod.ts"
     },
     {
@@ -1143,8 +1082,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_canvas_lod_lod",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 7,
       "norm_label": "lod"
     },
     {
@@ -1154,8 +1092,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_canvas_lod_lodforscale",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 0,
       "norm_label": "lodforscale()"
     },
     {
@@ -1165,8 +1102,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_elk_bundled_d",
-      "community": 10,
-      "community_name": "elk-bundled.d.ts",
+      "community": 9,
       "norm_label": "elk-bundled.d.ts"
     },
     {
@@ -1176,8 +1112,7 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "src_elk_bundled_d_elkjs_lib_elk_bundled_js",
-      "community": 10,
-      "community_name": "elk-bundled.d.ts",
+      "community": 9,
       "norm_label": "elkjs/lib/elk.bundled.js"
     },
     {
@@ -1187,8 +1122,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_elk_bundled_d_elkpoint",
-      "community": 10,
-      "community_name": "elk-bundled.d.ts",
+      "community": 9,
       "norm_label": "elkpoint"
     },
     {
@@ -1198,8 +1132,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_elk_bundled_d_elklabel",
-      "community": 10,
-      "community_name": "elk-bundled.d.ts",
+      "community": 9,
       "norm_label": "elklabel"
     },
     {
@@ -1209,8 +1142,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_elk_bundled_d_elkedgesection",
-      "community": 10,
-      "community_name": "elk-bundled.d.ts",
+      "community": 9,
       "norm_label": "elkedgesection"
     },
     {
@@ -1220,8 +1152,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "src_elk_bundled_d_elkextendededge",
-      "community": 10,
-      "community_name": "elk-bundled.d.ts",
+      "community": 9,
       "norm_label": "elkextendededge"
     },
     {
@@ -1231,8 +1162,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "src_elk_bundled_d_elknode",
-      "community": 10,
-      "community_name": "elk-bundled.d.ts",
+      "community": 9,
       "norm_label": "elknode"
     },
     {
@@ -1242,8 +1172,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "src_elk_bundled_d_elk",
-      "community": 10,
-      "community_name": "elk-bundled.d.ts",
+      "community": 9,
       "norm_label": "elk"
     },
     {
@@ -1253,8 +1182,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "src_elk_bundled_d_elk_constructor",
-      "community": 10,
-      "community_name": "elk-bundled.d.ts",
+      "community": 9,
       "norm_label": ".constructor()"
     },
     {
@@ -1264,8 +1192,7 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "src_elk_bundled_d_elk_layout",
-      "community": 10,
-      "community_name": "elk-bundled.d.ts",
+      "community": 9,
       "norm_label": ".layout()"
     },
     {
@@ -1275,8 +1202,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_lib_analysis",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "analysis.ts"
     },
     {
@@ -1286,8 +1212,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_lib_analysis_analysis",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "analysis"
     },
     {
@@ -1297,8 +1222,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "src_lib_analysis_analyze",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "analyze()"
     },
     {
@@ -1308,8 +1232,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_lib_autolayout",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "autolayout.ts"
     },
     {
@@ -1319,8 +1242,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "src_lib_autolayout_dailylayout",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "dailylayout"
     },
     {
@@ -1330,8 +1252,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "src_lib_autolayout_layoutdaily",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "layoutdaily()"
     },
     {
@@ -1341,8 +1262,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_lib_elklayout",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "elklayout.ts"
     },
     {
@@ -1352,8 +1272,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "src_lib_elklayout_getelk",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "getelk()"
     },
     {
@@ -1363,8 +1282,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "src_lib_elklayout_flowlayout",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "flowlayout"
     },
     {
@@ -1374,8 +1292,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "src_lib_elklayout_layoutflow",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "layoutflow()"
     },
     {
@@ -1386,7 +1303,6 @@
       "_origin": "ast",
       "id": "src_lib_flakes",
       "community": 2,
-      "community_name": "NodeShape.tsx",
       "norm_label": "flakes.ts"
     },
     {
@@ -1397,7 +1313,6 @@
       "_origin": "ast",
       "id": "src_lib_flakes_emitflakes",
       "community": 2,
-      "community_name": "NodeShape.tsx",
       "norm_label": "emitflakes()"
     },
     {
@@ -1407,8 +1322,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_lib_flow",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "flow.ts"
     },
     {
@@ -1418,8 +1332,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_lib_flow_linearorder",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "linearorder()"
     },
     {
@@ -1429,8 +1342,7 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "src_lib_flow_spineedges",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "spineedges()"
     },
     {
@@ -1440,8 +1352,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_lib_freehand",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 7,
       "norm_label": "freehand.ts"
     },
     {
@@ -1451,8 +1362,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "src_lib_freehand_strokepath",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 7,
       "norm_label": "strokepath()"
     },
     {
@@ -1462,8 +1372,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "src_lib_freehand_outlinetopath",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 7,
       "norm_label": "outlinetopath()"
     },
     {
@@ -1473,8 +1382,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_lib_geometry",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "geometry.ts"
     },
     {
@@ -1484,8 +1392,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_lib_geometry_rect",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "rect"
     },
     {
@@ -1495,8 +1402,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "src_lib_geometry_nodesize",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "nodesize()"
     },
     {
@@ -1506,8 +1412,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "src_lib_geometry_rectof",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "rectof()"
     },
     {
@@ -1517,8 +1422,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "src_lib_geometry_rectcenter",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "rectcenter()"
     },
     {
@@ -1528,8 +1432,7 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "src_lib_geometry_edgeanchor",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "edgeanchor()"
     },
     {
@@ -1540,7 +1443,6 @@
       "_origin": "ast",
       "id": "src_lib_geometry_roundedrectpath",
       "community": 2,
-      "community_name": "NodeShape.tsx",
       "norm_label": "roundedrectpath()"
     },
     {
@@ -1550,8 +1452,7 @@
       "source_location": "L74",
       "_origin": "ast",
       "id": "src_lib_geometry_pointinrect",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "pointinrect()"
     },
     {
@@ -1561,8 +1462,7 @@
       "source_location": "L78",
       "_origin": "ast",
       "id": "src_lib_geometry_inflate",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "inflate()"
     },
     {
@@ -1572,8 +1472,7 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "src_lib_geometry_rectsoverlap",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "rectsoverlap()"
     },
     {
@@ -1583,8 +1482,7 @@
       "source_location": "L92",
       "_origin": "ast",
       "id": "src_lib_geometry_polylinehitsrect",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "polylinehitsrect()"
     },
     {
@@ -1594,8 +1492,7 @@
       "source_location": "L105",
       "_origin": "ast",
       "id": "src_lib_geometry_polylinehitsany",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "polylinehitsany()"
     },
     {
@@ -1605,8 +1502,7 @@
       "source_location": "L116",
       "_origin": "ast",
       "id": "src_lib_geometry_snapposition",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 7,
       "norm_label": "snapposition()"
     },
     {
@@ -1617,7 +1513,6 @@
       "_origin": "ast",
       "id": "src_lib_geometry_roundcorners",
       "community": 2,
-      "community_name": "NodeShape.tsx",
       "norm_label": "roundcorners()"
     },
     {
@@ -1627,8 +1522,7 @@
       "source_location": "L201",
       "_origin": "ast",
       "id": "src_lib_geometry_detourroute",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "detourroute()"
     },
     {
@@ -1638,8 +1532,7 @@
       "source_location": "L246",
       "_origin": "ast",
       "id": "src_lib_geometry_routeedge",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "routeedge()"
     },
     {
@@ -1649,8 +1542,7 @@
       "source_location": "L267",
       "_origin": "ast",
       "id": "src_lib_geometry_routewithclearance",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "routewithclearance()"
     },
     {
@@ -1660,8 +1552,7 @@
       "source_location": "L414",
       "_origin": "ast",
       "id": "src_lib_geometry_disttosegment",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 7,
       "norm_label": "disttosegment()"
     },
     {
@@ -1671,8 +1562,7 @@
       "source_location": "L430",
       "_origin": "ast",
       "id": "src_lib_geometry_disttopolyline",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 7,
       "norm_label": "disttopolyline()"
     },
     {
@@ -1683,7 +1573,6 @@
       "_origin": "ast",
       "id": "src_lib_geometry_polylinemidpoint",
       "community": 2,
-      "community_name": "NodeShape.tsx",
       "norm_label": "polylinemidpoint()"
     },
     {
@@ -1694,7 +1583,6 @@
       "_origin": "ast",
       "id": "src_lib_rough",
       "community": 2,
-      "community_name": "NodeShape.tsx",
       "norm_label": "rough.ts"
     },
     {
@@ -1705,7 +1593,6 @@
       "_origin": "ast",
       "id": "src_lib_rough_generator",
       "community": 2,
-      "community_name": "NodeShape.tsx",
       "norm_label": "generator"
     },
     {
@@ -1716,7 +1603,6 @@
       "_origin": "ast",
       "id": "src_lib_rough_roughpath",
       "community": 2,
-      "community_name": "NodeShape.tsx",
       "norm_label": "roughpath"
     },
     {
@@ -1727,7 +1613,6 @@
       "_origin": "ast",
       "id": "src_lib_rough_seedfrom",
       "community": 2,
-      "community_name": "NodeShape.tsx",
       "norm_label": "seedfrom()"
     },
     {
@@ -1738,7 +1623,6 @@
       "_origin": "ast",
       "id": "src_lib_rough_crayonopts",
       "community": 2,
-      "community_name": "NodeShape.tsx",
       "norm_label": "crayonopts"
     },
     {
@@ -1749,7 +1633,6 @@
       "_origin": "ast",
       "id": "src_lib_rough_crayonroundedrect",
       "community": 2,
-      "community_name": "NodeShape.tsx",
       "norm_label": "crayonroundedrect()"
     },
     {
@@ -1760,7 +1643,6 @@
       "_origin": "ast",
       "id": "src_lib_rough_crayonpolyline",
       "community": 2,
-      "community_name": "NodeShape.tsx",
       "norm_label": "crayonpolyline()"
     },
     {
@@ -1771,7 +1653,6 @@
       "_origin": "ast",
       "id": "src_lib_rough_crayoncircle",
       "community": 2,
-      "community_name": "NodeShape.tsx",
       "norm_label": "crayoncircle()"
     },
     {
@@ -1782,7 +1663,6 @@
       "_origin": "ast",
       "id": "src_lib_rough_crayonline",
       "community": 2,
-      "community_name": "NodeShape.tsx",
       "norm_label": "crayonline()"
     },
     {
@@ -1793,7 +1673,6 @@
       "_origin": "ast",
       "id": "src_lib_rough_crayonarrowhead",
       "community": 2,
-      "community_name": "NodeShape.tsx",
       "norm_label": "crayonarrowhead()"
     },
     {
@@ -1803,8 +1682,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_lib_simplify",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 7,
       "norm_label": "simplify.ts"
     },
     {
@@ -1814,8 +1692,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_lib_simplify_simplifystroke",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 7,
       "norm_label": "simplifystroke()"
     },
     {
@@ -1826,7 +1703,6 @@
       "_origin": "ast",
       "id": "src_lib_theme",
       "community": 2,
-      "community_name": "NodeShape.tsx",
       "norm_label": "theme.ts"
     },
     {
@@ -1837,7 +1713,6 @@
       "_origin": "ast",
       "id": "src_lib_theme_crayon",
       "community": 2,
-      "community_name": "NodeShape.tsx",
       "norm_label": "crayon"
     },
     {
@@ -1847,8 +1722,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "src_lib_theme_crayon_picks",
-      "community": 13,
-      "community_name": "Toolbar.tsx",
+      "community": 11,
       "norm_label": "crayon_picks"
     },
     {
@@ -1859,7 +1733,6 @@
       "_origin": "ast",
       "id": "src_lib_theme_statuscolor",
       "community": 2,
-      "community_name": "NodeShape.tsx",
       "norm_label": "statuscolor()"
     },
     {
@@ -1870,7 +1743,6 @@
       "_origin": "ast",
       "id": "src_lib_theme_statuslabel",
       "community": 2,
-      "community_name": "NodeShape.tsx",
       "norm_label": "statuslabel()"
     },
     {
@@ -1881,7 +1753,6 @@
       "_origin": "ast",
       "id": "src_lib_theme_categorycolor",
       "community": 2,
-      "community_name": "NodeShape.tsx",
       "norm_label": "categorycolor()"
     },
     {
@@ -1892,7 +1763,6 @@
       "_origin": "ast",
       "id": "src_lib_theme_rationale_5",
       "community": 2,
-      "community_name": "NodeShape.tsx",
       "norm_label": "note: use these via `style={{ stroke/fill/color: ... }}` \u2014 svg *presentation"
     },
     {
@@ -1902,8 +1772,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_lib_uselive",
-      "community": 7,
-      "community_name": "types.ts",
+      "community": 8,
       "norm_label": "uselive.ts"
     },
     {
@@ -1913,8 +1782,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "src_lib_uselive_wsurl",
-      "community": 7,
-      "community_name": "types.ts",
+      "community": 8,
       "norm_label": "wsurl()"
     },
     {
@@ -1924,8 +1792,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_lib_uselive_live",
-      "community": 7,
-      "community_name": "types.ts",
+      "community": 8,
       "norm_label": "live"
     },
     {
@@ -1935,8 +1802,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "src_lib_uselive_uselive",
-      "community": 7,
-      "community_name": "types.ts",
+      "community": 8,
       "norm_label": "uselive()"
     },
     {
@@ -1946,8 +1812,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "main.tsx"
     },
     {
@@ -1957,8 +1822,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_main_rationale_5",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "note: intentionally not wrapping in <strictmode> \u2014 its double-invoked render"
     },
     {
@@ -1968,8 +1832,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_types",
-      "community": 7,
-      "community_name": "types.ts",
+      "community": 8,
       "norm_label": "types.ts"
     },
     {
@@ -1979,8 +1842,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_types_status",
-      "community": 7,
-      "community_name": "types.ts",
+      "community": 8,
       "norm_label": "status"
     },
     {
@@ -1990,8 +1852,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_types_viewkind",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "viewkind"
     },
     {
@@ -2001,8 +1862,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_types_nodelink",
-      "community": 7,
-      "community_name": "types.ts",
+      "community": 8,
       "norm_label": "nodelink"
     },
     {
@@ -2012,8 +1872,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "src_types_wawsection",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "wawsection"
     },
     {
@@ -2023,8 +1882,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "src_types_wawnode",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "wawnode"
     },
     {
@@ -2034,8 +1892,7 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "src_types_edgestyle",
-      "community": 7,
-      "community_name": "types.ts",
+      "community": 8,
       "norm_label": "edgestyle"
     },
     {
@@ -2045,8 +1902,7 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "src_types_wawedge",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "wawedge"
     },
     {
@@ -2056,8 +1912,7 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "src_types_wawcontent",
-      "community": 7,
-      "community_name": "types.ts",
+      "community": 8,
       "norm_label": "wawcontent"
     },
     {
@@ -2067,8 +1922,7 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "src_types_nodepos",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "nodepos"
     },
     {
@@ -2078,8 +1932,7 @@
       "source_location": "L76",
       "_origin": "ast",
       "id": "src_types_freehandstroke",
-      "community": 2,
-      "community_name": "NodeShape.tsx",
+      "community": 7,
       "norm_label": "freehandstroke"
     },
     {
@@ -2089,8 +1942,7 @@
       "source_location": "L83",
       "_origin": "ast",
       "id": "src_types_camera",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 8,
       "norm_label": "camera"
     },
     {
@@ -2100,8 +1952,7 @@
       "source_location": "L90",
       "_origin": "ast",
       "id": "src_types_nodeoverride",
-      "community": 7,
-      "community_name": "types.ts",
+      "community": 8,
       "norm_label": "nodeoverride"
     },
     {
@@ -2111,8 +1962,7 @@
       "source_location": "L100",
       "_origin": "ast",
       "id": "src_types_wawpreset",
-      "community": 7,
-      "community_name": "types.ts",
+      "community": 8,
       "norm_label": "wawpreset"
     },
     {
@@ -2122,8 +1972,7 @@
       "source_location": "L108",
       "_origin": "ast",
       "id": "src_types_wawlayout",
-      "community": 7,
-      "community_name": "types.ts",
+      "community": 8,
       "norm_label": "wawlayout"
     },
     {
@@ -2133,8 +1982,7 @@
       "source_location": "L130",
       "_origin": "ast",
       "id": "src_types_wawsettings",
-      "community": 7,
-      "community_name": "types.ts",
+      "community": 8,
       "norm_label": "wawsettings"
     },
     {
@@ -2144,8 +1992,7 @@
       "source_location": "L147",
       "_origin": "ast",
       "id": "src_types_servermessage",
-      "community": 7,
-      "community_name": "types.ts",
+      "community": 8,
       "norm_label": "servermessage"
     },
     {
@@ -2155,8 +2002,7 @@
       "source_location": "L151",
       "_origin": "ast",
       "id": "src_types_clientmessage",
-      "community": 7,
-      "community_name": "types.ts",
+      "community": 8,
       "norm_label": "clientmessage"
     },
     {
@@ -2166,8 +2012,7 @@
       "source_location": "L153",
       "_origin": "ast",
       "id": "src_types_empty_layout",
-      "community": 7,
-      "community_name": "types.ts",
+      "community": 8,
       "norm_label": "empty_layout"
     },
     {
@@ -2177,8 +2022,7 @@
       "source_location": "L164",
       "_origin": "ast",
       "id": "src_types_nextstatus",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "nextstatus()"
     },
     {
@@ -2188,8 +2032,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_ui_inlineeditor",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 8,
       "norm_label": "inlineeditor.tsx"
     },
     {
@@ -2199,8 +2042,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_ui_inlineeditor_props",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 8,
       "norm_label": "props"
     },
     {
@@ -2210,8 +2052,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_ui_inlineeditor_inlineeditor",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 8,
       "norm_label": "inlineeditor()"
     },
     {
@@ -2221,8 +2062,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_ui_toolbar",
-      "community": 13,
-      "community_name": "Toolbar.tsx",
+      "community": 11,
       "norm_label": "toolbar.tsx"
     },
     {
@@ -2232,8 +2072,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "src_ui_toolbar_props",
-      "community": 13,
-      "community_name": "Toolbar.tsx",
+      "community": 11,
       "norm_label": "props"
     },
     {
@@ -2243,8 +2082,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "src_ui_toolbar_tools",
-      "community": 13,
-      "community_name": "Toolbar.tsx",
+      "community": 11,
       "norm_label": "tools"
     },
     {
@@ -2254,8 +2092,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "src_ui_toolbar_toolbar",
-      "community": 13,
-      "community_name": "Toolbar.tsx",
+      "community": 11,
       "norm_label": "toolbar()"
     },
     {
@@ -2265,8 +2102,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_ui_topbar",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "topbar.tsx"
     },
     {
@@ -2276,8 +2112,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_ui_topbar_props",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "props"
     },
     {
@@ -2287,8 +2122,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "src_ui_topbar_topbar",
-      "community": 9,
-      "community_name": "Rect",
+      "community": 0,
       "norm_label": "topbar()"
     },
     {
@@ -2297,9 +2131,8 @@
       "source_file": "tsconfig.json",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "tsconfig",
-      "community": 3,
-      "community_name": "compilerOptions",
+      "id": "c_users_andre_where_are_we_tsconfig_json",
+      "community": 5,
       "norm_label": "tsconfig.json"
     },
     {
@@ -2308,9 +2141,8 @@
       "source_file": "tsconfig.json",
       "source_location": "L2",
       "_origin": "ast",
-      "id": "tsconfig_compileroptions",
-      "community": 3,
-      "community_name": "compilerOptions",
+      "id": "c_users_andre_where_are_we_tsconfig_compileroptions",
+      "community": 5,
       "norm_label": "compileroptions"
     },
     {
@@ -2319,9 +2151,8 @@
       "source_file": "tsconfig.json",
       "source_location": "L3",
       "_origin": "ast",
-      "id": "tsconfig_compileroptions_target",
-      "community": 3,
-      "community_name": "compilerOptions",
+      "id": "c_users_andre_where_are_we_tsconfig_compileroptions_target",
+      "community": 5,
       "norm_label": "target"
     },
     {
@@ -2330,9 +2161,8 @@
       "source_file": "tsconfig.json",
       "source_location": "L4",
       "_origin": "ast",
-      "id": "tsconfig_compileroptions_usedefineforclassfields",
-      "community": 3,
-      "community_name": "compilerOptions",
+      "id": "c_users_andre_where_are_we_tsconfig_compileroptions_usedefineforclassfields",
+      "community": 5,
       "norm_label": "usedefineforclassfields"
     },
     {
@@ -2341,9 +2171,8 @@
       "source_file": "tsconfig.json",
       "source_location": "L5",
       "_origin": "ast",
-      "id": "tsconfig_compileroptions_lib",
-      "community": 3,
-      "community_name": "compilerOptions",
+      "id": "c_users_andre_where_are_we_tsconfig_compileroptions_lib",
+      "community": 5,
       "norm_label": "lib"
     },
     {
@@ -2353,8 +2182,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "ref_es2021",
-      "community": 3,
-      "community_name": "compilerOptions",
+      "community": 5,
       "norm_label": "es2021"
     },
     {
@@ -2364,8 +2192,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "ref_dom",
-      "community": 3,
-      "community_name": "compilerOptions",
+      "community": 5,
       "norm_label": "dom"
     },
     {
@@ -2375,8 +2202,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "ref_dom_iterable",
-      "community": 3,
-      "community_name": "compilerOptions",
+      "community": 5,
       "norm_label": "dom.iterable"
     },
     {
@@ -2385,9 +2211,8 @@
       "source_file": "tsconfig.json",
       "source_location": "L6",
       "_origin": "ast",
-      "id": "tsconfig_compileroptions_module",
-      "community": 3,
-      "community_name": "compilerOptions",
+      "id": "c_users_andre_where_are_we_tsconfig_compileroptions_module",
+      "community": 5,
       "norm_label": "module"
     },
     {
@@ -2396,9 +2221,8 @@
       "source_file": "tsconfig.json",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "tsconfig_compileroptions_skiplibcheck",
-      "community": 3,
-      "community_name": "compilerOptions",
+      "id": "c_users_andre_where_are_we_tsconfig_compileroptions_skiplibcheck",
+      "community": 5,
       "norm_label": "skiplibcheck"
     },
     {
@@ -2407,9 +2231,8 @@
       "source_file": "tsconfig.json",
       "source_location": "L8",
       "_origin": "ast",
-      "id": "tsconfig_compileroptions_moduleresolution",
-      "community": 3,
-      "community_name": "compilerOptions",
+      "id": "c_users_andre_where_are_we_tsconfig_compileroptions_moduleresolution",
+      "community": 5,
       "norm_label": "moduleresolution"
     },
     {
@@ -2418,9 +2241,8 @@
       "source_file": "tsconfig.json",
       "source_location": "L9",
       "_origin": "ast",
-      "id": "tsconfig_compileroptions_allowimportingtsextensions",
-      "community": 3,
-      "community_name": "compilerOptions",
+      "id": "c_users_andre_where_are_we_tsconfig_compileroptions_allowimportingtsextensions",
+      "community": 5,
       "norm_label": "allowimportingtsextensions"
     },
     {
@@ -2429,9 +2251,8 @@
       "source_file": "tsconfig.json",
       "source_location": "L10",
       "_origin": "ast",
-      "id": "tsconfig_compileroptions_resolvejsonmodule",
-      "community": 3,
-      "community_name": "compilerOptions",
+      "id": "c_users_andre_where_are_we_tsconfig_compileroptions_resolvejsonmodule",
+      "community": 5,
       "norm_label": "resolvejsonmodule"
     },
     {
@@ -2440,9 +2261,8 @@
       "source_file": "tsconfig.json",
       "source_location": "L11",
       "_origin": "ast",
-      "id": "tsconfig_compileroptions_isolatedmodules",
-      "community": 3,
-      "community_name": "compilerOptions",
+      "id": "c_users_andre_where_are_we_tsconfig_compileroptions_isolatedmodules",
+      "community": 5,
       "norm_label": "isolatedmodules"
     },
     {
@@ -2451,9 +2271,8 @@
       "source_file": "tsconfig.json",
       "source_location": "L12",
       "_origin": "ast",
-      "id": "tsconfig_compileroptions_moduledetection",
-      "community": 3,
-      "community_name": "compilerOptions",
+      "id": "c_users_andre_where_are_we_tsconfig_compileroptions_moduledetection",
+      "community": 5,
       "norm_label": "moduledetection"
     },
     {
@@ -2462,9 +2281,8 @@
       "source_file": "tsconfig.json",
       "source_location": "L13",
       "_origin": "ast",
-      "id": "tsconfig_compileroptions_noemit",
-      "community": 3,
-      "community_name": "compilerOptions",
+      "id": "c_users_andre_where_are_we_tsconfig_compileroptions_noemit",
+      "community": 5,
       "norm_label": "noemit"
     },
     {
@@ -2473,9 +2291,8 @@
       "source_file": "tsconfig.json",
       "source_location": "L14",
       "_origin": "ast",
-      "id": "tsconfig_compileroptions_jsx",
-      "community": 3,
-      "community_name": "compilerOptions",
+      "id": "c_users_andre_where_are_we_tsconfig_compileroptions_jsx",
+      "community": 5,
       "norm_label": "jsx"
     },
     {
@@ -2484,9 +2301,8 @@
       "source_file": "tsconfig.json",
       "source_location": "L15",
       "_origin": "ast",
-      "id": "tsconfig_compileroptions_strict",
-      "community": 3,
-      "community_name": "compilerOptions",
+      "id": "c_users_andre_where_are_we_tsconfig_compileroptions_strict",
+      "community": 5,
       "norm_label": "strict"
     },
     {
@@ -2495,9 +2311,8 @@
       "source_file": "tsconfig.json",
       "source_location": "L16",
       "_origin": "ast",
-      "id": "tsconfig_compileroptions_nounusedlocals",
-      "community": 3,
-      "community_name": "compilerOptions",
+      "id": "c_users_andre_where_are_we_tsconfig_compileroptions_nounusedlocals",
+      "community": 5,
       "norm_label": "nounusedlocals"
     },
     {
@@ -2506,9 +2321,8 @@
       "source_file": "tsconfig.json",
       "source_location": "L17",
       "_origin": "ast",
-      "id": "tsconfig_compileroptions_nounusedparameters",
-      "community": 3,
-      "community_name": "compilerOptions",
+      "id": "c_users_andre_where_are_we_tsconfig_compileroptions_nounusedparameters",
+      "community": 5,
       "norm_label": "nounusedparameters"
     },
     {
@@ -2517,9 +2331,8 @@
       "source_file": "tsconfig.json",
       "source_location": "L18",
       "_origin": "ast",
-      "id": "tsconfig_compileroptions_nofallthroughcasesinswitch",
-      "community": 3,
-      "community_name": "compilerOptions",
+      "id": "c_users_andre_where_are_we_tsconfig_compileroptions_nofallthroughcasesinswitch",
+      "community": 5,
       "norm_label": "nofallthroughcasesinswitch"
     },
     {
@@ -2528,9 +2341,8 @@
       "source_file": "tsconfig.json",
       "source_location": "L20",
       "_origin": "ast",
-      "id": "tsconfig_include",
-      "community": 3,
-      "community_name": "compilerOptions",
+      "id": "c_users_andre_where_are_we_tsconfig_include",
+      "community": 5,
       "norm_label": "include"
     },
     {
@@ -2540,8 +2352,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "ref_src",
-      "community": 3,
-      "community_name": "compilerOptions",
+      "community": 5,
       "norm_label": "src"
     },
     {
@@ -2551,889 +2362,750 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "vite_config",
-      "community": 8,
-      "community_name": "vite.config.ts",
+      "community": 15,
       "norm_label": "vite.config.ts"
     },
     {
-      "label": "AGENTS.md",
-      "file_type": "document",
+      "label": "data/where-are-we.json (AI-edited file)",
+      "file_type": "concept",
       "source_file": "AGENTS.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "agents",
-      "community": 5,
-      "community_name": "Where Are We",
-      "norm_label": "agents.md"
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Single file AI edits so the board stays current without the user maintaining it; keeps AI writes isolated from user layout state.",
+      "id": "agents_where_are_we_json",
+      "community": 1,
+      "norm_label": "data/where-are-we.json (ai-edited file)"
     },
     {
-      "label": "Instructions for AI assistants working in this project",
-      "file_type": "document",
+      "label": "data/NEXT.md breadcrumb",
+      "file_type": "concept",
       "source_file": "AGENTS.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "agents_instructions_for_ai_assistants_working_in_this_project",
-      "community": 5,
-      "community_name": "Where Are We",
-      "norm_label": "instructions for ai assistants working in this project"
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Generated so an AI can instantly know the next move after a context reset; never edited directly.",
+      "id": "agents_next_md",
+      "community": 1,
+      "norm_label": "data/next.md breadcrumb"
     },
     {
-      "label": "What you do, and when",
-      "file_type": "document",
+      "label": "data/layout.local.json (user layout)",
+      "file_type": "concept",
       "source_file": "AGENTS.md",
-      "source_location": "L12",
-      "_origin": "ast",
-      "id": "agents_what_you_do_and_when",
-      "community": 5,
-      "community_name": "Where Are We",
-      "norm_label": "what you do, and when"
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Holds the user's hand-arranged layout and personal edits/overrides; must never be edited by the AI.",
+      "id": "agents_layout_local_json",
+      "community": 1,
+      "norm_label": "data/layout.local.json (user layout)"
     },
     {
-      "label": "Use graphify for accurate connections",
-      "file_type": "document",
+      "label": "project node (milestone)",
+      "file_type": "concept",
       "source_file": "AGENTS.md",
-      "source_location": "L26",
-      "_origin": "ast",
-      "id": "agents_use_graphify_for_accurate_connections",
-      "community": 5,
-      "community_name": "Where Are We",
-      "norm_label": "use graphify for accurate connections"
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Powers flowchart layout, gold critical path, and the Do this next banner - accuracy of blockedBy matters.",
+      "id": "agents_project_node",
+      "community": 1,
+      "norm_label": "project node (milestone)"
     },
     {
-      "label": "The file format",
-      "file_type": "document",
+      "label": "daily node (work session log)",
+      "file_type": "concept",
       "source_file": "AGENTS.md",
-      "source_location": "L34",
-      "_origin": "ast",
-      "id": "agents_the_file_format",
-      "community": 5,
-      "community_name": "Where Are We",
-      "norm_label": "the file format"
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": null,
+      "id": "agents_daily_node",
+      "community": 1,
+      "norm_label": "daily node (work session log)"
     },
     {
-      "label": "Writing card copy",
-      "file_type": "document",
+      "label": "board edges (start -> finish flow)",
+      "file_type": "concept",
       "source_file": "AGENTS.md",
-      "source_location": "L74",
-      "_origin": "ast",
-      "id": "agents_writing_card_copy",
-      "community": 5,
-      "community_name": "Where Are We",
-      "norm_label": "writing card copy"
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Edges also count as dependencies for the critical path calculation.",
+      "id": "agents_edges",
+      "community": 1,
+      "norm_label": "board edges (start -> finish flow)"
     },
     {
-      "label": "Hard rules",
-      "file_type": "document",
+      "label": "graphify query/update workflow",
+      "file_type": "concept",
       "source_file": "AGENTS.md",
-      "source_location": "L109",
-      "_origin": "ast",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Run graphify query before drawing edges/blockedBy so dependencies reflect real code structure, not guesses; run graphify update after modifying code.",
+      "id": "agents_graphify_usage",
+      "community": 1,
+      "norm_label": "graphify query/update workflow"
+    },
+    {
+      "label": "Card copy writing rules",
+      "file_type": "rationale",
+      "source_file": "AGENTS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Titles <=6 words, plain outcome language, no invented internal nouns or acronyms, ASCII-only to avoid UTF-8/Windows-1252 mangling corruption of the JSON file.",
+      "id": "agents_card_copy_rules",
+      "community": 1,
+      "norm_label": "card copy writing rules"
+    },
+    {
+      "label": "AGENTS.md hard rules",
+      "file_type": "rationale",
+      "source_file": "AGENTS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Never repurpose an id, always keep valid JSON, never set colors manually (status drives color), bump updatedAt only when there is real news.",
       "id": "agents_hard_rules",
-      "community": 5,
-      "community_name": "Where Are We",
-      "norm_label": "hard rules"
+      "community": 1,
+      "norm_label": "agents.md hard rules"
     },
     {
-      "label": "A good habit",
-      "file_type": "document",
-      "source_file": "AGENTS.md",
-      "source_location": "L121",
-      "_origin": "ast",
-      "id": "agents_a_good_habit",
-      "community": 5,
-      "community_name": "Where Are We",
-      "norm_label": "a good habit"
-    },
-    {
-      "label": "DESIGN.md",
-      "file_type": "document",
+      "label": "The Architect's Sketchbook (creative north star)",
+      "file_type": "rationale",
       "source_file": "DESIGN.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "design",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
-      "norm_label": "design.md"
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Resolves the tension between crayon medium and childishness risk: hand-drawn but by someone doing serious technical work. Every design decision is measured against this line.",
+      "id": "design_architects_sketchbook",
+      "community": 10,
+      "norm_label": "the architect's sketchbook (creative north star)"
     },
     {
-      "label": "Design System: Where Are We",
-      "file_type": "document",
+      "label": "Slate and Chalk color system",
+      "file_type": "concept",
       "source_file": "DESIGN.md",
-      "source_location": "L91",
-      "_origin": "ast",
-      "id": "design_design_system_where_are_we",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
-      "norm_label": "design system: where are we"
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Near-black slate board plus warm off-white chalk ink, with pigment reserved almost entirely for semantic meaning (status).",
+      "id": "design_color_system",
+      "community": 1,
+      "norm_label": "slate and chalk color system"
     },
     {
-      "label": "1. Overview",
-      "file_type": "document",
+      "label": "The One Loud Thing Rule",
+      "file_type": "rationale",
       "source_file": "DESIGN.md",
-      "source_location": "L93",
-      "_origin": "ast",
-      "id": "design_1_overview",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
-      "norm_label": "1. overview"
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Gold marks exactly one card, the next action; highlighting the whole critical path highlights nothing, so only one card may glow.",
+      "id": "design_one_loud_thing_rule",
+      "community": 10,
+      "norm_label": "the one loud thing rule"
     },
     {
-      "label": "2. Colors: Slate and Chalk",
-      "file_type": "document",
+      "label": "The Semantic Pigment Rule",
+      "file_type": "rationale",
       "source_file": "DESIGN.md",
-      "source_location": "L123",
-      "_origin": "ast",
-      "id": "design_2_colors_slate_and_chalk",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
-      "norm_label": "2. colors: slate and chalk"
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Status colours are prohibited as decoration; a colour appearing where it doesn't convey state is a bug.",
+      "id": "design_semantic_pigment_rule",
+      "community": 1,
+      "norm_label": "the semantic pigment rule"
     },
     {
-      "label": "Primary",
-      "file_type": "document",
+      "label": "The Contrast Floor Rule",
+      "file_type": "rationale",
       "source_file": "DESIGN.md",
-      "source_location": "L128",
-      "_origin": "ast",
-      "id": "design_primary",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
-      "norm_label": "primary"
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Every status label must clear 4.5:1 contrast in both themes; light ramp deepened deliberately rather than lightened toward prettier pastels.",
+      "id": "design_contrast_floor_rule",
+      "community": 1,
+      "norm_label": "the contrast floor rule"
     },
     {
-      "label": "Secondary",
-      "file_type": "document",
+      "label": "Typography system (Patrick Hand)",
+      "file_type": "concept",
       "source_file": "DESIGN.md",
-      "source_location": "L136",
-      "_origin": "ast",
-      "id": "design_secondary",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
-      "norm_label": "secondary"
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "One hand writes everything; a second display face would read as costume, so hierarchy comes from size/weight/case only.",
+      "id": "design_typography",
+      "community": 1,
+      "norm_label": "typography system (patrick hand)"
     },
     {
-      "label": "Tertiary",
-      "file_type": "document",
+      "label": "The Grows-When-Small Rule",
+      "file_type": "rationale",
       "source_file": "DESIGN.md",
-      "source_location": "L144",
-      "_origin": "ast",
-      "id": "design_tertiary",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
-      "norm_label": "tertiary"
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Text scales up as the board zooms out, never down; legibility is preserved by dropping detail, not shrinking type.",
+      "id": "design_grows_when_small_rule",
+      "community": 1,
+      "norm_label": "the grows-when-small rule"
     },
     {
-      "label": "Neutral",
-      "file_type": "document",
+      "label": "The Six Word Rule",
+      "file_type": "rationale",
       "source_file": "DESIGN.md",
-      "source_location": "L149",
-      "_origin": "ast",
-      "id": "design_neutral",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
-      "norm_label": "neutral"
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Long titles are a content bug, not a layout problem; fix the words, not the clamp.",
+      "id": "design_six_word_rule",
+      "community": 1,
+      "norm_label": "the six word rule"
     },
     {
-      "label": "Named Rules",
-      "file_type": "document",
+      "label": "Elevation model (flat board, floating tools)",
+      "file_type": "concept",
       "source_file": "DESIGN.md",
-      "source_location": "L158",
-      "_origin": "ast",
-      "id": "design_named_rules",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
-      "norm_label": "named rules"
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Canvas is dead paper with no shadow; depth exists only where chrome genuinely floats above the board (top bar, toolbar).",
+      "id": "design_elevation",
+      "community": 12,
+      "norm_label": "elevation model (flat board, floating tools)"
     },
     {
-      "label": "3. Typography",
-      "file_type": "document",
+      "label": "The Ink-Not-Object Rule",
+      "file_type": "rationale",
       "source_file": "DESIGN.md",
-      "source_location": "L171",
-      "_origin": "ast",
-      "id": "design_3_typography",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
-      "norm_label": "3. typography"
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "A card is a mark on the page, never an object resting on it; giving a card a shadow kills the sketchbook illusion.",
+      "id": "design_ink_not_object_rule",
+      "community": 12,
+      "norm_label": "the ink-not-object rule"
     },
     {
-      "label": "Hierarchy",
-      "file_type": "document",
+      "label": "The Earned Blur Rule",
+      "file_type": "rationale",
       "source_file": "DESIGN.md",
-      "source_location": "L181",
-      "_origin": "ast",
-      "id": "design_hierarchy",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
-      "norm_label": "hierarchy"
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "backdrop-filter permitted only on the two surfaces persistently floating over live canvas; blur as a default look is prohibited.",
+      "id": "design_earned_blur_rule",
+      "community": 12,
+      "norm_label": "the earned blur rule"
     },
     {
-      "label": "Named Rules",
-      "file_type": "document",
+      "label": "Component vocabulary (buttons, chips, cards, inputs, nav)",
+      "file_type": "concept",
       "source_file": "DESIGN.md",
-      "source_location": "L192",
-      "_origin": "ast",
-      "id": "design_named_rules_192",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
-      "norm_label": "named rules"
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": null,
+      "id": "design_components",
+      "community": 1,
+      "norm_label": "component vocabulary (buttons, chips, cards, inputs, nav)"
     },
     {
-      "label": "4. Elevation",
-      "file_type": "document",
+      "label": "The drawn stroke (signature component)",
+      "file_type": "concept",
       "source_file": "DESIGN.md",
-      "source_location": "L201",
-      "_origin": "ast",
-      "id": "design_4_elevation",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
-      "norm_label": "4. elevation"
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Every card/section/edge/arrowhead generated by rough.js and animated with stroke-dashoffset; one pass only, since multi-stroke reads as a confused double line. Reduced-motion resolves instantly to fully visible rather than being suppressed invisibly.",
+      "id": "design_drawn_stroke",
+      "community": 1,
+      "norm_label": "the drawn stroke (signature component)"
     },
     {
-      "label": "Shadow Vocabulary",
-      "file_type": "document",
+      "label": "Design Do's and Don'ts",
+      "file_type": "rationale",
       "source_file": "DESIGN.md",
-      "source_location": "L209",
-      "_origin": "ast",
-      "id": "design_shadow_vocabulary",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
-      "norm_label": "shadow vocabulary"
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Explicit anti-patterns: no generic SaaS dashboard, no childish toy look, no cluttered whiteboard, no cold corporate correction.",
+      "id": "design_dos_donts",
+      "community": 10,
+      "norm_label": "design do's and don'ts"
     },
     {
-      "label": "Named Rules",
-      "file_type": "document",
-      "source_file": "DESIGN.md",
-      "source_location": "L216",
-      "_origin": "ast",
-      "id": "design_named_rules_216",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
-      "norm_label": "named rules"
-    },
-    {
-      "label": "5. Components",
-      "file_type": "document",
-      "source_file": "DESIGN.md",
-      "source_location": "L227",
-      "_origin": "ast",
-      "id": "design_5_components",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
-      "norm_label": "5. components"
-    },
-    {
-      "label": "Buttons",
-      "file_type": "document",
-      "source_file": "DESIGN.md",
-      "source_location": "L229",
-      "_origin": "ast",
-      "id": "design_buttons",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
-      "norm_label": "buttons"
-    },
-    {
-      "label": "Chips",
-      "file_type": "document",
-      "source_file": "DESIGN.md",
-      "source_location": "L239",
-      "_origin": "ast",
-      "id": "design_chips",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
-      "norm_label": "chips"
-    },
-    {
-      "label": "Cards / Containers",
-      "file_type": "document",
-      "source_file": "DESIGN.md",
-      "source_location": "L245",
-      "_origin": "ast",
-      "id": "design_cards_containers",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
-      "norm_label": "cards / containers"
-    },
-    {
-      "label": "Inputs / Fields",
-      "file_type": "document",
-      "source_file": "DESIGN.md",
-      "source_location": "L256",
-      "_origin": "ast",
-      "id": "design_inputs_fields",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
-      "norm_label": "inputs / fields"
-    },
-    {
-      "label": "Navigation",
-      "file_type": "document",
-      "source_file": "DESIGN.md",
-      "source_location": "L261",
-      "_origin": "ast",
-      "id": "design_navigation",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
-      "norm_label": "navigation"
-    },
-    {
-      "label": "Signature Component: the drawn stroke",
-      "file_type": "document",
-      "source_file": "DESIGN.md",
-      "source_location": "L267",
-      "_origin": "ast",
-      "id": "design_signature_component_the_drawn_stroke",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
-      "norm_label": "signature component: the drawn stroke"
-    },
-    {
-      "label": "6. Do's and Don'ts",
-      "file_type": "document",
-      "source_file": "DESIGN.md",
-      "source_location": "L276",
-      "_origin": "ast",
-      "id": "design_6_do_s_and_don_ts",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
-      "norm_label": "6. do's and don'ts"
-    },
-    {
-      "label": "Do:",
-      "file_type": "document",
-      "source_file": "DESIGN.md",
-      "source_location": "L278",
-      "_origin": "ast",
-      "id": "design_do",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
-      "norm_label": "do:"
-    },
-    {
-      "label": "Don't:",
-      "file_type": "document",
-      "source_file": "DESIGN.md",
-      "source_location": "L288",
-      "_origin": "ast",
-      "id": "design_don_t",
-      "community": 6,
-      "community_name": "CanvasView.tsx",
-      "norm_label": "don't:"
-    },
-    {
-      "label": "HANDOFF-CANVAS-FIX.md",
+      "label": "Canvas reliability phased plan (0-6)",
       "file_type": "document",
       "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "handoff_canvas_fix",
-      "community": 12,
-      "community_name": "StrokeShape.tsx",
-      "norm_label": "handoff-canvas-fix.md"
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Phased execution plan: orient/reproduce, camera fix, draw-in vanish fix, pins/edges, readable cards, card resize, verify+polish.",
+      "id": "handoff_canvas_fix_phased_plan",
+      "community": 1,
+      "norm_label": "canvas reliability phased plan (0-6)"
     },
     {
-      "label": "HANDOFF \u2014 Where Are We: canvas reliability pass",
+      "label": "Camera init race / flash-to-black bug",
+      "file_type": "concept",
+      "source_file": "HANDOFF-CANVAS-FIX.md",
+      "source_location": "src/App.tsx ~130-341",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Saved camera sets cameraInitRef before ELK fills viewRects, so fit is skipped forever, leaving an off-screen black viewport.",
+      "id": "handoff_canvas_fix_camera_flash_black",
+      "community": 1,
+      "norm_label": "camera init race / flash-to-black bug"
+    },
+    {
+      "label": "DrawnPath cancel leaves invisible strokes",
+      "file_type": "concept",
+      "source_file": "HANDOFF-CANVAS-FIX.md",
+      "source_location": "src/canvas/DrawnPath.tsx ~81-86",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "anim.cancel() leaves full strokeDashoffset, producing invisible paths after re-layout or rapid AI edits.",
+      "id": "handoff_canvas_fix_drawnpath_vanish",
+      "community": 1,
+      "norm_label": "drawnpath cancel leaves invisible strokes"
+    },
+    {
+      "label": "Pins, edges, new-card placement bugs",
+      "file_type": "concept",
+      "source_file": "HANDOFF-CANVAS-FIX.md",
+      "source_location": "src/lib/elklayout.ts; src/lib/geometry.ts",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "ELK ignores pinned positions causing collisions; nodeSize ignores title length causing overlap/clipping; new nodes omitted until ELK resolves.",
+      "id": "handoff_canvas_fix_pins_edges",
+      "community": 1,
+      "norm_label": "pins, edges, new-card placement bugs"
+    },
+    {
+      "label": "Readable cards + AI guidance (Phase 4)",
+      "file_type": "concept",
+      "source_file": "HANDOFF-CANVAS-FIX.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Include title wrap/length in nodeSize(); tighten AGENTS.md guidance to short titles/one-line notes.",
+      "id": "handoff_canvas_fix_readable_cards",
+      "community": 1,
+      "norm_label": "readable cards + ai guidance (phase 4)"
+    },
+    {
+      "label": "Card resize (Phase 5)",
+      "file_type": "concept",
+      "source_file": "HANDOFF-CANVAS-FIX.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "NodePos already supports optional w/h but there is no resize UI; add corner/edge drag handle persisting into layout.pinned.",
+      "id": "handoff_canvas_fix_card_resize",
+      "community": 1,
+      "norm_label": "card resize (phase 5)"
+    },
+    {
+      "label": "Verify + polish (Phase 6)",
+      "file_type": "concept",
+      "source_file": "HANDOFF-CANVAS-FIX.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "tsc/build must stay green; smoke test on Boostl .waw data; update HANDOVER.md; run graphify update .",
+      "id": "handoff_canvas_fix_verify_polish",
+      "community": 1,
+      "norm_label": "verify + polish (phase 6)"
+    },
+    {
+      "label": "Known bug cluster (Bugbot + layout audit)",
       "file_type": "document",
       "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "handoff_canvas_fix_handoff_where_are_we_canvas_reliability_pass",
-      "community": 12,
-      "community_name": "StrokeShape.tsx",
-      "norm_label": "handoff \u2014 where are we: canvas reliability pass"
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": null,
+      "id": "handoff_canvas_fix_bug_cluster",
+      "community": 1,
+      "norm_label": "known bug cluster (bugbot + layout audit)"
     },
     {
-      "label": "Phased plan (overview)",
-      "file_type": "document",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L9",
-      "_origin": "ast",
-      "id": "handoff_canvas_fix_phased_plan_overview",
-      "community": 12,
-      "community_name": "StrokeShape.tsx",
-      "norm_label": "phased plan (overview)"
-    },
-    {
-      "label": "Outcome",
-      "file_type": "document",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L25",
-      "_origin": "ast",
-      "id": "handoff_canvas_fix_outcome",
-      "community": 12,
-      "community_name": "StrokeShape.tsx",
-      "norm_label": "outcome"
-    },
-    {
-      "label": "Context",
-      "file_type": "document",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L37",
-      "_origin": "ast",
-      "id": "handoff_canvas_fix_context",
-      "community": 12,
-      "community_name": "StrokeShape.tsx",
-      "norm_label": "context"
-    },
-    {
-      "label": "Known bug cluster (Bugbot + prior audit)",
-      "file_type": "document",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L54",
-      "_origin": "ast",
-      "id": "handoff_canvas_fix_known_bug_cluster_bugbot_prior_audit",
-      "community": 12,
-      "community_name": "StrokeShape.tsx",
-      "norm_label": "known bug cluster (bugbot + prior audit)"
-    },
-    {
-      "label": "Gotchas (from HANDOVER.md)",
-      "file_type": "document",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L67",
-      "_origin": "ast",
-      "id": "handoff_canvas_fix_gotchas_from_handover_md",
-      "community": 12,
-      "community_name": "StrokeShape.tsx",
-      "norm_label": "gotchas (from handover.md)"
-    },
-    {
-      "label": "Constraints",
-      "file_type": "document",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L77",
-      "_origin": "ast",
-      "id": "handoff_canvas_fix_constraints",
-      "community": 12,
-      "community_name": "StrokeShape.tsx",
-      "norm_label": "constraints"
-    },
-    {
-      "label": "Phases (execute in order; verify before next)",
-      "file_type": "document",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L87",
-      "_origin": "ast",
-      "id": "handoff_canvas_fix_phases_execute_in_order_verify_before_next",
-      "community": 12,
-      "community_name": "StrokeShape.tsx",
-      "norm_label": "phases (execute in order; verify before next)"
-    },
-    {
-      "label": "Phase 0 \u2014 Orient + reproduce (no product fixes)",
-      "file_type": "document",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L89",
-      "_origin": "ast",
-      "id": "handoff_canvas_fix_phase_0_orient_reproduce_no_product_fixes",
-      "community": 12,
-      "community_name": "StrokeShape.tsx",
-      "norm_label": "phase 0 \u2014 orient + reproduce (no product fixes)"
-    },
-    {
-      "label": "Phase 1 \u2014 Camera / flash\u2192black",
-      "file_type": "document",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L102",
-      "_origin": "ast",
-      "id": "handoff_canvas_fix_phase_1_camera_flash_black",
-      "community": 12,
-      "community_name": "StrokeShape.tsx",
-      "norm_label": "phase 1 \u2014 camera / flash\u2192black"
-    },
-    {
-      "label": "Phase 2 \u2014 DrawnPath cancel safety",
-      "file_type": "document",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L113",
-      "_origin": "ast",
-      "id": "handoff_canvas_fix_phase_2_drawnpath_cancel_safety",
-      "community": 12,
-      "community_name": "StrokeShape.tsx",
-      "norm_label": "phase 2 \u2014 drawnpath cancel safety"
-    },
-    {
-      "label": "Phase 3 \u2014 Layout: pins, new cards, edges",
-      "file_type": "document",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L119",
-      "_origin": "ast",
-      "id": "handoff_canvas_fix_phase_3_layout_pins_new_cards_edges",
-      "community": 12,
-      "community_name": "StrokeShape.tsx",
-      "norm_label": "phase 3 \u2014 layout: pins, new cards, edges"
-    },
-    {
-      "label": "Phase 4 \u2014 Readable cards + AI guidance",
-      "file_type": "document",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L129",
-      "_origin": "ast",
-      "id": "handoff_canvas_fix_phase_4_readable_cards_ai_guidance",
-      "community": 12,
-      "community_name": "StrokeShape.tsx",
-      "norm_label": "phase 4 \u2014 readable cards + ai guidance"
-    },
-    {
-      "label": "Phase 5 \u2014 Card resize",
-      "file_type": "document",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L138",
-      "_origin": "ast",
-      "id": "handoff_canvas_fix_phase_5_card_resize",
-      "community": 12,
-      "community_name": "StrokeShape.tsx",
-      "norm_label": "phase 5 \u2014 card resize"
-    },
-    {
-      "label": "Phase 6 \u2014 Ship checklist",
-      "file_type": "document",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L147",
-      "_origin": "ast",
-      "id": "handoff_canvas_fix_phase_6_ship_checklist",
-      "community": 12,
-      "community_name": "StrokeShape.tsx",
-      "norm_label": "phase 6 \u2014 ship checklist"
-    },
-    {
-      "label": "Do not",
-      "file_type": "document",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L157",
-      "_origin": "ast",
-      "id": "handoff_canvas_fix_do_not",
-      "community": 12,
-      "community_name": "StrokeShape.tsx",
-      "norm_label": "do not"
-    },
-    {
-      "label": "Escalate to owner (batch)",
-      "file_type": "document",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L167",
-      "_origin": "ast",
-      "id": "handoff_canvas_fix_escalate_to_owner_batch",
-      "community": 12,
-      "community_name": "StrokeShape.tsx",
-      "norm_label": "escalate to owner (batch)"
-    },
-    {
-      "label": "Start",
-      "file_type": "document",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L175",
-      "_origin": "ast",
-      "id": "handoff_canvas_fix_start",
-      "community": 12,
-      "community_name": "StrokeShape.tsx",
-      "norm_label": "start"
-    },
-    {
-      "label": "HANDOVER.md",
+      "label": "Where Are We v2 status (verification complete)",
       "file_type": "document",
       "source_file": "HANDOVER.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "handover",
-      "community": 11,
-      "community_name": "Where things stand",
-      "norm_label": "handover.md"
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "v2 is DONE and fully verified; build passes; full browser verification checklist passed.",
+      "id": "handover_v2_status",
+      "community": 1,
+      "norm_label": "where are we v2 status (verification complete)"
     },
     {
-      "label": "HANDOVER \u2014 Where Are We v2 (verification complete, ready to use)",
+      "label": "2026-07-24 canvas reliability pass",
       "file_type": "document",
       "source_file": "HANDOVER.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "handover_handover_where_are_we_v2_verification_complete_ready_to_use",
-      "community": 11,
-      "community_name": "Where things stand",
-      "norm_label": "handover \u2014 where are we v2 (verification complete, ready to use)"
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Root cause of reported flash-to-black was a stale v1 dist/ build served against v2 server layout (missing layout.positions), causing a TypeError and React unmount.",
+      "id": "handover_canvas_reliability_pass",
+      "community": 1,
+      "norm_label": "2026-07-24 canvas reliability pass"
     },
     {
-      "label": "2026-07-24 canvas reliability pass (HANDOFF-CANVAS-FIX.md)",
+      "label": "Camera rescue fix",
+      "file_type": "concept",
+      "source_file": "HANDOVER.md",
+      "source_location": "App.tsx",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Saved camera is verified once ELK produces real rects (contentVisible); auto-fits if it frames empty space instead of staying black. Any user setCamera marks the camera checked and is never overridden.",
+      "id": "handover_camera_rescue",
+      "community": 1,
+      "norm_label": "camera rescue fix"
+    },
+    {
+      "label": "DrawnPath cancel safety fix",
+      "file_type": "concept",
+      "source_file": "HANDOVER.md",
+      "source_location": "canvas/DrawnPath.tsx",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Effect cleanup clears inline dasharray/dashoffset after anim.cancel() so interrupted draw-ins can no longer leave permanently invisible strokes.",
+      "id": "handover_drawnpath_cancel_safety",
+      "community": 1,
+      "norm_label": "drawnpath cancel safety fix"
+    },
+    {
+      "label": "Pins + new cards + edges fix",
+      "file_type": "concept",
+      "source_file": "HANDOVER.md",
+      "source_location": "App.tsx viewRects; lib/geometry.ts",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "New nodes get immediate placeholder rects; auto-laid cards nudged off pinned cards; routeEdge() falls back to orthogonal A* over a 30px grid when a straight edge would cut through a card.",
+      "id": "handover_pins_new_cards_edges",
+      "community": 1,
+      "norm_label": "pins + new cards + edges fix"
+    },
+    {
+      "label": "Readable cards fix",
+      "file_type": "concept",
+      "source_file": "HANDOVER.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "nodeSize() models the real card (status row + wrapped title clamped 3 + note clamped 4 + chip); .node-title line-clamped at 3 in CSS; AGENTS.md/CLI init/.cursor rule updated with title/note length guidance.",
+      "id": "handover_readable_cards",
+      "community": 1,
+      "norm_label": "readable cards fix"
+    },
+    {
+      "label": "Card resize shipped feature",
+      "file_type": "concept",
+      "source_file": "HANDOVER.md",
+      "source_location": "canvas/CanvasView.tsx; App.tsx",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Selected card shows bottom-right corner handle; dragging persists {x,y,w,h} into layout.pinned (min 140x74); undo works via resize-<id> key; Auto-arrange clears size with the pin.",
+      "id": "handover_card_resize",
+      "community": 1,
+      "norm_label": "card resize shipped feature"
+    },
+    {
+      "label": "Data files split (where-are-we.json / presets.json / layout.local.json / NEXT.md)",
+      "file_type": "concept",
+      "source_file": "HANDOVER.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Split exists so saved arrangements travel between machines while volatile per-machine state (camera, in-progress pins, scribbles) doesn't create merge conflicts; server owns the split and migrates presets out of older layout.local.json on first run.",
+      "id": "handover_data_files_split",
+      "community": 1,
+      "norm_label": "data files split (where-are-we.json / presets.json / layout.local.json / next.md)"
+    },
+    {
+      "label": "Known gaps / owner questions (batched)",
+      "file_type": "rationale",
+      "source_file": "HANDOVER.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Section frames as member bounding boxes can stretch across the board when a pin is far outside its section; deliberate v2 behavior, redesign only if it bothers the owner. Resize handle look and title-clamp aggressiveness are taste calls.",
+      "id": "handover_known_gaps",
+      "community": 1,
+      "norm_label": "known gaps / owner questions (batched)"
+    },
+    {
+      "label": "Fresh machine setup notes",
       "file_type": "document",
       "source_file": "HANDOVER.md",
-      "source_location": "L5",
-      "_origin": "ast",
-      "id": "handover_2026_07_24_canvas_reliability_pass_handoff_canvas_fix_md",
-      "community": 11,
-      "community_name": "Where things stand",
-      "norm_label": "2026-07-24 canvas reliability pass (handoff-canvas-fix.md)"
-    },
-    {
-      "label": "Data files in a data dir",
-      "file_type": "document",
-      "source_file": "HANDOVER.md",
-      "source_location": "L53",
-      "_origin": "ast",
-      "id": "handover_data_files_in_a_data_dir",
-      "community": 11,
-      "community_name": "Where things stand",
-      "norm_label": "data files in a data dir"
-    },
-    {
-      "label": "What this project is",
-      "file_type": "document",
-      "source_file": "HANDOVER.md",
-      "source_location": "L68",
-      "_origin": "ast",
-      "id": "handover_what_this_project_is",
-      "community": 11,
-      "community_name": "Where things stand",
-      "norm_label": "what this project is"
-    },
-    {
-      "label": "Where things stand",
-      "file_type": "document",
-      "source_file": "HANDOVER.md",
-      "source_location": "L79",
-      "_origin": "ast",
-      "id": "handover_where_things_stand",
-      "community": 11,
-      "community_name": "Where things stand",
-      "norm_label": "where things stand"
-    },
-    {
-      "label": "Board state (data/where-are-we.json)",
-      "file_type": "document",
-      "source_file": "HANDOVER.md",
-      "source_location": "L103",
-      "_origin": "ast",
-      "id": "handover_board_state_data_where_are_we_json",
-      "community": 11,
-      "community_name": "Where things stand",
-      "norm_label": "board state (data/where-are-we.json)"
-    },
-    {
-      "label": "What to do next (nothing is blocked)",
-      "file_type": "document",
-      "source_file": "HANDOVER.md",
-      "source_location": "L109",
-      "_origin": "ast",
-      "id": "handover_what_to_do_next_nothing_is_blocked",
-      "community": 11,
-      "community_name": "Where things stand",
-      "norm_label": "what to do next (nothing is blocked)"
-    },
-    {
-      "label": "Machine setup notes (fresh machine)",
-      "file_type": "document",
-      "source_file": "HANDOVER.md",
-      "source_location": "L119",
-      "_origin": "ast",
-      "id": "handover_machine_setup_notes_fresh_machine",
-      "community": 11,
-      "community_name": "Where things stand",
-      "norm_label": "machine setup notes (fresh machine)"
-    },
-    {
-      "label": "Gotchas that still apply",
-      "file_type": "document",
-      "source_file": "HANDOVER.md",
-      "source_location": "L135",
-      "_origin": "ast",
-      "id": "handover_gotchas_that_still_apply",
-      "community": 11,
-      "community_name": "Where things stand",
-      "norm_label": "gotchas that still apply"
-    },
-    {
-      "label": "PRODUCT.md",
-      "file_type": "document",
-      "source_file": "PRODUCT.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "product",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": null,
+      "id": "handover_machine_setup",
       "community": 14,
-      "community_name": "Product",
-      "norm_label": "product.md"
+      "norm_label": "fresh machine setup notes"
     },
     {
-      "label": "Product",
+      "label": "Product users (solo founder / small-team builder)",
       "file_type": "document",
       "source_file": "PRODUCT.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "product_product",
-      "community": 14,
-      "community_name": "Product",
-      "norm_label": "product"
-    },
-    {
-      "label": "Register",
-      "file_type": "document",
-      "source_file": "PRODUCT.md",
-      "source_location": "L3",
-      "_origin": "ast",
-      "id": "product_register",
-      "community": 14,
-      "community_name": "Product",
-      "norm_label": "register"
-    },
-    {
-      "label": "Users",
-      "file_type": "document",
-      "source_file": "PRODUCT.md",
-      "source_location": "L7",
-      "_origin": "ast",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Job to be done: see project state in one glance, know what to do next without deciding, see that today produced something - has to make sense cold after a break/context switch.",
       "id": "product_users",
-      "community": 14,
-      "community_name": "Product",
-      "norm_label": "users"
+      "community": 13,
+      "norm_label": "product users (solo founder / small-team builder)"
     },
     {
-      "label": "Product Purpose",
-      "file_type": "document",
+      "label": "Product purpose (live board, believed not groomed)",
+      "file_type": "rationale",
       "source_file": "PRODUCT.md",
-      "source_location": "L18",
-      "_origin": "ast",
-      "id": "product_product_purpose",
-      "community": 14,
-      "community_name": "Product",
-      "norm_label": "product purpose"
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Success is that the board is believed and glanced at daily rather than tidied/ignored/abandoned like other project trackers; if the user has to groom it, it has failed.",
+      "id": "product_purpose",
+      "community": 13,
+      "norm_label": "product purpose (live board, believed not groomed)"
     },
     {
-      "label": "Brand Personality",
-      "file_type": "document",
+      "label": "Brand personality (hand-drawn, calm, credible)",
+      "file_type": "rationale",
       "source_file": "PRODUCT.md",
-      "source_location": "L27",
-      "_origin": "ast",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Voice is plain and direct, no cheerleading or exclamation marks; the board states facts and gets out of the way.",
       "id": "product_brand_personality",
-      "community": 14,
-      "community_name": "Product",
-      "norm_label": "brand personality"
+      "community": 10,
+      "norm_label": "brand personality (hand-drawn, calm, credible)"
     },
     {
-      "label": "Anti-references",
-      "file_type": "document",
+      "label": "Anti-references (SaaS dashboard, childish, cluttered whiteboard, cold corporate)",
+      "file_type": "rationale",
       "source_file": "PRODUCT.md",
-      "source_location": "L39",
-      "_origin": "ast",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Childish/toy-like flagged as the sharpest risk since the medium is literally crayon; the line is hand-drawn by an adult for adult work.",
       "id": "product_anti_references",
-      "community": 14,
-      "community_name": "Product",
-      "norm_label": "anti-references"
+      "community": 10,
+      "norm_label": "anti-references (saas dashboard, childish, cluttered whiteboard, cold corporate)"
     },
     {
-      "label": "Design Principles",
-      "file_type": "document",
+      "label": "Product design principles",
+      "file_type": "rationale",
       "source_file": "PRODUCT.md",
-      "source_location": "L53",
-      "_origin": "ast",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Board is the product not the chrome; answer 'where am I?' in one glance; hand-drawn not hand-made (precision underneath, looseness on the surface); quiet by default, loud only where it matters; readable cold.",
       "id": "product_design_principles",
-      "community": 14,
-      "community_name": "Product",
-      "norm_label": "design principles"
+      "community": 10,
+      "norm_label": "product design principles"
     },
     {
-      "label": "Accessibility & Inclusion",
-      "file_type": "document",
+      "label": "Accessibility & inclusion defaults",
+      "file_type": "concept",
       "source_file": "PRODUCT.md",
-      "source_location": "L70",
-      "_origin": "ast",
-      "id": "product_accessibility_inclusion",
-      "community": 14,
-      "community_name": "Product",
-      "norm_label": "accessibility & inclusion"
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "prefers-reduced-motion honoured by degrading to instant fully-visible state rather than being skipped in a way that hides geometry; status never carried by colour alone; zoom treated as a first-class accessibility affordance.",
+      "id": "product_accessibility",
+      "community": 1,
+      "norm_label": "accessibility & inclusion defaults"
     },
     {
-      "label": "README.md",
+      "label": "Quick start (dev mode and CLI)",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "readme",
-      "community": 5,
-      "community_name": "Where Are We",
-      "norm_label": "readme.md"
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": null,
+      "id": "readme_quick_start",
+      "community": 1,
+      "norm_label": "quick start (dev mode and cli)"
     },
     {
-      "label": "Where Are We",
-      "file_type": "document",
+      "label": "where-are-we.json data schema",
+      "file_type": "concept",
       "source_file": "README.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "readme_where_are_we",
-      "community": 5,
-      "community_name": "Where Are We",
-      "norm_label": "where are we"
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": null,
+      "id": "readme_data_schema",
+      "community": 1,
+      "norm_label": "where-are-we.json data schema"
     },
     {
-      "label": "Quick start (this repo, dev mode)",
-      "file_type": "document",
+      "label": "Board features (sections, auto-layout, critical path, do this next, daily view)",
+      "file_type": "concept",
       "source_file": "README.md",
-      "source_location": "L17",
-      "_origin": "ast",
-      "id": "readme_quick_start_this_repo_dev_mode",
-      "community": 5,
-      "community_name": "Where Are We",
-      "norm_label": "quick start (this repo, dev mode)"
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": null,
+      "id": "readme_board_features",
+      "community": 1,
+      "norm_label": "board features (sections, auto-layout, critical path, do this next, daily view)"
     },
     {
-      "label": "Quick start (any other repo)",
-      "file_type": "document",
+      "label": "Canvas tools (pan, move, draw, connect, card, erase)",
+      "file_type": "concept",
       "source_file": "README.md",
-      "source_location": "L27",
-      "_origin": "ast",
-      "id": "readme_quick_start_any_other_repo",
-      "community": 5,
-      "community_name": "Where Are We",
-      "norm_label": "quick start (any other repo)"
-    },
-    {
-      "label": "How it works",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L44",
-      "_origin": "ast",
-      "id": "readme_how_it_works",
-      "community": 5,
-      "community_name": "Where Are We",
-      "norm_label": "how it works"
-    },
-    {
-      "label": "The board",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L68",
-      "_origin": "ast",
-      "id": "readme_the_board",
-      "community": 5,
-      "community_name": "Where Are We",
-      "norm_label": "the board"
-    },
-    {
-      "label": "Tools",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L79",
-      "_origin": "ast",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Overrides to AI cards (status/title/note) are stored in the layout file as overrides; if the AI later updates the card, its fresh content wins and the stale override is dropped.",
       "id": "readme_tools",
-      "community": 5,
-      "community_name": "Where Are We",
-      "norm_label": "tools"
+      "community": 1,
+      "norm_label": "canvas tools (pan, move, draw, connect, card, erase)"
     },
     {
-      "label": "Data schema (`where-are-we.json`)",
-      "file_type": "document",
+      "label": "Project layout (bin/, server/, data/, src/)",
+      "file_type": "concept",
       "source_file": "README.md",
-      "source_location": "L100",
-      "_origin": "ast",
-      "id": "readme_data_schema_where_are_we_json",
-      "community": 5,
-      "community_name": "Where Are We",
-      "norm_label": "data schema (`where-are-we.json`)"
-    },
-    {
-      "label": "Project layout",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L138",
-      "_origin": "ast",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": null,
       "id": "readme_project_layout",
-      "community": 5,
-      "community_name": "Where Are We",
-      "norm_label": "project layout"
+      "community": 1,
+      "norm_label": "project layout (bin/, server/, data/, src/)"
+    },
+    {
+      "label": "index.html (app entry point)",
+      "file_type": "code",
+      "source_file": "index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": null,
+      "id": "index_html_root",
+      "community": 1,
+      "norm_label": "index.html (app entry point)"
     }
   ],
   "links": [
@@ -3616,8 +3288,8 @@
       "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package",
-      "target": "package_bin",
+      "source": "c_users_andre_where_are_we_package_json",
+      "target": "c_users_andre_where_are_we_package_bin",
       "confidence_score": 1.0
     },
     {
@@ -3627,8 +3299,8 @@
       "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package",
-      "target": "package_dependencies",
+      "source": "c_users_andre_where_are_we_package_json",
+      "target": "c_users_andre_where_are_we_package_dependencies",
       "confidence_score": 1.0
     },
     {
@@ -3638,8 +3310,8 @@
       "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package",
-      "target": "package_description",
+      "source": "c_users_andre_where_are_we_package_json",
+      "target": "c_users_andre_where_are_we_package_description",
       "confidence_score": 1.0
     },
     {
@@ -3649,8 +3321,8 @@
       "source_location": "L27",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package",
-      "target": "package_devdependencies",
+      "source": "c_users_andre_where_are_we_package_json",
+      "target": "c_users_andre_where_are_we_package_devdependencies",
       "confidence_score": 1.0
     },
     {
@@ -3660,8 +3332,8 @@
       "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package",
-      "target": "package_files",
+      "source": "c_users_andre_where_are_we_package_json",
+      "target": "c_users_andre_where_are_we_package_files",
       "confidence_score": 1.0
     },
     {
@@ -3671,8 +3343,8 @@
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package",
-      "target": "package_name",
+      "source": "c_users_andre_where_are_we_package_json",
+      "target": "c_users_andre_where_are_we_package_name",
       "confidence_score": 1.0
     },
     {
@@ -3682,8 +3354,8 @@
       "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package",
-      "target": "package_scripts",
+      "source": "c_users_andre_where_are_we_package_json",
+      "target": "c_users_andre_where_are_we_package_scripts",
       "confidence_score": 1.0
     },
     {
@@ -3693,8 +3365,8 @@
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package",
-      "target": "package_type",
+      "source": "c_users_andre_where_are_we_package_json",
+      "target": "c_users_andre_where_are_we_package_type",
       "confidence_score": 1.0
     },
     {
@@ -3704,8 +3376,8 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package",
-      "target": "package_version",
+      "source": "c_users_andre_where_are_we_package_json",
+      "target": "c_users_andre_where_are_we_package_version",
       "confidence_score": 1.0
     },
     {
@@ -3715,8 +3387,8 @@
       "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_bin",
-      "target": "package_bin_where_are_we",
+      "source": "c_users_andre_where_are_we_package_bin",
+      "target": "c_users_andre_where_are_we_package_bin_where_are_we",
       "confidence_score": 1.0
     },
     {
@@ -3727,7 +3399,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_files",
+      "source": "c_users_andre_where_are_we_package_files",
       "target": "ref_bin",
       "confidence_score": 1.0
     },
@@ -3739,7 +3411,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_files",
+      "source": "c_users_andre_where_are_we_package_files",
       "target": "ref_dist",
       "confidence_score": 1.0
     },
@@ -3751,7 +3423,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_files",
+      "source": "c_users_andre_where_are_we_package_files",
       "target": "ref_readme_md",
       "confidence_score": 1.0
     },
@@ -3763,7 +3435,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_files",
+      "source": "c_users_andre_where_are_we_package_files",
       "target": "ref_server",
       "confidence_score": 1.0
     },
@@ -3774,8 +3446,8 @@
       "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_scripts",
-      "target": "package_scripts_build",
+      "source": "c_users_andre_where_are_we_package_scripts",
+      "target": "c_users_andre_where_are_we_package_scripts_build",
       "confidence_score": 1.0
     },
     {
@@ -3785,8 +3457,8 @@
       "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_scripts",
-      "target": "package_scripts_dev",
+      "source": "c_users_andre_where_are_we_package_scripts",
+      "target": "c_users_andre_where_are_we_package_scripts_dev",
       "confidence_score": 1.0
     },
     {
@@ -3796,8 +3468,8 @@
       "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_scripts",
-      "target": "package_scripts_dev_server",
+      "source": "c_users_andre_where_are_we_package_scripts",
+      "target": "c_users_andre_where_are_we_package_scripts_dev_server",
       "confidence_score": 1.0
     },
     {
@@ -3807,8 +3479,8 @@
       "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_scripts",
-      "target": "package_scripts_dev_web",
+      "source": "c_users_andre_where_are_we_package_scripts",
+      "target": "c_users_andre_where_are_we_package_scripts_dev_web",
       "confidence_score": 1.0
     },
     {
@@ -3818,8 +3490,8 @@
       "source_location": "L20",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_scripts",
-      "target": "package_scripts_prepare",
+      "source": "c_users_andre_where_are_we_package_scripts",
+      "target": "c_users_andre_where_are_we_package_scripts_prepare",
       "confidence_score": 1.0
     },
     {
@@ -3829,8 +3501,8 @@
       "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_scripts",
-      "target": "package_scripts_preview",
+      "source": "c_users_andre_where_are_we_package_scripts",
+      "target": "c_users_andre_where_are_we_package_scripts_preview",
       "confidence_score": 1.0
     },
     {
@@ -3840,8 +3512,8 @@
       "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_dependencies",
-      "target": "package_dependencies_chokidar",
+      "source": "c_users_andre_where_are_we_package_dependencies",
+      "target": "c_users_andre_where_are_we_package_dependencies_chokidar",
       "confidence_score": 1.0
     },
     {
@@ -3851,8 +3523,8 @@
       "source_location": "L25",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_dependencies",
-      "target": "package_dependencies_ws",
+      "source": "c_users_andre_where_are_we_package_dependencies",
+      "target": "c_users_andre_where_are_we_package_dependencies_ws",
       "confidence_score": 1.0
     },
     {
@@ -3863,7 +3535,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_dependencies_chokidar",
+      "source": "c_users_andre_where_are_we_package_dependencies_chokidar",
       "target": "chokidar",
       "confidence_score": 1.0
     },
@@ -3875,7 +3547,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_dependencies_ws",
+      "source": "c_users_andre_where_are_we_package_dependencies_ws",
       "target": "ws",
       "confidence_score": 1.0
     },
@@ -3886,8 +3558,8 @@
       "source_location": "L32",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_concurrently",
+      "source": "c_users_andre_where_are_we_package_devdependencies",
+      "target": "c_users_andre_where_are_we_package_devdependencies_concurrently",
       "confidence_score": 1.0
     },
     {
@@ -3897,8 +3569,8 @@
       "source_location": "L33",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_elkjs",
+      "source": "c_users_andre_where_are_we_package_devdependencies",
+      "target": "c_users_andre_where_are_we_package_devdependencies_elkjs",
       "confidence_score": 1.0
     },
     {
@@ -3908,8 +3580,8 @@
       "source_location": "L34",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_perfect_freehand",
+      "source": "c_users_andre_where_are_we_package_devdependencies",
+      "target": "c_users_andre_where_are_we_package_devdependencies_perfect_freehand",
       "confidence_score": 1.0
     },
     {
@@ -3919,8 +3591,8 @@
       "source_location": "L35",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_react",
+      "source": "c_users_andre_where_are_we_package_devdependencies",
+      "target": "c_users_andre_where_are_we_package_devdependencies_react",
       "confidence_score": 1.0
     },
     {
@@ -3930,8 +3602,8 @@
       "source_location": "L36",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_react_dom",
+      "source": "c_users_andre_where_are_we_package_devdependencies",
+      "target": "c_users_andre_where_are_we_package_devdependencies_react_dom",
       "confidence_score": 1.0
     },
     {
@@ -3941,8 +3613,8 @@
       "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_roughjs",
+      "source": "c_users_andre_where_are_we_package_devdependencies",
+      "target": "c_users_andre_where_are_we_package_devdependencies_roughjs",
       "confidence_score": 1.0
     },
     {
@@ -3952,8 +3624,8 @@
       "source_location": "L28",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_types_react",
+      "source": "c_users_andre_where_are_we_package_devdependencies",
+      "target": "c_users_andre_where_are_we_package_devdependencies_types_react",
       "confidence_score": 1.0
     },
     {
@@ -3963,8 +3635,8 @@
       "source_location": "L29",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_types_react_dom",
+      "source": "c_users_andre_where_are_we_package_devdependencies",
+      "target": "c_users_andre_where_are_we_package_devdependencies_types_react_dom",
       "confidence_score": 1.0
     },
     {
@@ -3974,8 +3646,8 @@
       "source_location": "L30",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_types_ws",
+      "source": "c_users_andre_where_are_we_package_devdependencies",
+      "target": "c_users_andre_where_are_we_package_devdependencies_types_ws",
       "confidence_score": 1.0
     },
     {
@@ -3985,8 +3657,8 @@
       "source_location": "L38",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_typescript",
+      "source": "c_users_andre_where_are_we_package_devdependencies",
+      "target": "c_users_andre_where_are_we_package_devdependencies_typescript",
       "confidence_score": 1.0
     },
     {
@@ -3996,8 +3668,8 @@
       "source_location": "L39",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_vite",
+      "source": "c_users_andre_where_are_we_package_devdependencies",
+      "target": "c_users_andre_where_are_we_package_devdependencies_vite",
       "confidence_score": 1.0
     },
     {
@@ -4007,8 +3679,8 @@
       "source_location": "L31",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_vitejs_plugin_react",
+      "source": "c_users_andre_where_are_we_package_devdependencies",
+      "target": "c_users_andre_where_are_we_package_devdependencies_vitejs_plugin_react",
       "confidence_score": 1.0
     },
     {
@@ -4019,7 +3691,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_devdependencies_types_react",
+      "source": "c_users_andre_where_are_we_package_devdependencies_types_react",
       "target": "types_react",
       "confidence_score": 1.0
     },
@@ -4031,7 +3703,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_devdependencies_types_react_dom",
+      "source": "c_users_andre_where_are_we_package_devdependencies_types_react_dom",
       "target": "types_react_dom",
       "confidence_score": 1.0
     },
@@ -4043,7 +3715,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_devdependencies_types_ws",
+      "source": "c_users_andre_where_are_we_package_devdependencies_types_ws",
       "target": "types_ws",
       "confidence_score": 1.0
     },
@@ -4055,7 +3727,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_devdependencies_vitejs_plugin_react",
+      "source": "c_users_andre_where_are_we_package_devdependencies_vitejs_plugin_react",
       "target": "vitejs_plugin_react",
       "confidence_score": 1.0
     },
@@ -4067,7 +3739,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_devdependencies_concurrently",
+      "source": "c_users_andre_where_are_we_package_devdependencies_concurrently",
       "target": "concurrently",
       "confidence_score": 1.0
     },
@@ -4079,7 +3751,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_devdependencies_elkjs",
+      "source": "c_users_andre_where_are_we_package_devdependencies_elkjs",
       "target": "elkjs",
       "confidence_score": 1.0
     },
@@ -4091,7 +3763,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_devdependencies_perfect_freehand",
+      "source": "c_users_andre_where_are_we_package_devdependencies_perfect_freehand",
       "target": "perfect_freehand",
       "confidence_score": 1.0
     },
@@ -4103,7 +3775,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_devdependencies_react",
+      "source": "c_users_andre_where_are_we_package_devdependencies_react",
       "target": "react",
       "confidence_score": 1.0
     },
@@ -4115,7 +3787,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_devdependencies_react_dom",
+      "source": "c_users_andre_where_are_we_package_devdependencies_react_dom",
       "target": "react_dom",
       "confidence_score": 1.0
     },
@@ -4127,7 +3799,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_devdependencies_roughjs",
+      "source": "c_users_andre_where_are_we_package_devdependencies_roughjs",
       "target": "roughjs",
       "confidence_score": 1.0
     },
@@ -4139,7 +3811,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_devdependencies_typescript",
+      "source": "c_users_andre_where_are_we_package_devdependencies_typescript",
       "target": "typescript",
       "confidence_score": 1.0
     },
@@ -4151,7 +3823,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_devdependencies_vite",
+      "source": "c_users_andre_where_are_we_package_devdependencies_vite",
       "target": "vite",
       "confidence_score": 1.0
     },
@@ -8430,8 +8102,8 @@
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig",
-      "target": "tsconfig_compileroptions",
+      "source": "c_users_andre_where_are_we_tsconfig_json",
+      "target": "c_users_andre_where_are_we_tsconfig_compileroptions",
       "confidence_score": 1.0
     },
     {
@@ -8441,8 +8113,8 @@
       "source_location": "L20",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig",
-      "target": "tsconfig_include",
+      "source": "c_users_andre_where_are_we_tsconfig_json",
+      "target": "c_users_andre_where_are_we_tsconfig_include",
       "confidence_score": 1.0
     },
     {
@@ -8452,8 +8124,8 @@
       "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_allowimportingtsextensions",
+      "source": "c_users_andre_where_are_we_tsconfig_compileroptions",
+      "target": "c_users_andre_where_are_we_tsconfig_compileroptions_allowimportingtsextensions",
       "confidence_score": 1.0
     },
     {
@@ -8463,8 +8135,8 @@
       "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_isolatedmodules",
+      "source": "c_users_andre_where_are_we_tsconfig_compileroptions",
+      "target": "c_users_andre_where_are_we_tsconfig_compileroptions_isolatedmodules",
       "confidence_score": 1.0
     },
     {
@@ -8474,8 +8146,8 @@
       "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_jsx",
+      "source": "c_users_andre_where_are_we_tsconfig_compileroptions",
+      "target": "c_users_andre_where_are_we_tsconfig_compileroptions_jsx",
       "confidence_score": 1.0
     },
     {
@@ -8485,8 +8157,8 @@
       "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_lib",
+      "source": "c_users_andre_where_are_we_tsconfig_compileroptions",
+      "target": "c_users_andre_where_are_we_tsconfig_compileroptions_lib",
       "confidence_score": 1.0
     },
     {
@@ -8496,8 +8168,8 @@
       "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_module",
+      "source": "c_users_andre_where_are_we_tsconfig_compileroptions",
+      "target": "c_users_andre_where_are_we_tsconfig_compileroptions_module",
       "confidence_score": 1.0
     },
     {
@@ -8507,8 +8179,8 @@
       "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_moduledetection",
+      "source": "c_users_andre_where_are_we_tsconfig_compileroptions",
+      "target": "c_users_andre_where_are_we_tsconfig_compileroptions_moduledetection",
       "confidence_score": 1.0
     },
     {
@@ -8518,8 +8190,8 @@
       "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_moduleresolution",
+      "source": "c_users_andre_where_are_we_tsconfig_compileroptions",
+      "target": "c_users_andre_where_are_we_tsconfig_compileroptions_moduleresolution",
       "confidence_score": 1.0
     },
     {
@@ -8529,8 +8201,8 @@
       "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_noemit",
+      "source": "c_users_andre_where_are_we_tsconfig_compileroptions",
+      "target": "c_users_andre_where_are_we_tsconfig_compileroptions_noemit",
       "confidence_score": 1.0
     },
     {
@@ -8540,8 +8212,8 @@
       "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_nofallthroughcasesinswitch",
+      "source": "c_users_andre_where_are_we_tsconfig_compileroptions",
+      "target": "c_users_andre_where_are_we_tsconfig_compileroptions_nofallthroughcasesinswitch",
       "confidence_score": 1.0
     },
     {
@@ -8551,8 +8223,8 @@
       "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_nounusedlocals",
+      "source": "c_users_andre_where_are_we_tsconfig_compileroptions",
+      "target": "c_users_andre_where_are_we_tsconfig_compileroptions_nounusedlocals",
       "confidence_score": 1.0
     },
     {
@@ -8562,8 +8234,8 @@
       "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_nounusedparameters",
+      "source": "c_users_andre_where_are_we_tsconfig_compileroptions",
+      "target": "c_users_andre_where_are_we_tsconfig_compileroptions_nounusedparameters",
       "confidence_score": 1.0
     },
     {
@@ -8573,8 +8245,8 @@
       "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_resolvejsonmodule",
+      "source": "c_users_andre_where_are_we_tsconfig_compileroptions",
+      "target": "c_users_andre_where_are_we_tsconfig_compileroptions_resolvejsonmodule",
       "confidence_score": 1.0
     },
     {
@@ -8584,8 +8256,8 @@
       "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_skiplibcheck",
+      "source": "c_users_andre_where_are_we_tsconfig_compileroptions",
+      "target": "c_users_andre_where_are_we_tsconfig_compileroptions_skiplibcheck",
       "confidence_score": 1.0
     },
     {
@@ -8595,8 +8267,8 @@
       "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_strict",
+      "source": "c_users_andre_where_are_we_tsconfig_compileroptions",
+      "target": "c_users_andre_where_are_we_tsconfig_compileroptions_strict",
       "confidence_score": 1.0
     },
     {
@@ -8606,8 +8278,8 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_target",
+      "source": "c_users_andre_where_are_we_tsconfig_compileroptions",
+      "target": "c_users_andre_where_are_we_tsconfig_compileroptions_target",
       "confidence_score": 1.0
     },
     {
@@ -8617,8 +8289,8 @@
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_usedefineforclassfields",
+      "source": "c_users_andre_where_are_we_tsconfig_compileroptions",
+      "target": "c_users_andre_where_are_we_tsconfig_compileroptions_usedefineforclassfields",
       "confidence_score": 1.0
     },
     {
@@ -8629,7 +8301,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "tsconfig_compileroptions_lib",
+      "source": "c_users_andre_where_are_we_tsconfig_compileroptions_lib",
       "target": "ref_dom",
       "confidence_score": 1.0
     },
@@ -8641,7 +8313,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "tsconfig_compileroptions_lib",
+      "source": "c_users_andre_where_are_we_tsconfig_compileroptions_lib",
       "target": "ref_dom_iterable",
       "confidence_score": 1.0
     },
@@ -8653,7 +8325,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "tsconfig_compileroptions_lib",
+      "source": "c_users_andre_where_are_we_tsconfig_compileroptions_lib",
       "target": "ref_es2021",
       "confidence_score": 1.0
     },
@@ -8665,836 +8337,631 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "tsconfig_include",
+      "source": "c_users_andre_where_are_we_tsconfig_include",
       "target": "ref_src",
       "confidence_score": 1.0
     },
     {
-      "relation": "contains",
+      "relation": "rationale_for",
       "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
       "source_file": "AGENTS.md",
-      "source_location": "L1",
+      "source_location": null,
       "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents",
-      "target": "agents_instructions_for_ai_assistants_working_in_this_project",
-      "confidence_score": 1.0
+      "source": "agents_card_copy_rules",
+      "target": "agents_where_are_we_json"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "AGENTS.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "agents_hard_rules",
+      "target": "agents_where_are_we_json"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "AGENTS.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "agents_where_are_we_json",
+      "target": "agents_layout_local_json"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "AGENTS.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "agents_where_are_we_json",
+      "target": "agents_next_md"
+    },
+    {
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "HANDOVER.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "handover_v2_status",
+      "target": "agents_where_are_we_json"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "readme_data_schema",
+      "target": "agents_where_are_we_json"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "HANDOVER.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "handover_data_files_split",
+      "target": "agents_next_md"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "HANDOVER.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "handover_data_files_split",
+      "target": "agents_layout_local_json"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "readme_tools",
+      "target": "agents_layout_local_json"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L134",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "readme",
-      "target": "agents",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
       "source_file": "AGENTS.md",
-      "source_location": "L34",
+      "source_location": null,
       "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_instructions_for_ai_assistants_working_in_this_project",
-      "target": "agents_the_file_format",
-      "confidence_score": 1.0
+      "source": "agents_daily_node",
+      "target": "agents_project_node"
     },
     {
-      "relation": "contains",
+      "relation": "conceptually_related_to",
       "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
       "source_file": "AGENTS.md",
-      "source_location": "L26",
+      "source_location": null,
       "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_instructions_for_ai_assistants_working_in_this_project",
-      "target": "agents_use_graphify_for_accurate_connections",
-      "confidence_score": 1.0
+      "source": "agents_project_node",
+      "target": "agents_edges"
     },
     {
-      "relation": "contains",
+      "relation": "references",
       "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
       "source_file": "AGENTS.md",
-      "source_location": "L12",
+      "source_location": null,
       "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_instructions_for_ai_assistants_working_in_this_project",
-      "target": "agents_what_you_do_and_when",
-      "confidence_score": 1.0
+      "source": "agents_edges",
+      "target": "agents_graphify_usage"
     },
     {
-      "relation": "contains",
+      "relation": "references",
       "confidence": "EXTRACTED",
-      "source_file": "AGENTS.md",
-      "source_location": "L121",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_the_file_format",
-      "target": "agents_a_good_habit",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "AGENTS.md",
-      "source_location": "L109",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_the_file_format",
-      "target": "agents_hard_rules",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "AGENTS.md",
-      "source_location": "L74",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_the_file_format",
-      "target": "agents_writing_card_copy",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "DESIGN.md",
-      "source_location": "L91",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "design",
-      "target": "design_design_system_where_are_we",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "DESIGN.md",
-      "source_location": "L93",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "design_design_system_where_are_we",
-      "target": "design_1_overview",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "DESIGN.md",
-      "source_location": "L123",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "design_design_system_where_are_we",
-      "target": "design_2_colors_slate_and_chalk",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "DESIGN.md",
-      "source_location": "L171",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "design_design_system_where_are_we",
-      "target": "design_3_typography",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "DESIGN.md",
-      "source_location": "L201",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "design_design_system_where_are_we",
-      "target": "design_4_elevation",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "DESIGN.md",
-      "source_location": "L227",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "design_design_system_where_are_we",
-      "target": "design_5_components",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "DESIGN.md",
-      "source_location": "L276",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "design_design_system_where_are_we",
-      "target": "design_6_do_s_and_don_ts",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "DESIGN.md",
-      "source_location": "L158",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "design_2_colors_slate_and_chalk",
-      "target": "design_named_rules",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "DESIGN.md",
-      "source_location": "L149",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "design_2_colors_slate_and_chalk",
-      "target": "design_neutral",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "DESIGN.md",
-      "source_location": "L128",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "design_2_colors_slate_and_chalk",
-      "target": "design_primary",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "DESIGN.md",
-      "source_location": "L136",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "design_2_colors_slate_and_chalk",
-      "target": "design_secondary",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "DESIGN.md",
-      "source_location": "L144",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "design_2_colors_slate_and_chalk",
-      "target": "design_tertiary",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "DESIGN.md",
-      "source_location": "L181",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "design_3_typography",
-      "target": "design_hierarchy",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "DESIGN.md",
-      "source_location": "L192",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "design_3_typography",
-      "target": "design_named_rules_192",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "DESIGN.md",
-      "source_location": "L216",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "design_4_elevation",
-      "target": "design_named_rules_216",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "DESIGN.md",
-      "source_location": "L209",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "design_4_elevation",
-      "target": "design_shadow_vocabulary",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "DESIGN.md",
-      "source_location": "L229",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "design_5_components",
-      "target": "design_buttons",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "DESIGN.md",
-      "source_location": "L245",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "design_5_components",
-      "target": "design_cards_containers",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "DESIGN.md",
-      "source_location": "L239",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "design_5_components",
-      "target": "design_chips",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "DESIGN.md",
-      "source_location": "L256",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "design_5_components",
-      "target": "design_inputs_fields",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "DESIGN.md",
-      "source_location": "L261",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "design_5_components",
-      "target": "design_navigation",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "DESIGN.md",
-      "source_location": "L267",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "design_5_components",
-      "target": "design_signature_component_the_drawn_stroke",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "DESIGN.md",
-      "source_location": "L278",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "design_6_do_s_and_don_ts",
-      "target": "design_do",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "DESIGN.md",
-      "source_location": "L288",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "design_6_do_s_and_don_ts",
-      "target": "design_don_t",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handoff_canvas_fix",
-      "target": "handoff_canvas_fix_handoff_where_are_we_canvas_reliability_pass",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L77",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handoff_canvas_fix_handoff_where_are_we_canvas_reliability_pass",
-      "target": "handoff_canvas_fix_constraints",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L37",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handoff_canvas_fix_handoff_where_are_we_canvas_reliability_pass",
-      "target": "handoff_canvas_fix_context",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L157",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handoff_canvas_fix_handoff_where_are_we_canvas_reliability_pass",
-      "target": "handoff_canvas_fix_do_not",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L167",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handoff_canvas_fix_handoff_where_are_we_canvas_reliability_pass",
-      "target": "handoff_canvas_fix_escalate_to_owner_batch",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L25",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handoff_canvas_fix_handoff_where_are_we_canvas_reliability_pass",
-      "target": "handoff_canvas_fix_outcome",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L9",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handoff_canvas_fix_handoff_where_are_we_canvas_reliability_pass",
-      "target": "handoff_canvas_fix_phased_plan_overview",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L87",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handoff_canvas_fix_handoff_where_are_we_canvas_reliability_pass",
-      "target": "handoff_canvas_fix_phases_execute_in_order_verify_before_next",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L175",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handoff_canvas_fix_handoff_where_are_we_canvas_reliability_pass",
-      "target": "handoff_canvas_fix_start",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L67",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handoff_canvas_fix_context",
-      "target": "handoff_canvas_fix_gotchas_from_handover_md",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L54",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handoff_canvas_fix_context",
-      "target": "handoff_canvas_fix_known_bug_cluster_bugbot_prior_audit",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L89",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handoff_canvas_fix_phases_execute_in_order_verify_before_next",
-      "target": "handoff_canvas_fix_phase_0_orient_reproduce_no_product_fixes",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L102",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handoff_canvas_fix_phases_execute_in_order_verify_before_next",
-      "target": "handoff_canvas_fix_phase_1_camera_flash_black",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L113",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handoff_canvas_fix_phases_execute_in_order_verify_before_next",
-      "target": "handoff_canvas_fix_phase_2_drawnpath_cancel_safety",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L119",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handoff_canvas_fix_phases_execute_in_order_verify_before_next",
-      "target": "handoff_canvas_fix_phase_3_layout_pins_new_cards_edges",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L129",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handoff_canvas_fix_phases_execute_in_order_verify_before_next",
-      "target": "handoff_canvas_fix_phase_4_readable_cards_ai_guidance",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L138",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handoff_canvas_fix_phases_execute_in_order_verify_before_next",
-      "target": "handoff_canvas_fix_phase_5_card_resize",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HANDOFF-CANVAS-FIX.md",
-      "source_location": "L147",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handoff_canvas_fix_phases_execute_in_order_verify_before_next",
-      "target": "handoff_canvas_fix_phase_6_ship_checklist",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
       "source_file": "HANDOVER.md",
-      "source_location": "L1",
+      "source_location": null,
       "weight": 1.0,
-      "_origin": "ast",
-      "source": "handover",
-      "target": "handover_handover_where_are_we_v2_verification_complete_ready_to_use",
-      "confidence_score": 1.0
+      "source": "handover_v2_status",
+      "target": "agents_graphify_usage"
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HANDOVER.md",
-      "source_location": "L5",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "DESIGN.md",
+      "source_location": null,
       "weight": 1.0,
-      "_origin": "ast",
-      "source": "handover_handover_where_are_we_v2_verification_complete_ready_to_use",
-      "target": "handover_2026_07_24_canvas_reliability_pass_handoff_canvas_fix_md",
-      "confidence_score": 1.0
+      "source": "design_six_word_rule",
+      "target": "agents_card_copy_rules"
     },
     {
-      "relation": "contains",
+      "relation": "references",
       "confidence": "EXTRACTED",
-      "source_file": "HANDOVER.md",
-      "source_location": "L103",
+      "confidence_score": 1.0,
+      "source_file": "HANDOFF-CANVAS-FIX.md",
+      "source_location": null,
       "weight": 1.0,
-      "_origin": "ast",
-      "source": "handover_handover_where_are_we_v2_verification_complete_ready_to_use",
-      "target": "handover_board_state_data_where_are_we_json",
-      "confidence_score": 1.0
+      "source": "handoff_canvas_fix_readable_cards",
+      "target": "agents_card_copy_rules"
     },
     {
-      "relation": "contains",
+      "relation": "references",
       "confidence": "EXTRACTED",
-      "source_file": "HANDOVER.md",
-      "source_location": "L53",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handover_handover_where_are_we_v2_verification_complete_ready_to_use",
-      "target": "handover_data_files_in_a_data_dir",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HANDOVER.md",
-      "source_location": "L135",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handover_handover_where_are_we_v2_verification_complete_ready_to_use",
-      "target": "handover_gotchas_that_still_apply",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HANDOVER.md",
-      "source_location": "L119",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handover_handover_where_are_we_v2_verification_complete_ready_to_use",
-      "target": "handover_machine_setup_notes_fresh_machine",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HANDOVER.md",
-      "source_location": "L68",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handover_handover_where_are_we_v2_verification_complete_ready_to_use",
-      "target": "handover_what_this_project_is",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HANDOVER.md",
-      "source_location": "L109",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handover_handover_where_are_we_v2_verification_complete_ready_to_use",
-      "target": "handover_what_to_do_next_nothing_is_blocked",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HANDOVER.md",
-      "source_location": "L79",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handover_handover_where_are_we_v2_verification_complete_ready_to_use",
-      "target": "handover_where_things_stand",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "PRODUCT.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "product",
-      "target": "product_product",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "PRODUCT.md",
-      "source_location": "L70",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "product_product",
-      "target": "product_accessibility_inclusion",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "PRODUCT.md",
-      "source_location": "L39",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "product_product",
-      "target": "product_anti_references",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "PRODUCT.md",
-      "source_location": "L27",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "product_product",
-      "target": "product_brand_personality",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "PRODUCT.md",
-      "source_location": "L53",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "product_product",
-      "target": "product_design_principles",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "PRODUCT.md",
-      "source_location": "L18",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "product_product",
-      "target": "product_product_purpose",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "PRODUCT.md",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "product_product",
-      "target": "product_register",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "PRODUCT.md",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "product_product",
-      "target": "product_users",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L1",
+      "source_location": null,
       "weight": 1.0,
-      "_origin": "ast",
-      "source": "readme",
-      "target": "readme_where_are_we",
-      "confidence_score": 1.0
+      "source": "readme_data_schema",
+      "target": "agents_hard_rules"
     },
     {
-      "relation": "contains",
+      "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L100",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": null,
       "weight": 1.0,
-      "_origin": "ast",
-      "source": "readme_where_are_we",
-      "target": "readme_data_schema_where_are_we_json",
-      "confidence_score": 1.0
+      "source": "design_dos_donts",
+      "target": "design_architects_sketchbook"
     },
     {
-      "relation": "contains",
+      "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L44",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": null,
       "weight": 1.0,
-      "_origin": "ast",
-      "source": "readme_where_are_we",
-      "target": "readme_how_it_works",
-      "confidence_score": 1.0
+      "source": "design_one_loud_thing_rule",
+      "target": "design_architects_sketchbook"
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L138",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "PRODUCT.md",
+      "source_location": null,
       "weight": 1.0,
-      "_origin": "ast",
-      "source": "readme_where_are_we",
-      "target": "readme_project_layout",
-      "confidence_score": 1.0
+      "source": "product_brand_personality",
+      "target": "design_architects_sketchbook"
     },
     {
-      "relation": "contains",
+      "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L27",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": null,
       "weight": 1.0,
-      "_origin": "ast",
-      "source": "readme_where_are_we",
-      "target": "readme_quick_start_any_other_repo",
-      "confidence_score": 1.0
+      "source": "design_contrast_floor_rule",
+      "target": "design_color_system"
     },
     {
-      "relation": "contains",
+      "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L17",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": null,
       "weight": 1.0,
-      "_origin": "ast",
-      "source": "readme_where_are_we",
-      "target": "readme_quick_start_this_repo_dev_mode",
-      "confidence_score": 1.0
+      "source": "design_semantic_pigment_rule",
+      "target": "design_color_system"
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L68",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "index.html",
+      "source_location": null,
       "weight": 1.0,
-      "_origin": "ast",
-      "source": "readme_where_are_we",
-      "target": "readme_the_board",
-      "confidence_score": 1.0
+      "source": "index_html_root",
+      "target": "design_color_system"
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L79",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "PRODUCT.md",
+      "source_location": null,
       "weight": 1.0,
-      "_origin": "ast",
-      "source": "readme_where_are_we",
-      "target": "readme_tools",
-      "confidence_score": 1.0
+      "source": "product_design_principles",
+      "target": "design_one_loud_thing_rule"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "PRODUCT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "product_accessibility",
+      "target": "design_contrast_floor_rule"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "design_grows_when_small_rule",
+      "target": "design_typography"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "design_six_word_rule",
+      "target": "design_typography"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "index_html_root",
+      "target": "design_typography"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "design_earned_blur_rule",
+      "target": "design_elevation"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "design_ink_not_object_rule",
+      "target": "design_elevation"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "design_drawn_stroke",
+      "target": "design_components"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PRODUCT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "product_accessibility",
+      "target": "design_drawn_stroke"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "PRODUCT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "product_anti_references",
+      "target": "design_dos_donts"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "HANDOFF-CANVAS-FIX.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "handoff_canvas_fix_phased_plan",
+      "target": "handoff_canvas_fix_camera_flash_black"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "HANDOFF-CANVAS-FIX.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "handoff_canvas_fix_phased_plan",
+      "target": "handoff_canvas_fix_card_resize"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "HANDOFF-CANVAS-FIX.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "handoff_canvas_fix_phased_plan",
+      "target": "handoff_canvas_fix_drawnpath_vanish"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "HANDOFF-CANVAS-FIX.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "handoff_canvas_fix_phased_plan",
+      "target": "handoff_canvas_fix_pins_edges"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "HANDOFF-CANVAS-FIX.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "handoff_canvas_fix_phased_plan",
+      "target": "handoff_canvas_fix_readable_cards"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "HANDOFF-CANVAS-FIX.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "handoff_canvas_fix_phased_plan",
+      "target": "handoff_canvas_fix_verify_polish"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "HANDOFF-CANVAS-FIX.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "handoff_canvas_fix_phased_plan",
+      "target": "handover_v2_status"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "HANDOVER.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "handover_canvas_reliability_pass",
+      "target": "handoff_canvas_fix_phased_plan"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "HANDOFF-CANVAS-FIX.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "handoff_canvas_fix_bug_cluster",
+      "target": "handoff_canvas_fix_camera_flash_black"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "HANDOVER.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "handover_camera_rescue",
+      "target": "handoff_canvas_fix_camera_flash_black"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "HANDOFF-CANVAS-FIX.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "handoff_canvas_fix_bug_cluster",
+      "target": "handoff_canvas_fix_drawnpath_vanish"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "HANDOVER.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "handover_drawnpath_cancel_safety",
+      "target": "handoff_canvas_fix_drawnpath_vanish"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "HANDOFF-CANVAS-FIX.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "handoff_canvas_fix_bug_cluster",
+      "target": "handoff_canvas_fix_pins_edges"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "HANDOVER.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "handover_pins_new_cards_edges",
+      "target": "handoff_canvas_fix_pins_edges"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "HANDOVER.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "handover_readable_cards",
+      "target": "handoff_canvas_fix_readable_cards"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "HANDOVER.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "handover_card_resize",
+      "target": "handoff_canvas_fix_card_resize"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "HANDOVER.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "handover_v2_status",
+      "target": "handover_data_files_split"
+    },
+    {
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "HANDOVER.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "handover_v2_status",
+      "target": "readme_project_layout"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "readme_board_features",
+      "target": "handover_pins_new_cards_edges"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "HANDOVER.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "handover_known_gaps",
+      "target": "handover_card_resize"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "AMBIGUOUS",
+      "confidence_score": 0.2,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "readme_tools",
+      "target": "handover_card_resize"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "readme_data_schema",
+      "target": "handover_data_files_split"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PRODUCT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "product_users",
+      "target": "product_purpose"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "readme_quick_start",
+      "target": "readme_project_layout"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "readme_board_features",
+      "target": "readme_data_schema"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "index_html_root",
+      "target": "readme_project_layout"
     }
   ],
-  "hyperedges": [],
-  "built_at_commit": "76707e4b93cf919fc754af5bf7becb31945b942d"
+  "hyperedges": [
+    {
+      "id": "canvas_reliability_pass_flow",
+      "label": "Canvas reliability pass: plan, bug cluster, and shipped fixes",
+      "nodes": [
+        "handoff_canvas_fix_phased_plan",
+        "handoff_canvas_fix_bug_cluster",
+        "handover_canvas_reliability_pass"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "HANDOVER.md"
+    },
+    {
+      "id": "where_are_we_json_data_contract",
+      "label": "where-are-we.json shared data contract across AI-editing, README schema, and handover file split",
+      "nodes": [
+        "agents_where_are_we_json",
+        "readme_data_schema",
+        "handover_data_files_split"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "README.md"
+    },
+    {
+      "id": "crayon_brand_identity",
+      "label": "Crayon brand identity: north star, anti-references, and design principles together define the product's visual/voice contract",
+      "nodes": [
+        "design_architects_sketchbook",
+        "product_anti_references",
+        "product_design_principles"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "PRODUCT.md"
+    }
+  ],
+  "built_at_commit": "d73f83165d554bcc040e6521c7681d601a0cfc96"
 }
