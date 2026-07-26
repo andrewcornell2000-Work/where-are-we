@@ -6,6 +6,7 @@ dist/
 data/NEXT.md
 data/*.tmp-*
 .waw/
+skills-lock.json
 
 # Graphify — keep the real outputs, drop transient/machine-local files
 graphify-out/.graphify_python
